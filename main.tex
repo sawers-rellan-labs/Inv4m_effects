@@ -44,7 +44,6 @@ proliferation gene network}
 \author[$1$,$2$]{Nirwan Tandukar}
 \author[$4$]{Sergio Pérez-Limón}
 \author[$4$]{Melanie Perryman}
-\author[$5$]{Miguel A. Piñeros}
 \author[$7$]{Daniel Runcie}
 \author[$4$]{Ruairidh Sawers}
 \author[$1$,*]{Rubén Rellán Álvarez}
@@ -259,33 +258,41 @@ sequences (just red rectangles in Fig~\ref{fig::design}B, Downstream), and the
 few knob repeats present are closer to the downstream external anchor gene 
 rather than to \invfour. We can observe these four patterns in the opposite 
 orientation in PT and TIL18 relative to B73.
+\clearpage
 
-\begin{figure}[b!]
-\caption{\textbf{Chromosomal Inversion \invfour: Delimitation, Introgression 
-Breeding Design, Field Experimental Setup and Population Genotype.} 
-\textbf{(A)} \invfour breakpoints overlap clusters of full 180 bp knob repeats 
-with interspersed partial \textit{TR-1}s (normalized match score $<50$). Each 
-point represents a BLAST+ \cite{camacho2009} hit with a selected sequence of 
-180 bp knob or \textit{TR-1} repeats. Around the 230 Mb mark regions 
-corresponding to reported 4L cytogenetic knobs can be observed in \mex and B73 
-while absent in PT. \textbf{(B)} Sequence self-similarity dotplots, using LAST 
-\cite{kielbasa2011}, for the inversion breakpoint segments as defined in 
-Table~\ref{tab:breakpoints}. Breakpoints are upstream and downstream of 
-\invfour in each genome coordinate system as depicted in (A). Forward matches 
-in red, reverse in blue. Rectangles indicate tandem repeats. \textbf{(C)} PT 
-shows higher (** \textit{t-test} $p=0.0022$) leaf phosphorus content than B73 
-under phosphorus sufficiency (Puerto Vallarta, 2016). \textbf{(D)} Near 
-Isogenic Line population breeding scheme. The \invfour from Mi21, a highland 
-traditional variety closely related to PT, was introgressed into a temperate 
-lowland genetic background using B73 as recurrent parent. \textbf{(E)} Rock 
-Springs, PA, field station experimental setup at 5 ppm (-P), and 36 ppm (+P) 
-soil phosphorus [mg/kg Mehlich-3]. \textbf{(F)} NIL genotypes at BC$_6$S$_2$, 
-of plants used in RNA and lipid extractions, $n=13$, B73 NAM5 coordinates. 
-\textbf{(G)} Zoom into \invfour introgression. Plants are sorted by genotype at 
-the \invfour tagging SNP PZE04175660223 (181.6 Mb, downwards pointing triangle) 
-then by field row number.}
+\begin{figure*}[ht!]
+% (fausto) remove include graphics before submission
+\centering
+\includegraphics[width=\linewidth]{figs/design.png}
+\caption[\textit{\invfour} Delimitation, Introgression Breeding Design and Population Genotypes.]
+{\textit{\textbf{Chromosomal Inversion \invfour: Delimitation,  Introgression Breeding Design, Field Experimental Setup and Population Genotype.}} }
 \label{fig::design}
-\end{figure}
+\end{figure*}
+
+\clearpage
+
+\addtocounter{figure}{-1}
+
+% caption of the figure on the next page
+\begin{figure*}[ht!]
+    \caption[]{\textbf{Chromosomal Inversion \invfour: Delimitation, Introgression 
+Breeding Design, Field Experimental Setup and Population Genotype.}
+% \textbf{(A)} Chromosome 4 macrosynteny among highland and lowland \textit{Zea} genomes illustrating \invfour. The highland Mexican traditional variety Palomero Toluqueño (PT) shows the same gene order as the teosinte \mex inbred TIL18. This highland karyotype (purple) has the \invfour inversion relative to the reference genome inbred B73 (\textit{spp. mays}, yellow). Synteny plot created with MCscan\cite{tang2024}, genes from the ortholog groups defining the endpoints of the inversion are depicted below each ideogram.
+\textbf{(A)} \invfour breakpoints overlap clusters of full 180 bp knob repeats with interspersed partial \textit{TR-1}s (normalized match score $<50$). Each point represents a BLAST+ \cite{camacho2009} hit with a selected sequence of 180 bp knob or  \textit{TR-1} repeats. 
+ Around the 230 Mb mark regions corresponding to reported 4L cytogenetic knobs can be observed in \mex and B73 while absent in PT.
+\textbf{(B)} Sequence self-similarity dotplots, using LAST \cite{kielbasa2011}, for the inversion breakpoint segments as defined in Table~\ref{tab:breakpoints}.
+Breakpoints are upstream and downstream of \invfour in each genome coordinate system as depicted in (A).
+Forward matches in red, reverse in blue. 
+Rectangles indicate tandem repeats. 
+\textbf{(C)} PT shows higher (** \textit{t-test} $p=0.0022$) leaf phosphorus content than B73 under phosphorus sufficiency (Puerto Vallarta, 2016). 
+\textbf{(D)} Near Isogenic Line population breeding scheme. The \invfour from Mi21, a highland traditional variety closely related to PT, was introgressed into a temperate lowland genetic background using B73 as recurrent parent.
+\textbf{(E)}  Rock Springs, PA, field station experimental setup at 5 ppm (-P), and  36 ppm (+P) soil phosphorus [mg/kg Mehlich-3].
+\textbf{(F)} NIL genotypes at BC$_6$S$_2  $, of plants used in RNA and lipid extractions, $n=13$, B73 NAM5 coordinates. 
+\textbf{(G)} Zoom into \invfour introgression. Plants are sorted by genotype at the \invfour tagging SNP PZE04175660223 (181.6 Mb, downwards pointing triangle) then by field row number. 
+}
+\end{figure*}
+
+
 
 \subsection{Divergent highland introgression is mostly confined to a 39 Mb 
 segment spanning \invfour}
@@ -347,13 +354,15 @@ line, 51 Mb of fixed highland introgression, 35 Mb of divergent highland
 introgression colocalized and matching the selection of \invfour, and 10 Mb of 
 other dispersed divergent highland introgressions.
 
-\begin{figure}[!ht]
+
+\begin{figure*}[!ht]
+\includegraphics[width=0.95\linewidth]{figs/effects.png}
 \centering
 \caption{\textbf{Effect of \invfour on PH, DTA, DTS, HI.} BLUEs from spatial 
 mixed models (\texttt{statgenHTP::fitModels}); phosphorus is modeled as a 
 covariate and not interpreted.}
 \label{fig:phenotypes}
-\end{figure}
+\end{figure*}
 
 \subsection{Inv4m accelerates flowering and promotes growth}
 
@@ -362,12 +371,14 @@ time and plant architecture. Plants carrying the highland inversion allele
 flowered earlier and grew taller than control lines, with these effects 
 consistent across both phosphorus treatments (Fig~\ref{fig:phenotypes}).
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
 \centering
+\includegraphics[width=0.95\linewidth]{figs/RNAseq.png}
 \caption{\textbf{Global and local transcriptomic effects of \invfour across 
 leaf stages.} Phosphorus panels omitted.}
 \label{fig:transcriptome}
-\end{figure}
+\end{figure*}
+
 
 \subsection{Despite strong transcriptional effects, \invfour differential 
 expression lacks functional enrichment}
@@ -416,7 +427,9 @@ monogalactosyldiacylglycerol synthase \textit{mgd2}), phenylpropanoid and
 flavonoid biosynthesis, chitin degradation, ABC transporters, and 
 brassinosteroid biosynthesis (\textit{brc2}). Conversely, genes involved in 
 galactolipid biosynthesis, which are crucial for maintaining photosynthetic 
-membranes, are significantly downregulated.
+membranes are significantly downregulated.
+
+\clearpage
 
 \subsection{\invfour plants show perturbations of a cell proliferation gene 
 expression network in leaves and have elongated shoot apical meristems}
@@ -455,15 +468,16 @@ $H_a: \mu_{\textit{Inv4}} > \mu_{\textit{CTRL}}$) 9\% increase in SAM height
 shape coefficient (2.49 $\text{nm}^{-1}$, 0.59 $\text{nm}^{-1}$), indicating an 
 elongated meristem (Panel C).
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
 \centering
+\includegraphics[width=\linewidth]{figs/DEG_network.png}
 \caption{\textbf{Trans coexpression network of \invfour DEGs.} \textbf{(A)} 
 Edge polarity reflects causal precedence of the genetic perturbation by 
 \invfour introgression. \textbf{(B)} GO enrichment results.}
 \label{fig::DEGnetwork}
-\end{figure}
+\end{figure*}
 
-\begin{table}[!ht]
+\begin{table*}[!ht]
 \caption{\textbf{Effect of \invfour on Flowering Time and Plant Height Gene 
 Candidates}}
 \label{tab:FT_PH_candidates}
@@ -705,14 +719,15 @@ kinase)\end{tabular} &
   \cite{vanous2018, liu2023} \\ \hline
 \end{tabular}%
 }
-\end{table}
+\end{table*}
 
-\begin{figure}[!ht]
+\begin{figure*}[!ht]
 \centering
+\includegraphics[width=\linewidth]{figs/model.png}
 \caption{\textbf{B73 phenotypic and gene expression response to \invfour 
 introgression}}
 \label{fig::model}
-\end{figure}
+\end{figure*}
 
 However, the variation at \invfour seems to have no major effect in the gene 
 response to phosphorus. The \invfour x P interaction t-test (\textit{FDR} 
@@ -1078,6 +1093,7 @@ assistance with field work and laboratory analyses.
 \end{table}
 
 \begin{figure}[!ht]
+\includegraphics[width=\linewidth]{figs/SNP_distribution.png}
 \caption{\textbf{Chromosome Distribution of the SNPs in the RNAseq samples, 
 their correlation with \invfour, and genotype run length as percentage of the 
 genome.} \textbf{(A)} Chromosome 4 contains 44\% of all genotyped SNPs and 98\% 
@@ -1094,27 +1110,6 @@ line is the overall mean for the 13 NILs.}
 \label{fig::SNPdistro}
 \end{figure}
 
-\begin{figure}[!ht]
-\caption{\textbf{Plant growth curves show effect of phosphorus treatment but no 
-\invfour effect.} \textbf{(A)} Stover dry weight observations. \textbf{(B)} 
-Stover dry weight, logistic growth fit curves per field row. \textbf{(C-F)} 
-Effects of phosphorus treatments on logistic growth curve parameters, selected 
-for their significance (\fdrls) in a linear mixed effect model, as pairwise 
-comparisons. Student's \textit{t-test p-value}: * $<0.05$, ** $<0.01$, *** 
-$<0.001$, **** $<0.0001$.}
-\label{fig::growth}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\caption{\textbf{Effect of Phosphorus Treatment in the Maize Ionome.} 
-\textbf{(A)} Significant effects (linear mixed model, \fdrls) of soil 
-phosphorus treatment on mineral content per tissue, and seed/stover mineral 
-ratio. \textbf{(B-G)} Pairwise comparisons between phosphorus treatments 
-corresponding to the effect in (A). Student's \textit{t-test p-value}: * 
-$<0.05$, ** $<0.01$, *** $<0.001$, **** $<0.0001$.}
-\label{fig::ionome}
-\end{figure}
 
 \begin{table}[!ht]
 \caption{\textbf{Effect of experimental conditions on expression of 
@@ -1138,18 +1133,5 @@ Leaf & Down & sm2 & 7.3 & -2.12 & salmon silk2 \\
 }
 \end{table}
 
-\begin{figure}[!ht]
-\centering
-\caption{\textbf{Effect of \invfour, Phosphorus Treatment and Interaction in 
-lipids, all leaves.}}
-\label{fig::lipid_all_leaves}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\caption{\textbf{Effect of \invfour, Phosphorus Treatment and Interaction in 
-lipids, old leaves vs young leaves.}}
-\label{fig::lipid_old_young}
-\end{figure}
 
 \end{document}
