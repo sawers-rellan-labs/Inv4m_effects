@@ -129,7 +129,7 @@
 
 \fancypagestyle{firststyle}{
    \fancyhead[R]{{\watermarkfont bio\textcolor{color2}{R}$\chi$iv}}
-   \fancyhead[L]{\includegraphics[width=0.8cm]{cornkey.png}}
+ %  \fancyhead[L]{\includegraphics[width=0.8cm]{}}
    \fancyfoot[R]{\footnotesize bio\textcolor{color2}{R}$\chi$iv \hspace{1em} \monthyeardate\today \hspace{2em} \thepage\ }
 }
 
@@ -141,7 +141,7 @@
 \rfoot{}
 \fancyfoot[RO,RE]{\thepage\ \hspace{2em} \@runningauthor \hspace{0.2em}}
 \fancyfoot[RO]{\@runningtitle \hspace{2em} \thepage\ }
-\fancyfoot[LO,LE]{\includegraphics[width=0.5cm]{cornkey.png}}
+% \fancyfoot[LO,LE]{\includegraphics[width=0.5cm]{}}
 
 %\fancyfoot[LO,RE]{}
 \renewcommand{\headrulewidth}{0pt}% % No header rule
