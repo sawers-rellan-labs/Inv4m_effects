@@ -30,25 +30,25 @@
 \newcommand{\jmjix}{\textit{jmj9}\xspace}
 \newcommand{\arabidopis}{\textit{Arabidopsis}\xspace}
 
-\usepackage{hyperref}
+\usepackage[hyperfigures=false]{hyperref}
 
 \newcolumntype{b}{X}
 \newcolumntype{s}{>{\hsize=.5\hsize}X}
 
-\title{Introgression of Mexican highland chromosomal inversion \textit{Inv4m} into temperate 
-maize modulates flowering, plant height, and growth-related gene networks}
+\title{The teosinte \mex chromosomal inversion \textit{Inv4m} modulates maize flowering time, plant height, and growth regulation gene networks}
+
+% Teosinte Inv4m Inversion Modulates Maize Growth and Flowering via Gene Network Rewiring
 
 
 \author[$1$,$2$,*]{Fausto Rodríguez-Zapata}
 \author[$1$,$2$]{Nirwan Tandukar}
-\author[$1$]{Hannah Pil}
+\author[$1$,$2$]{Hannah Pil}
 \author[$1$]{Carolina Escalona-Weldt}
-\author[$1$]{Zehta Glover}
+\author[$1$,$2$]{Zehta Fazler}
 \author[$1$]{Lauren Insko}
-\author[$1$, $5$]{Alejandro Aragón-Raygoza}
+\author[$1$,$5$]{Alejandro Aragón-Raygoza}
 \author[$4$]{Melanie Perryman}
 \author[$4$]{Sergio Pérez-Limón}
-% Li, Meng
 \author[$1$,$5$]{Josh Strable}
 \author[$6$]{Daniel Runcie}
 \author[$4$]{Ruairidh Sawers}
@@ -64,7 +64,7 @@ maize modulates flowering, plant height, and growth-related gene networks}
 
 \keywords{ Local Adaptation, Highland Maize, Teosinte Mexicana Introgression, Chromosomal Inversion}
 
-\runningtitle{The Role of \textit{Invm4} in adaptation to low phosphorus availability} % For use in the footer
+\runningtitle{The Role of \textit{Inv4m} in local adaptation} % For use in the footer
 
 %% For the footnote.
 %% Give the last name of the first author if only one author;
@@ -77,21 +77,13 @@ maize modulates flowering, plant height, and growth-related gene networks}
 
 %%% Abstract %%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Maize adaptation to temperate zones may have been facilitated by introgression 
-from highland wild relatives. We investigated the effects of \invfour, a 15 Mb 
-chromosomal inversion from \textit{Zea mays ssp. mexicana}, by introgressing 
-it into temperate maize (B73) through eight generations of backcrossing. Field 
-trials under contrasting phosphorus treatments revealed that \invfour 
-significantly accelerates flowering time and increases plant height, 
-independent of phosphorus availability. Transcriptomic analysis identified 
-perturbations in a cell proliferation gene expression network, including 
-downregulation of JUMONJI methyltransferases that show higher copy numbers in 
-modern maize compared to highland teosinte. Phenotypic measurements confirmed 
-that \invfour plants exhibit elongated shoot apical meristems. While classical 
-phosphorus starvation response genes were detected within the inversion, 
-\invfour showed no detectable effect on phosphorus starvation responses. These 
-findings illuminate the genetic mechanisms underlying \invfour's contribution 
-to local adaptation and identify candidate genes driving its phenotypic effects.
+Maize adaptation to temperate zones may have been facilitated by introgression from highland wild relatives.
+We investigated the effects of \invfour, a 15 Mb chromosomal inversion from \textit{Zea mays ssp. mexicana}, by introgressing it into temperate maize (B73) through eight generations of backcrossing.
+Field trials under contrasting phosphorus treatments revealed that \invfour significantly accelerates flowering time and increases plant height, independent of phosphorus availability.
+Transcriptomic analysis identified perturbations in a cell proliferation gene expression network, including downregulation of JUMONJI histone demethylases that show higher copy numbers in modern maize compared to highland teosinte.
+Phenotypic measurements confirmed that \invfour plants exhibit elongated shoot apical meristems.
+While classical phosphorus starvation response genes were detected within the inversion, \invfour showed no detectable effect on phosphorus starvation responses.
+These findings illuminate the genetic mechanisms underlying \invfour's contribution to local adaptation and identify candidate genes driving its phenotypic effects.
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -102,185 +94,108 @@ to local adaptation and identify candidate genes driving its phenotypic effects.
 \maketitle
 \thispagestyle{firststyle}
 \correspondingauthoraffiliation{
-Dept. of Plant Sciences, University of California, Davis, CA, USA
-E-mail: corresponding@ucdavis.edu}
+Dept. of Plant Sciences, University of California, Davis, CA, USA E-mail: corresponding@ucdavis.edu}
 \vspace{-11pt}%
 
 \setboolean{displaylineno}{true}
 \ifthenelse{\boolean{displaylineno}}{\linenumbers}{}
 
 \section{Introduction}
-\lettrine[lines=2]{\color{color2}M}{aize} might have preadapted to temperate 
-zones through introgression from its highland wild relative, 
-\textit{Zea mays ssp. mexicana} (shorthand \mex) \cite{yang2023}. Maize was originally domesticated in the tropical lowlands of Mexico. Before its expansion into temperate regions, maize was introduced to the Mexican highlands 
-and the Southwestern United States, where sympatry with highland teosinte 
-likely facilitated the introgression of adaptive alleles from \mex.
+\lettrine[lines=2]{\color{color2}M}{aize} might have preadapted to temperate zones through introgression from its highland wild relative, \textit{Zea mays ssp. mexicana} (shorthand \mex) \cite{yang2023}.
+Maize was originally domesticated in the tropical lowlands of Mexico.
+Before its expansion into temperate regions, maize was introduced to the Mexican highlands and the Southwestern United States, where sympatry with highland teosinte likely facilitated the introgression of adaptive alleles from \mex.
 
-However, not all highland-adaptive loci are present in temperate maize. 
-Highland-associated chromosomal inversions, such as \invfour and 
-\textit{Inv9f}, are prevalent in highland teosinte populations 
-\cite{pyhajarvi2013} and traditional Mexican maize varieties (TVs) 
-\cite{crow2020,gonzalez-segovia2019-jy} but are rare in temperate maize. 
-Chromosomal inversions can contribute to local adaptation by preserving locally 
-adapted alleles across multiple loci and reducing recombination within the 
-inversion \cite{kirkpatrick2006b}. Genotyping of teosinte populations using 
-the Maize 50K chip revealed that \invfour spans 13 Mb and is predominantly 
-found in \mex populations \cite{pyhajarvi2013}. In Mexican TVs, variation in 
-\invfour is associated with elevation and flowering time 
-\cite{romero_navarro2017-cn}. Additionally, \invfour shows reduced genetic 
-diversity, a clinal relationship with elevation, and is nearly fixed in 
-locations above 2500 m.a.s.l. \cite{crow2020}. The inversion exhibits 
-suppressed recombination, as confirmed in a biparental cross 
-\cite{gonzalez-segovia2019-jy}.
+However, not all highland-adaptive loci are present in temperate maize.
+Highland-associated chromosomal inversions, such as \invfour and \textit{Inv9f}, are prevalent in highland teosinte populations \cite{pyhajarvi2013} and traditional Mexican maize varieties (TVs) \cite{crow2020,gonzalez-segovia2019-jy} but are rare in temperate maize.
+Chromosomal inversions can contribute to local adaptation by preserving locally adapted alleles across multiple loci and reducing recombination within the inversion \cite{kirkpatrick2006b}.
+Genotyping of teosinte populations using the Maize 50K chip revealed that \invfour spans 13 Mb and is predominantly found in \mex populations \cite{pyhajarvi2013}.
+In Mexican TVs, variation in \invfour is associated with elevation and flowering time \cite{romero_navarro2017-cn}.
+Additionally, \invfour shows reduced genetic diversity, a clinal relationship with elevation, and is nearly fixed in locations above 2500 m.a.s.l. \cite{crow2020}.
+The inversion exhibits suppressed recombination, as confirmed in a biparental cross \cite{gonzalez-segovia2019-jy}.
 
-\invfour demonstrates classic patterns of gene-by-environment interactions 
-indicative of local adaptation. Plants carrying the \invfour-highland allele 
-exhibit delayed flowering at low elevations and earlier flowering at high 
-elevations \cite{crow2020}. The highland haplotype of \invfour was introgressed 
-from \textit{Zea mays ssp. mexicana} 
-\cite{pyhajarvi2013,calfee2021-mr,hufford2013-gs}, a wild maize relative 
-native to the Mexican highlands.
+\invfour demonstrates classic patterns of gene-by-environment interactions indicative of local adaptation.
+Plants carrying the \invfour-highland allele exhibit delayed flowering at low elevations and earlier flowering at high elevations \cite{crow2020}.
+The highland haplotype of \invfour was introgressed from \textit{Zea mays ssp. mexicana} \cite{pyhajarvi2013,calfee2021-mr,hufford2013-gs}, a wild maize relative native to the Mexican highlands.
 
-Despite strong evidence linking \invfour to local adaptation, the physiological 
-processes and environmental factors underlying its adaptive role remain unclear. 
-Furthermore, the specific genes within \invfour that drive local adaptation are 
-largely unidentified. Previous research has shown that \invfour-highland 
-upregulates photosynthesis genes in response to cold at the seedling stage 
-\cite{crow2020} and is associated with earlier flowering in the Mexican 
-highlands, which likely enhances fitness in environments with limited 
-growth-degree accumulation throughout the year \cite{romero_navarro2017-cn}. 
+Despite strong evidence linking \invfour to local adaptation, the physiological processes and environmental factors underlying its adaptive role remain unclear.
+Furthermore, the specific genes within \invfour that drive local adaptation are largely unidentified.
+Previous research has shown that \invfour-highland upregulates photosynthesis genes in response to cold at the seedling stage \cite{crow2020} and is associated with earlier flowering in the Mexican highlands, which likely enhances fitness in environments with limited growth-degree accumulation throughout the year \cite{romero_navarro2017-cn}.
 However, cold is not the only limiting factor for plant growth in the highlands.
 
-Volcanic soils (Andosols), which dominate the Mexican highlands, present an 
-additional constraint. Approximately 95\% of natural Andosol profiles in Mexico 
-are found above 2000 m.a.s.l. \cite{paz-pellat2018,inegi2013}. These soils are 
-characterized by high phosphorus retention \cite{krasilnikov2013}, which leads 
-to low phosphorus availability for plant uptake \cite{galvan-tejada2014}. 
-MICH21, one of the Mexican highland maize accessions analyzed by 
-\cite{crow2020}, originates from the Purépecha Plateau, where Andosols and 
-phosphorus-efficient TVs are common 
-\cite{paz-pellat2018,galvan-tejada2014,bayuelo-jimenez2011,bayuelo-jimenez2014}. 
-\invfour may contribute to adaptation in the highlands by carrying alleles that 
-enhance the phosphorus starvation response (PSR). For example, the phosphate 
-transporter gene \textit{ZmPho1;2a}, located within \invfour, is a strong 
-candidate for adaptation to low phosphorus availability 
-\cite{salazar-vidal2016-rl}.
+Volcanic soils (Andosols), which dominate the Mexican highlands, present an additional constraint.
+Approximately 95\% of natural Andosol profiles in Mexico are found above 2000 m.a.s.l. \cite{paz-pellat2018,inegi2013}.
+These soils are characterized by high phosphorus retention \cite{krasilnikov2013}, which leads to low phosphorus availability for plant uptake \cite{galvan-tejada2014}.
+MICH21, one of the Mexican highland maize accessions analyzed by \cite{crow2020}, originates from the Purépecha Plateau, where Andosols and phosphorus-efficient TVs are common \cite{paz-pellat2018,galvan-tejada2014,bayuelo-jimenez2011,bayuelo-jimenez2014}.
+\invfour may contribute to adaptation in the highlands by carrying alleles that enhance the phosphorus starvation response (PSR).
+For example, the phosphate transporter gene \textit{ZmPho1;2a} (\textit{phos2}, \textit{Zm00001eb191650}), located within \invfour, is a strong candidate for adaptation to low phosphorus availability \cite{salazar-vidal2016-rl}.
 
-In this study, we aimed to understand the physiological and molecular effects 
-of \invfour and to identify candidate genes within the inversion that could 
-elucidate its adaptive role. Specifically, we tested whether \invfour-highland 
-contributes to adaptation to low phosphorus availability. To achieve this, we 
-backcrossed MICH21, a Mexican highland TV carrying \invfour, into the B73 
-genetic background for eight generations, generating Near Isogenic Lines (NILs) 
-\cite{crow2020}. These NILs were grown under temperate field conditions with 
-two phosphorus treatments to evaluate flowering time, height, and 
-transcriptomic responses.
+In this study, we aimed to understand the physiological and molecular effects of \invfour and to identify candidate genes within the inversion that could elucidate its adaptive role.
+Specifically, we tested whether \invfour-highland contributes to adaptation to low phosphorus availability.
+To achieve this, we backcrossed MICH21, a Mexican highland TV carrying \invfour, into the B73 genetic background for eight generations, generating Near Isogenic Lines (NILs) \cite{crow2020}.
+These NILs were grown under temperate field conditions with two phosphorus treatments to evaluate flowering time, height, and transcriptomic responses.
 
-We observed that \invfour significantly reduces flowering time and increases 
-plant height, independent of phosphorus levels. We identified a cluster of 
-JUMONJI methyltransferases, which have higher copy numbers in modern maize 
-compared to highland teosinte and TVs, as potential contributors to flowering 
-time differences. Additionally, we found a group of cell cycle-related genes 
-that may underlie height differences. While classical PSR genes were identified 
-within the inversion, \invfour had no detectable effect on the phosphorus 
-starvation response. These findings provide insights into the genetic 
-mechanisms underlying \invfour's contribution to local adaptation and highlight 
-potential candidate genes driving its effects.
+We observed that \invfour significantly reduces flowering time and increases plant height, independent of phosphorus levels.
+We identified a cluster of JUMONJI histone demethylases, which have higher copy numbers in modern maize compared to highland teosinte and TVs, as potential contributors to flowering time differences.
+Additionally, we found a group of cell cycle-related genes that may underlie height differences.
+While classical PSR genes were identified within the inversion, \invfour had no detectable effect on the phosphorus starvation response.
+These findings provide insights into the genetic mechanisms underlying \invfour's contribution to local adaptation and highlight potential candidate genes driving its effects.
 
 \section{Results}
 
 \subsection{\invfour is a 15 Mb inversion delimited by breakpoint segments 
 overlapping chromosomal knob repeats}
 
-Complete genome sequences of selected Mexican Highland traditional varieties 
-allowed us to delimit the recombination breakpoints of \invfour by using an 
-Anchorwave \cite{song2022} alignment of chromosome 4. With this aim, we aligned 
-both PT, a close relative to the \invfour donor parent Mi21, as a 
-representative genome for the Mexican highlands, and TIL18 representing the 
-highland teosinte \mex, to B73, the recurrent parent used for \invfour 
-introgression (Fig~\ref{fig::design}A, Supporting Table~\ref{tab:breakpoints}).
+Complete genome sequences of selected Mexican Highland traditional varieties allowed us to delimit the recombination breakpoints of \invfour by using an Anchorwave \cite{song2022} alignment of chromosome 4. With this aim, we aligned both PT, a close relative to the \invfour donor parent Mi21, as a representative genome for the Mexican highlands, and TIL18 representing the highland teosinte \mex, to B73, the recurrent parent used for \invfour introgression (Fig~\ref{fig::design}A, Supplementary Table~\ref{tab:breakpoints}).
 
-In each pairwise comparison, we found that the anchor-defined \invfour 
-alignment is between the reference B73 plus strand and the highland genome 
-minus strand, as expected. This alignment allowed us to narrow down \invfour 
-location between genes \textit{Zm00001eb190470} and \textit{Zm00001eb194800}, 
-spanning 15.2 Mb and 432 annotated genes in the B73 v5 genome. This region 
-corresponded to a 13.4 Mb inversion in the PT genome, bounded by genes 
-\textit{Zm00109aa017629} and \textit{Zm00109aa018009}; and, also a 13.2 Mb 
-inversion in TIL18, extending from genes \textit{Zx00002aa015554} to 
-\textit{Zx00002aa015905}.
+In each pairwise comparison, we found that the anchor-defined \invfour alignment is between the reference B73 plus strand and the highland genome minus strand, as expected.
+This alignment allowed us to narrow down \invfour location between genes \textit{Zm00001eb190470} and \textit{Zm00001eb194800}, spanning 15.2 Mb and 432 annotated genes in the B73 v5 genome.
+This region corresponded to a 13.4 Mb inversion in the PT genome, bounded by genes \textit{Zm00109aa017629} and \textit{Zm00109aa018009}; and, also a 13.2 Mb inversion in TIL18, extending from genes \textit{Zx00002aa015554} to \textit{Zx00002aa015905}.
 
-However, the \invfour section was bordered by unaligned segments rather than by 
-reference orientation (plus/plus) alignments. These unaligned segments 
-contained no annotated genes, except for \textit{Zm00001eb190490} in the 
-upstream breakpoint segment of B73. To explore the nature of the sequences 
-spanning the \invfour breakpoints, we made a local similarity search using LAST 
-\cite{kielbasa2011} inside these \invfour bounding unaligned segments. We 
-detected typical tandem array patterns in the dotplots (blue and red rectangles 
-in Fig~\ref{fig::design}B) and we took a closer look at the available repeat 
-annotation of B73.
+However, the \invfour section was bordered by unaligned segments rather than by reference orientation (plus/plus) alignments.
+These unaligned segments contained no annotated genes, except for \textit{Zm00001eb190490} in the upstream breakpoint segment of B73.
+To explore the nature of the sequences spanning the \invfour breakpoints, we made a local similarity search using LAST \cite{kielbasa2011} inside these \invfour bounding unaligned segments.
+We detected typical tandem array patterns in the dotplots (blue and red rectangles in Fig~\ref{fig::design}B) and we took a closer look at the available repeat annotation of B73.
 
-The MaizeGDB annotation of B73 shows that the upstream \invfour breakpoint 
-segment contained 438 \textit{knob180} and 29 \textit{TR-1} repeats making up 
-$69\%$ and $5\%$ of the 636 annotated repeats in this 323 kb section. These 
-chromosomal knob 180 bp and TR-1 repeat annotations matched the observed tandem 
-array patterns observed in the dotplots Fig~\ref{fig::design}B. Then we 
-searched the two classes of knob repeats in TIL18 and PT, which have no public 
-repetitive element annotation to date. For comparison purposes, we did a BLAST+ 
-\cite{camacho2009} similarity search of the three chromosomes 4 using a 
-selected sequence of each repeat class as subjects (see methods).
+The MaizeGDB annotation of B73 shows that the upstream \invfour breakpoint segment contained 438 \textit{knob180} and 29 \textit{TR-1} repeats making up $69\%$ and $5\%$ of the 636 annotated repeats in this 323 kb section.
+These chromosomal knob 180 bp and TR-1 repeat annotations matched the observed tandem array patterns observed in the dotplots Fig~\ref{fig::design}B.
+Then we searched the two classes of knob repeats in TIL18 and PT, which have no public repetitive element annotation to date.
+For comparison purposes, we did a BLAST+ \cite{camacho2009} similarity search of the three chromosomes 4 using a selected sequence of each repeat class as subjects (see methods).
 
-This allowed us not only to detect both kinds of knob repeats in the breakpoint 
-segments but also inside the inversion and the rest of the chromosome. We found 
-in the long arm of chromosome 4 repeat arrays corresponding to previously 
-reported heterochromatic knobs, the ones interspersed in the \invfour 
-breakpoints, and an internal knob repeat array inside \invfour 
-Fig~\ref{fig::design}A. Chromosomal knob repeats were the most abundant kind of 
-repeats within the \invfour breakpoint sections Table \ref{tab:breakpoints} and 
-the \invfour proper.
+This allowed us not only to detect both kinds of knob repeats in the breakpoint segments but also inside the inversion and the rest of the chromosome.
+We found in the long arm of chromosome 4 repeat arrays corresponding to previously reported heterochromatic knobs, the ones interspersed in the \invfour breakpoints, and an internal knob repeat array inside \invfour Fig~\ref{fig::design}A.
+Chromosomal knob repeats were the most abundant kind of repeats within the \invfour breakpoint sections (Table~\ref{tab:breakpoints}, Supplementary Table~\ref{tab:knob_repeats}) and the \invfour proper.
 
-There is a notable difference in the heterochromatic knobs between the long 
-arms of the analyzed chromosomes. TIL18 has a 30 Mb region of mixed repeats 
-likely corresponding to the 4L knob reported in \mex 
-\cite{bilinski2018,albert2010}, PT is knobless, and B73 carries a 4L knob 
-consisting of \textit{TR-1} repeats \cite{ghaffari2013,albert2010} 
-(Fig~\ref{fig::design}A).
+There is a notable difference in the heterochromatic knobs between the long arms of the analyzed chromosomes.
+TIL18 has a 30 Mb region of mixed repeats likely corresponding to the 4L knob reported in \mex \cite{bilinski2018,albert2010}, PT is knobless, and B73 carries a 4L knob consisting of \textit{TR-1} repeats \cite{ghaffari2013,albert2010} (Fig~\ref{fig::design}A).
 
-Although the downstream breakpoint had a lower content of knob repeats with 37 
-\textit{knob180} and no annotated \textit{TR-1}'s, those made up $46\%$ out of 
-the 81 annotated repeats in 80 kb. In each genome, the breakpoint segments on 
-each side of the inversion showed asymmetries in size, knob repeat number, 
-presence of knob inverted repeat arrays, and closeness of the knob repeats to 
-the \invfour anchor gene (Fig~\ref{fig::design}B).
+Although the downstream breakpoint had a lower content of knob repeats with 37 \textit{knob180} and no annotated \textit{TR-1}'s, those made up $46\%$ out of the 81 annotated repeats in 89 kb.
+In each genome, the breakpoint segments on each side of the inversion showed asymmetries in size, knob repeat number, presence of knob inverted repeat arrays, and closeness of the knob repeats to the \invfour anchor gene (Fig~\ref{fig::design}B).
 
-In particular, in B73 the upstream breakpoint segment is larger (323 kb vs 89 
-kb), has a greater number of repeats (352 vs 26), presence of inverted knob 
-repeat arrays (blue and red rectangles in Fig~\ref{fig::design} B Upstream), 
-and some knob repeats close to the inversion, while the downstream breakpoint 
-segment is smaller, has a lower number of repeats, no inverted repeats of knob 
-sequences (just red rectangles in Fig~\ref{fig::design}B, Downstream), and the 
-few knob repeats present are closer to the downstream external anchor gene 
-rather than to \invfour. We can observe these four patterns in the opposite 
-orientation in PT and TIL18 relative to B73.
+In particular, in B73 the upstream breakpoint segment is larger (323 kb vs 89 kb), has a greater number of repeats (352 vs 26), presence of inverted knob repeat arrays (blue and red rectangles in Fig~\ref{fig::design} B Upstream), and some knob repeats close to the inversion, while the downstream breakpoint segment is smaller, has a lower number of repeats, no inverted repeats of knob sequences (just red rectangles in Fig~\ref{fig::design}B, Downstream), and the few knob repeats present are closer to the downstream external anchor gene rather than to \invfour.
+We can observe these four patterns in the opposite orientation in PT and TIL18 relative to B73.
 
 
 \begin{figure*}[ht!]
 % (fausto) remove include graphics before submission
 \centering
 \includegraphics[width=0.9\linewidth]{figs/design.png}
-\caption[\textit{\invfour} Delimitation, Introgression Breeding Design and Population Genotypes.]{
-\textbf{Chromosomal Inversion \invfour: Delimitation, Introgression Breeding Design, Field Experimental Setup and Population Genotype}.
-% \textbf{(A)} Chromosome 4 macrosynteny among highland and lowland \textit{Zea} genomes illustrating \invfour. The highland Mexican traditional variety Palomero Toluqueño (PT) shows the same gene order as the teosinte \mex inbred TIL18. This highland karyotype (purple) has the \invfour inversion relative to the reference genome inbred B73 (\textit{spp. mays}, yellow). Synteny plot created with MCscan\cite{tang2024}, genes from the ortholog groups defining the endpoints of the inversion are depicted below each ideogram.
-\textbf{(A)} \invfour breakpoints overlap clusters of full 180 bp knob repeats with interspersed partial \textit{TR-1}s (normalized match score $<50$). Each point represents a BLAST+ \cite{camacho2009} hit with a selected sequence of 180 bp knob or  \textit{TR-1} repeats. 
- Around the 230 Mb mark regions corresponding to reported 4L cytogenetic knobs can be observed in \mex and B73 while absent in PT.
-\textbf{(B)} Sequence self-similarity dotplots, using LAST \cite{kielbasa2011}, for the inversion breakpoint segments as defined in Table~\ref{tab:breakpoints}.
-Breakpoints are upstream and downstream of \invfour in each genome coordinate system as depicted in (A).
-Forward matches in red, reverse in blue. 
-Rectangles indicate tandem repeats. 
-\textbf{(C)} Near Isogenic Line population breeding scheme. The \invfour from Mi21, a highland traditional variety closely related to PT, was introgressed into a temperate lowland genetic background using B73 as recurrent parent.
-\textbf{(F)} NIL genotypes at BC$_6$S$_2  $, of plants used in RNA and lipid extractions, $n=13$, B73 NAM5 coordinates. 
-\textbf{(G)} Zoom into \invfour introgression. Plants are sorted by genotype at the \invfour tagging SNP PZE04175660223 (181.6 Mb, downwards pointing triangle) then by field row number. 
-}
+\caption[\textit{\invfour} Delimitation, Introgression Breeding Design and Population Genotypes.]{ \textbf{Chromosomal Inversion \invfour: Delimitation, Introgression Breeding Design, Field Experimental Setup and Population Genotype}.
+\textbf{(A)} Near Isogenic Line population breeding scheme.
+The \invfour from Mi21, a highland traditional variety closely related to PT, was introgressed into a temperate lowland genetic background using B73 as recurrent parent.
+\textbf{(B)} Distribution of 180~bp knob repeats and \textit{TR-1} elements across the \invfour region.
+Each point represents a BLAST+ \cite{camacho2009} hit (normalized match score).
+Solid purple lines mark inversion breakpoints; dashed black lines mark the estimated \mex introgression boundaries in Mi21~NIL and B73, connected by sigmoid curves reflecting the coordinate transformation between genomes.
+Around the 225~Mb mark, regions corresponding to reported 4L cytogenetic knobs can be observed in \mex and B73 while absent in PT.
+\textbf{(C)} AnchorWave \cite{song2022} whole-genome alignment dotplots of Mi21 NIL chromosome~4 versus TIL18 (teosinte \mex), PT (highland maize), and B73 (reference).
+Collinear anchors in blue, inverted in red.
+The dashed rectangle on the B73 panel marks the estimated introgression extent ($\sim$141--170~Mb in Mi21; $\sim$158--191~Mb in B73 coordinates), determined from positional offset analysis of the alignment.
+\textbf{(D)} Sequence self-similarity dotplots, using LAST \cite{kielbasa2011}, for the inversion breakpoint segments as defined in Table~\ref{tab:breakpoints}.
+Forward matches in red, reverse in blue.
+Rectangles indicate tandem repeats.
+\textbf{(E)} NIL genotypes at BC$_6$S$_2$, of plants used in RNA and lipid extractions, $n=13$, B73 NAM5 coordinates.
+Genotype color: gold = B73/B73, green = B73/Mi21 (heterozygous), purple = Mi21/Mi21.
+\textbf{(F)} Zoom into \invfour introgression.
+Plants are sorted by genotype at the \invfour tagging SNP PZE04175660223 (181.6 Mb, downwards pointing triangle) then by field row number. }
 \label{fig::design}
 \end{figure*}
 \clearpage
@@ -289,147 +204,96 @@ Rectangles indicate tandem repeats.
 \subsection{Divergent highland introgression is mostly confined to a 39 Mb 
 segment spanning \invfour}
 
-To study the effects of \invfour we repeatedly backcrossed Mi21, a Mexican 
-highland landrace containing \invfour into B73 using a marker inside the 
-inversion. We then used RNA-Seq data to genotype the resulting 
-$\text{BC}_6\text{S}_2$ lines. The distribution of the 19861 QC-filtered SNPs 
-is heavily biased towards chromosome 4. Almost half of the variants, 8892 
-(44\%), are on chromosome 4, with the other 9 chromosomes having an average of 
-1219 SNPs (6\%) each (Supporting Fig~\ref{fig::SNPdistro}A).
+To study the effects of \invfour we repeatedly backcrossed Mi21, a Mexican highland landrace containing \invfour into B73 using a marker inside the inversion.
+We then used RNA-Seq data to genotype the resulting $\text{BC}_6\text{S}_2$ lines.
+The distribution of the 19861 QC-filtered SNPs is heavily biased towards chromosome 4. Almost half of the variants, 8892 (44\%), are on chromosome 4, with the other 9 chromosomes having an average of 1219 SNPs (6\%) each (Supplementary Fig.~\ref{fig::SNPdistro}A).
 
-The genotypes in the matrix of 19861 SNPs $\times$ 13 individuals are 63.5\% 
-homozygous for B73, 8.96\% heterozygous, and 27.3\% homozygous for Mi21, with 
-0.16\% missing data. We converted this genotype matrix to identical genotype 
-run \cite{layer2016} length in base pairs to estimate the proportion of the 
-plant genome introgressed from Mi21 (Fig~\ref{fig::design}F and G).
+The genotypes in the matrix of 19861 SNPs $\times$ 13 individuals are 63.5\% homozygous for B73, 8.96\% heterozygous, and 27.3\% homozygous for Mi21, with 0.16\% missing data.
+We converted this genotype matrix to identical genotype run \cite{layer2016} length in base pairs to estimate the proportion of the plant genome introgressed from Mi21 (Fig~\ref{fig::design}F and G).
 
-By genotype run length, the plants are, on average, 85.6\% homozygous for B73 
-(1821 Mb), 8.61\% heterozygous (183 Mb), and 5.5\% homozygous for Mi21 (117 
-Mb), with 0.34 \% missing data (7.32 Mb) (Supporting Fig~\ref{fig::SNPdistro}D). 
-As the genotypes come exclusively from variant sites, the matrix has no markers 
-fixed for the reference B73 allele. The NIL genomes are thus represented by a 
-mosaic of 3 types of sections. First, sections with fixed highland 
-introgression, where the alternate Mi21 allele is fixed. Second, sections of 
-divergent highland introgression consisting of markers significantly correlated 
-with the \invfour tagging SNP PZE04175660223. And third, sections with random 
-introgressions uncorrelated with \invfour.
+By genotype run length, the plants are, on average, 85.6\% homozygous for B73 (1821 Mb), 8.61\% heterozygous (183 Mb), and 5.5\% homozygous for Mi21 (117 Mb), with 0.34 \% missing data (7.32 Mb) (Supplementary Fig.~\ref{fig::SNPdistro}D).
+As the genotypes come exclusively from variant sites, the matrix has no markers fixed for the reference B73 allele.
+The NIL genomes are thus represented by a mosaic of 3 types of sections.
+First, sections with fixed highland introgression, where the alternate Mi21 allele is fixed.
+Second, sections of divergent highland introgression consisting of markers significantly correlated with the \invfour tagging SNP PZE04175660223.
+And third, sections with random introgressions uncorrelated with \invfour.
 
-The fixed highland introgression sections are made up of 126 SNPs marking 51 Mb 
-(2.4\% of the genome) in genotype run length (average per plant). By manual 
-inspection we defined a region of divergent highland introgression between 
-positions 157012149 and 195900523 in B73 v5 coordinates, bounding 39 Mb of 
-shared introgression among \invfour carrying lines. With our selection for the 
-highland allele of PZE04175660223 we have produced plants with the introgression 
-of the target \invfour inversion surrounded by 24 Mb of lingering unintended 
-linkage drag (Fig~\ref{fig::design}F and G). Conversely, we have produced 
-inversion-free lines in the CTRL group by selecting for the B73 allele.
+The fixed highland introgression sections are made up of 1394 SNPs marking 51 Mb (2.4\% of the genome) in genotype run length (average per plant).
+By manual inspection we defined a region of divergent highland introgression between positions 157012149 and 195900523 in B73 v5 coordinates, bounding 39 Mb of shared introgression among \invfour carrying lines.
+With our selection for the highland allele of PZE04175660223 we have produced plants with the introgression of the target \invfour inversion surrounded by 24 Mb of lingering unintended linkage drag (Fig~\ref{fig::design}F and G).
+Conversely, we have produced inversion-free lines in the CTRL group by selecting for the B73 allele.
 
-In more detail, there are 7683 SNPs significantly correlated with \invfour 
-(Pearson correlation \textit{t-test}, \fdrls) constituting divergent highland 
-introgressions throughout the genome but mostly in \invfour and flanking regions 
-(Supporting Fig~\ref{fig::SNPdistro}A). From these 7683, 7322 SNPs ($95.3\%$) 
-cover 35 Mb and 271 expressed genes inside the 39 Mb shared introgressed region 
-that includes \invfour. The remaining 361 divergently introgressed SNPs in the 
-genomic background were dispersed throughout 10.4 Mb of sequence covering 52 
-expressed genes.
+In more detail, there are 7683 SNPs significantly correlated with \invfour (Pearson correlation \textit{t-test}, $\textit{FDR} < 0.005$) constituting divergent highland introgressions throughout the genome but mostly in \invfour and flanking regions (Supplementary Fig.~\ref{fig::SNPdistro}A).
+From these 7683, 7322 SNPs ($95.3\%$) cover 34 Mb and 512 expressed genes inside the 39 Mb shared introgressed region that includes \invfour.
+The remaining 361 divergently introgressed SNPs in the genomic background were dispersed throughout 17 Mb of sequence covering 52 expressed genes.
 
-Notably, the majority of these markers, 207 SNPs from 14 expressed genes, are 
-negatively correlated with PZE04175660223 and are located just upstream of the 
-shared introgression near \invfour over a 2.7 Mb stretch, from position 
-154283637 to 15698557 (Fig~\ref{fig::design}G and Supporting 
-Fig~\ref{fig::SNPdistro}C). In this segment, individuals selected for \invfour 
-are homozygous for the B73 allele at all positions, while individuals selected 
-for the standard karyotype are frequently heterozygous.
+Notably, the majority of these markers, 207 SNPs from 14 expressed genes, are negatively correlated with PZE04175660223 and are located just upstream of the shared introgression near \invfour over a 2.7 Mb stretch, from position 154283637 to 156985577 (Fig~\ref{fig::design}G and Supplementary Fig.~\ref{fig::SNPdistro}C).
+In this segment, individuals selected for \invfour are homozygous for the B73 allele at all positions, while individuals selected for the standard karyotype are frequently heterozygous.
 
-In summary, each plant has an average of 117 Mb of homozygous Mi21 genome per 
-line, 51 Mb of fixed highland introgression, 35 Mb of divergent highland 
-introgression colocalized and matching the selection of \invfour, and 10 Mb of 
-other dispersed divergent highland introgressions.
+In summary, each plant has an average of 117 Mb of homozygous Mi21 genome per line, 51 Mb of fixed highland introgression, 34 Mb of divergent highland introgression colocalized and matching the selection of \invfour, and 17 Mb of other dispersed divergent highland introgressions.
 
 
   \begin{figure*}[!ht]
-  \includegraphics[width=0.95\linewidth]{figs/effects.png}
+  \includegraphics[width=\linewidth]{figs/effects.png}
   \centering
-  \caption{\textbf{Effect of \invfour on field phenotypes and shoot apical meristem architecture.}
-  \textbf{(A)} Spatially-corrected phenotype values (BLUEs from SpATS mixed models) for plant height (PH, cm), days to anthesis (DTA), days to silking (DTS), and harvest index (HI) comparing CTRL (yellow) and \invfour (purple) genotypes. Phosphorus treatment was modeled as a covariate and data are pooled across treatments.
-  \textbf{(C)} Representative differential interference contrast micrographs of cleared vegetative shoot apical meristems from two-week-old seedlings grown in controlled environment chambers. Yellow lines indicate height and width measurements used for quantification. Scale bars: 100 $\mu$m.
-  \textbf{(D)} Quantification of SAM dimensions: absolute height ($h$), radius ($r$), height-to-radius ratio ($h/r$), and shape factor ($h/r^2$). \invfour plants exhibit significantly taller meristems with elongated shape.
-  Significance: $^{*}p < 0.05$, $^{****}p < 0.0001$ (two-sample \textit{t}-test, FDR-adjusted).}
+\caption{\textbf{Effect of \invfour on field phenotypes and shoot apical meristem architecture.}
+\textbf{(A)} Spatially-corrected phenotype values (BLUEs from SpATS mixed models) for plant height (PH, cm), days to anthesis (DTA, days), days to silking (DTS, days), harvest index (HI), stover dry weight at harvest (STWHV, g), and collar diameter (CD, mm) comparing CTRL (yellow) and \invfour (purple) genotypes.
+Phosphorus treatment was modeled as a covariate and data are pooled across treatments.
+\textbf{(B)} Representative differential interference contrast micrographs of cleared vegetative shoot apical meristems from two-week-old seedlings grown in controlled environment chambers.
+Yellow lines indicate height and width measurements used for quantification.
+Scale bars: 100 $\mu$m.
+\textbf{(C)} Quantification of SAM dimensions: absolute height ($h$), radius ($r$), height-to-radius ratio ($h/r$), and shape factor ($h/r^2$).
+\invfour plants exhibit significantly taller meristems with elongated shape.
+Significance: $^{*}p < 0.05$, $^{****}p < 0.0001$ (two-sample \textit{t}-test, FDR-adjusted).}
   \label{fig:phenotypes}
   \end{figure*}
 
-\subsection{Inv4m accelerates flowering and promotes growth}
+\subsection{\invfour modulates flowering and promotes growth}
 
-Field trials demonstrated that \invfour significantly affects both flowering
-time and plant architecture (Fig~\ref{fig:phenotypes}A). Spatially-corrected
-phenotype analysis revealed that plants carrying the highland inversion allele
-flowered $1.30 \pm 0.27$ days earlier to anthesis ($p = 7.6 \times 10^{-6}$) and
-$1.05 \pm 0.22$ days earlier to silking ($p = 1.3 \times 10^{-5}$) compared to
-control lines. \invfour plants were also significantly taller, with a
-$6.48 \pm 1.11$ cm increase in plant height ($p = 2.2 \times 10^{-7}$). Harvest
-index showed a modest but significant increase of $0.11 \pm 0.04$
-($p = 0.01$), indicating that the enhanced vegetative growth did not come at
-the expense of reproductive allocation. These effects were consistent across
-phosphorus treatments, which were modeled as a covariate in the spatial
-correction.
+Field trials demonstrated that \invfour significantly affects both flowering time and plant architecture (Fig~\ref{fig:phenotypes}A).
+Spatially-corrected phenotype analysis revealed that plants carrying the highland inversion allele flowered $1.30 \pm 0.27$ days earlier to anthesis ($p = 7.9 \times 10^{-6}$) and $1.05 \pm 0.22$ days earlier to silking ($p = 1.4 \times 10^{-5}$) compared to control lines.
+\invfour plants were also significantly taller, with a $6.48 \pm 1.11$ cm increase in plant height ($p = 2.3 \times 10^{-7}$).
+Harvest index showed a modest but significant increase of $0.11 \pm 0.04$ ($p = 0.01$), indicating that the enhanced vegetative growth did not come at the expense of reproductive allocation.
+Stover dry weight at harvest and collar diameter were also significantly affected by \invfour (FDR $< 0.05$), consistent with the overall growth promotion phenotype.
+These effects were consistent across phosphorus treatments, which were modeled as a covariate in the spatial correction.
 
-To investigate whether these macroscopic phenotypes were associated with
-changes in meristem organization, we examined shoot apical meristems (SAMs)
-from two-week-old seedlings grown in controlled environment chambers
-(Fig~\ref{fig:phenotypes}C,D). While SAM height showed a trend toward
-increase ($9.65 \pm 5.50$ $\mu$m, $p = 0.088$), the SAM radius was unchanged
-($0.03 \pm 1.12$ $\mu$m, $p = 0.98$). Importantly, the shape metrics capturing
-SAM elongation were significantly altered: the height-to-radius ratio increased
-by $0.158 \pm 0.074$ ($p = 0.038$) and the shape factor ($h/r^2$) increased by
-$2.49 \pm 1.14$ nm$^{-1}$ ($p = 0.035$), representing a 9\% elongation of the
-meristem dome. These findings suggest that the accelerated flowering and
-increased plant height in \invfour lines may originate from altered meristem
-geometry established early in development.
+To investigate whether these macroscopic phenotypes were associated with changes in meristem organization, we examined shoot apical meristems (SAMs) from two-week-old seedlings grown in controlled environment chambers (Fig~\ref{fig:phenotypes}B,C).
+While SAM height showed a trend toward increase ($9.65 \pm 5.50$ $\mu$m, $p = 0.088$), the SAM radius was unchanged ($0.03 \pm 1.12$ $\mu$m, $p = 0.98$).
+Importantly, the shape metrics capturing SAM elongation were significantly altered: the height-to-radius ratio increased by $0.158 \pm 0.074$ ($p = 0.038$) and the shape factor ($h/r^2$) increased by $2.49 \pm 1.14$ nm$^{-1}$ ($p = 0.035$), representing a 9\% elongation of the meristem dome.
+These findings suggest that the accelerated flowering and increased plant height in \invfour lines may originate from altered meristem geometry established early in development.
 
-To test whether \invfour effects are consistent across environments, we
-analyzed phenotypes from three location-year combinations using the MI21 donor
-background. Two-way ANOVA revealed significant genotype $\times$ environment
-interactions for all phenotypes tested (Supplementary Table~\ref{tab::gxe}). The
-strongest interaction was observed for plant height ($p < 8.7 \times 10^{-10}$,
-$\eta^2_p = 0.29$), followed by GDDA ($p < 7.1 \times 10^{-5}$, $\eta^2_p =
-0.14$) and DTA ($p < 2.9 \times 10^{-5}$, $\eta^2_p = 0.16$).
+To test whether \invfour effects are consistent across environments, we analyzed phenotypes from three location-year combinations using the MI21 donor background.
+Two-way ANOVA revealed significant genotype $\times$ environment interactions for all phenotypes tested (Supplementary Table~\ref{tab::gxe}, Supplementary Fig.~\ref{fig::gxe_interaction}).
+The strongest interaction was observed for plant height ($p < 8.7 \times 10^{-10}$, $\eta^2_p = 0.29$), followed by DTA ($p < 2.9 \times 10^{-5}$, $\eta^2_p = 0.16$) and GDDA ($p < 7.1 \times 10^{-5}$, $\eta^2_p = 0.14$).
 
-Despite significant GxE interactions, the main effect of genotype was
-significant for all phenotypes, with \invfour showing consistent increases in
-plant height across environments (emmeans contrast: $+3.15$ cm, $p < 5.4 \times
-10^{-5}$) and earlier flowering (GDDS: $-7.97$ GDD, $p < 7.2 \times 10^{-4}$).
-Effect sizes varied substantially across environments (Supplementary
-Fig.~\ref{fig::gxe_forest}). For plant height, Cohen's $d$ ranged from 1.45
-(PSU2022) to 2.23 (PSU2025) in Pennsylvania environments, but was negative
-($d = -1.28$) in North Carolina (CLY2025). This reversal suggests that the
-magnitude and direction of \invfour effects on growth depend on environmental
-conditions.
+Despite significant GxE interactions, the main effect of genotype was significant for all phenotypes, with \invfour showing consistent increases in plant height across environments (emmeans contrast: $+3.15$ cm, $p < 5.4 \times 10^{-5}$) and earlier flowering (GDDS: $-7.97$ GDD, $p < 7.2 \times 10^{-4}$).
+Effect sizes varied substantially across environments (Supplementary Fig.~\ref{fig::gxe_forest}).
+For plant height, Cohen's $d$ ranged from 1.45 (PSU2022) to 2.23 (PSU2025) in Pennsylvania environments, but was negative ($d = -1.28$) in North Carolina (CLY2025).
+This reversal suggests that the magnitude and direction of \invfour effects on growth depend on environmental conditions.
 
-To characterize the architectural basis of \invfour effects on plant height,
-we measured internode lengths in the CLY2025 field experiment. In the MI21
-background, we measured 1,556 internodes from 112 control plants and 1,607
-internodes from 116 \invfour plants. Mean internode length was similar between
-genotypes (CTRL: $13.1 \pm 5.5$ cm; \invfour: $12.9 \pm 5.2$ cm). Internode
-profiles showed characteristic patterns with the longest internodes at
-positions 4--6 from the top, corresponding to the ear node region
-(Supplementary Fig.~\ref{fig::internode}). Total node count did not differ
-significantly between genotypes within the MI21 background, suggesting that
-\invfour effects on plant height are mediated by internode elongation rather
-than increased phytomer number.
+To characterize the architectural basis of \invfour effects on plant height, we measured internode lengths in the CLY2025 field experiment.
+In the MI21 background, we measured 1,556 internodes from 112 control plants and 1,607 internodes from 116 \invfour plants.
+Mean internode length was similar between genotypes (CTRL: $13.1 \pm 5.5$ cm; \invfour: $12.9 \pm 5.2$ cm).
+Internode profiles revealed that the largest \invfour effects were concentrated at positions 2 to 4 from the top, with position 2 (just below the tassel) accounting for the majority of the height difference ($-4.1$ cm, $p < 10^{-19}$) (Supplementary Fig.~\ref{fig::internode}).
+Total node count did not differ significantly between genotypes within the MI21 background, suggesting that \invfour effects on plant height are mediated by internode elongation rather than increased phytomer number.
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=0.8\linewidth]{figs/RNAseq.png}
 \caption{\textbf{Global and local transcriptomic effects of \invfour across leaf stages.}
-\textbf{(A)} Leaf sampling strategy. Four developmental leaf stages (1 to 4) were sampled across four replicates for both \invfour and CTRL genotypes. 
-\textbf{(B)} Multidimensional Scaling Analysis of the leaf transcriptome. Samples are colored by genotype (CTRL: yellow; \invfour: purple) and shaped by leaf stage, showing clear separation along dimension 3. 
-\textbf{(C)} Volcano plot of \invfour-associated DEGs. Labeled genes highlight significant perturbations, including the downregulation of multiple JUMONJI methyltransferases within the inversion. 
-\textbf{(D)} Global Manhattan plot showing Differentially Expressed Genes (DEGs) associated with leaf stage across the ten maize chromosomes. The floral integrator \textit{zmm4} is a highly significant DEG. 
-\textbf{(E)} Global Manhattan plot for DEGs associated with the \invfour genotype effect. A prominent peak of differential expression is localized to the introgressed region on chromosome 4, containing the \jmjii, \jmjvi, and \jmjix cluster. 
-\textbf{(G)} Haplotype map of the introgressed region on chromosome 4 for representative NIL lines. The blue triangle indicates the tagging SNP PZE04175660223 used for selection. 
-\textbf{(H)} Zoome into the 150-200 Mb region of chromosome 4, showing  the effect of \invfour introgression in gene expression. 
-\textbf{(I)} Expressoin effect of Inv4,across chromosome 4. Moving average lines (green for upregulated, red for downregulated) illustrate the coordinated transcriptomic shift within the \invfour region, specifically the downregulation of the \jmjii cluster.
-}
+\textbf{(A)} Leaf sampling strategy.
+Four developmental leaf stages (1 to 4) were sampled across four replicates for both \invfour and CTRL genotypes.
+\textbf{(B)} Multidimensional Scaling Analysis of the leaf transcriptome.
+Samples are colored by genotype (CTRL: yellow; \invfour: purple) and shaped by leaf stage, showing clear separation along dimension 3. \textbf{(C)} Volcano plot of \invfour-associated DEGs.
+Labeled genes highlight significant perturbations, including the downregulation of multiple JUMONJI histone demethylases within the inversion.
+\textbf{(D)} Global Manhattan plot showing Differentially Expressed Genes (DEGs) associated with leaf stage across the ten maize chromosomes.
+The floral integrator \textit{zmm4} (\textit{Zm00001eb057540}) is a highly significant DEG.
+\textbf{(E)} Global Manhattan plot for DEGs associated with the \invfour genotype effect.
+A prominent peak of differential expression is localized to the introgressed region on chromosome 4, containing the \jmjii, \jmjvi, and \jmjix cluster.
+\textbf{(G)} Haplotype map of the introgressed region on chromosome 4 for representative NIL lines.
+The blue triangle indicates the tagging SNP PZE04175660223 used for selection.
+\textbf{(H)} Zoom into the 150-200 Mb region of chromosome 4, showing the effect of \invfour introgression in gene expression.
+\textbf{(I)} Expression effect of \invfour across chromosome 4. Moving average lines (green for upregulated, red for downregulated) illustrate the coordinated transcriptomic shift within the \invfour region, specifically the downregulation of the \jmjii cluster. }
 \label{fig:transcriptome}
 \end{figure*}
 
@@ -534,226 +398,295 @@ Flanking vs Outside &
 
 \subsection*{Leaf developmental stage drives global transcriptional changes while \invfour effects are predominantly local}
 
-To characterize the transcriptional landscape of \invfour introgression, we performed RNA-seq on leaves sampled across a developmental gradient from field-grown NILs. Multidimensional scaling (MDS) of gene expression revealed three major axes of variation (Fig~\ref{fig:transcriptome}A-B). The first two dimensions captured 38\% of total variance, corresponding to phosphorus treatment (26\%) and leaf developmental stage (12\%), as described in detail in our companion study \citep{rodriguez2026phosphorus}. The third dimension explained 8\% of variance and strongly correlated with genotype ($r = 0.92$, $\textit{FDR} = 2.06 \times 10^{-17}$), clearly separating \invfour from CTRL samples.
+To characterize the transcriptional landscape of \invfour introgression, we performed RNA-seq on leaves sampled across a developmental gradient from field-grown NILs.
+Multidimensional scaling (MDS) of gene expression revealed three major axes of variation (Fig~\ref{fig:transcriptome}A-B).
+The first two dimensions captured 39\% of total variance, corresponding to phosphorus treatment (27\%) and leaf developmental stage (12\%), as described in detail in our companion study~\cite{rodriguez2026phosphorus}.
+The third dimension explained 8\% of variance and strongly correlated with genotype ($r = 0.92$, $\textit{FDR} = 2.06 \times 10^{-17}$), clearly separating \invfour from CTRL samples.
 
-The spatial distribution of differentially expressed genes (DEGs) revealed a striking contrast between leaf stage and \invfour effects (Fig~\ref{fig:transcriptome}D-E). Leaf developmental stage produced a genome-wide transcriptional response, with significant DEGs distributed across all ten chromosomes (Fig~\ref{fig:transcriptome}D). In contrast, the \invfour effect was sharply localized: a prominent peak of differential expression on chromosome 4 corresponded precisely to the introgressed region (Fig~\ref{fig:transcriptome}E).
+The spatial distribution of differentially expressed genes (DEGs) revealed a striking contrast between leaf stage and \invfour effects (Fig~\ref{fig:transcriptome}D-E).
+Leaf developmental stage produced a genome-wide transcriptional response, with significant DEGs distributed across all ten chromosomes (Fig~\ref{fig:transcriptome}D).
+In contrast, the \invfour effect was sharply localized: a prominent peak of differential expression on chromosome 4 corresponded precisely to the introgressed region (Fig~\ref{fig:transcriptome}E).
 
-To quantify this localization, we classified the 465 \invfour-responsive DEGs ($\textit{FDR} < 0.05$) by their position relative to the inversion (Table~\ref{tab:DEGs_distro}). DEGs within the shared introgression (39 Mb spanning \invfour and flanking regions) showed 97-fold enrichment compared to the rest of the genome (Fisher's exact test, $p < 10^{-200}$). This enrichment was even stronger among high-confidence DEGs ($|\log_2 \text{FC}| > 1.5$): the 116 high-confidence DEGs in the shared introgression represented a 141-fold enrichment over genomic background. Notably, there was no significant difference in DEG density between \invfour proper and the flanking regions (odds ratio = 1.02, $p = 0.95$), indicating that the transcriptional perturbation extends throughout the introgressed segment.
+To quantify this localization, we classified the 465 \invfour-responsive DEGs ($\textit{FDR} < 0.05$) by their position relative to the inversion (Table~\ref{tab:DEGs_distro}).
+DEGs within the shared introgression (39 Mb spanning \invfour and flanking regions) showed 97-fold enrichment compared to the rest of the genome (Fisher's exact test, $p < 10^{-200}$).
+This enrichment was even stronger among high-confidence DEGs ($|\log_2 \text{FC}| > 1.5$): the 116 high-confidence DEGs in the shared introgression represented a 141-fold enrichment over genomic background.
+Notably, there was no significant difference in DEG density between \invfour proper and the flanking regions (odds ratio = 1.02, $p = 0.95$), indicating that the transcriptional perturbation extends throughout the introgressed segment.
 
-The peak of differential expression within \invfour proper corresponds to a cluster of \textit{JUMONJI} histone demethylases comprising \jmjii, \jmjvi, and \jmjiv (Fig~\ref{fig:transcriptome}H-I). These genes showed the strongest downregulation in \invfour plants, with \jmjii exhibiting a $\log_2 \text{FC} = -3.49$ ($\textit{FDR} < 10^{-20}$).
+The peak of differential expression within \invfour proper corresponds to a cluster of \textit{JUMONJI} histone demethylases comprising \jmjii, \jmjvi, and \jmjiv (Fig~\ref{fig:transcriptome}H-I).
+The NAM v5 annotation consolidates \jmjii, \jmjvi, and \jmjix as alternative transcripts of a single locus (\textit{Zm00001eb191790}), while \jmjiv is annotated separately (\textit{Zm00001eb191820}).
+These genes showed the strongest downregulation in \invfour plants, with \jmjii exhibiting a $\log_2 \text{FC} = -3.49$ ($\textit{FDR} < 10^{-20}$; Supplementary Table~\ref{tab:gene_effects}).
 
 
 
 \begin{table*}[!ht]
-\caption{\textbf{Effect of \invfour on Flowering Time and Plant Height Gene 
+\caption{\textbf{Effect of \invfour on Flowering Time and Plant Height Gene
 Candidates}}
 \label{tab:FT_PH_candidates}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lllllllll}
-\hline
-\rowcolor[HTML]{FFFFFF} 
-\textbf{Phenotype} &
+\begin{tabular}{llllllll}
+\toprule
   \textbf{Gene} &
   \textbf{Label} &
   \textbf{Description} &
   \textbf{\begin{tabular}[c]{@{}l@{}}$\bf{log_2}$\\(FC)\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}l@{}}$\bf{-log_{10}}$\\ 
+  \textbf{\begin{tabular}[c]{@{}l@{}}$\bf{-log_{10}}$\\
 (\textit{FDR})\end{tabular}} &
   \textbf{Location} &
-  \textbf{\begin{tabular}[c]{@{}l@{}} GWAS \\ 
+  \textbf{\begin{tabular}[c]{@{}l@{}} GWAS \\
 \textit{p-value}\end{tabular}} &
   \textbf{ref} \\ \midrule
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+\multicolumn{8}{l}{\textbf{Flowering Time}} \\ \midrule
   \textit{Zm00001eb191790} &
   \textit{jmj2} &
-  Lysine-specific demethylase &
+  Lysine-specific demethylase JMJ703 &
   -3.49 &
   21.93 &
   \textbf{\invfour} &
-  1.34E-07 &
-  \cite{tibbs-cortes2024} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+  1.34e-07 &
+  \cite{tibbs-cortes2024, wang2021} \\
   \textit{Zm00001eb191790} &
   \textit{jmj6} &
-  Lysine-specific demethylase &
+  Lysine-specific demethylase JMJ703 &
   -3.49 &
   21.93 &
   \textbf{\invfour} &
-  1.34E-07 &
-  \cite{tibbs-cortes2024} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+  1.34e-07 &
+  \cite{tibbs-cortes2024, wang2021} \\
   \textit{Zm00001eb191790} &
   \textit{jmj9} &
-  Lysine-specific demethylase &
+  Lysine-specific demethylase JMJ703 &
   -3.49 &
   21.93 &
   \textbf{\invfour} &
-  1.34E-07 &
-  \cite{tibbs-cortes2024} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+  1.34e-07 &
+  \cite{tibbs-cortes2024, wang2021} \\
   \textit{Zm00001eb191820} &
   \textit{jmj4} &
-  Lysine-specific demethylase &
+  Putative lysine-specific demethylase JMJ16 &
   -2.84 &
   19.72 &
   \textbf{\invfour} &
    &
   \cite{wang2021} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
   \textit{Zm00001eb060540} &
-  \textit{actin-1} &
+  \textit{act1} &
   Actin-1 &
   2.23 &
   9.93 &
   outside &
    &
   \cite{wang2021} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
   \textit{Zm00001eb070810} &
-  \textit{} &
-  \begin{tabular}[c]{@{}l@{}}YchF C-terminal domain\\ containing
-protein\end{tabular} &
+  \textit{ychf} &
+  Uncharacterized protein &
   4.19 &
   9.70 &
   outside &
    &
-  \cite{wang2021, li2016, liu2023} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+  \cite{li2016, liu2023} \\
+  \textit{Zm00001eb192350} &
+  \textit{pkwd1} &
+  Protein kinase family protein / WD-40 repeat family protein &
+  -2.20 &
+  8.73 &
+  \textbf{\invfour} &
+  1.23e-06 &
+  \cite{liu2023} \\
   \textit{Zm00001eb190090} &
-  \textit{} &
-  Aspartic proteinase &
+  \textit{nep1} &
+  Aspartic proteinase nepenthesin-1 &
   7.18 &
   7.00 &
   flanking &
-  1.14E-11 &
-  \cite{peiffer2014} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
-  \textit{Zm00001eb157030} &
-  \textit{} &
-  \begin{tabular}[c]{@{}l@{}}Electron transfer flavoprotein\\ subunit
-alpha\end{tabular} &
-  5.68 &
-  4.84 &
+  7.41e-11 &
+  \cite{liu2023, peiffer2013, peiffer2014} \\
+  \textit{Zm00001eb197370} &
+  \textit{abi40} &
+  ABI3VP1-type transcription factor (Fragment) &
+  -2.25 &
+  5.77 &
   outside &
-   &
-  \cite{wang2021, li2016, liu2023} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
+  2.35e-08 &
+  \cite{liu2023, peiffer2013, peiffer2014, wang2021} \\
   \textit{Zm00001eb428740} &
   \textit{ocl2} &
-  Homeobox-leucine zipper &
+  Homeobox-leucine zipper protein ROC5 &
   -2.66 &
   5.46 &
   outside &
    &
   \cite{wang2021} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
-  \textit{Zm00001eb197370} &
-  \textit{abi40} &
-  \begin{tabular}[c]{@{}l@{}}ABI3VP1-type\\ transcription
-factor\end{tabular} &
-  -2.25 &
-  5.77 &
-  outside &
-   &
-  \cite{wang2021} \\
-\rowcolor[HTML]{EFEFEF}
-\cellcolor[HTML]{EFEFEF} &
   \textit{Zm00001eb186670} &
-  \textit{} &
+   &
   Uncharacterized protein &
   -2.83 &
   5.41 &
   flanking &
+  1.51e-06 &
+  \cite{jiao2012, li2016, liu2023} \\
+  \textit{Zm00001eb157030} &
    &
-  \cite{wang2021, li2016, liu2023} \\
-\rowcolor[HTML]{EFEFEF}
-\multirow{-11}{*}{\cellcolor[HTML]{EFEFEF}\begin{tabular}[c]{@{}l@{}}Flowering\\
-Time\end{tabular}} &
+  Uncharacterized protein &
+  5.68 &
+  4.84 &
+  outside &
+   &
+  \cite{li2016, liu2023} \\
   \textit{Zm00001eb191000} &
-  \textit{} &
-  4-coumarate--CoA ligase-like 5 &
+  \textit{4cll5} &
+  4-coumarate:CoA ligase-like 5 &
   -3.35 &
   2.76 &
   \textbf{\invfour} &
    &
-  \cite{wang2021} \\ \hline
- &
-  \textit{Zm00001eb196600} &
-  \textit{} &
-  \begin{tabular}[c]{@{}l@{}}R3H-assoc domain\\ containing
-protein\end{tabular} &
-  -2.25 &
-  12.49 &
+  \cite{wang2021} \\
+  \textit{Zm00001eb187450} &
+  \textit{mybr58} &
+  HTH myb-type domain-containing protein &
+  1.74 &
+  2.51 &
   flanking &
-  8.80E-11 &
-  \cite{peiffer2014, liu2023} \\
- &
+   &
+  \cite{wang2021} \\
+ \midrule
+\multicolumn{8}{l}{\textbf{Plant Height}} \\ \midrule
   \textit{Zm00001eb194380} &
   \textit{sec6} &
-  Exocyst complex component &
+  Exocyst complex component Sec6 &
   2.87 &
   16.53 &
   \textbf{\invfour} &
-  1.42E-04 &
-  \cite{peiffer2014, liu2023} \\
- &
+  1.31e-04 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb190240} &
+   &
+  Uncharacterized protein &
+  -9.16 &
+  14.16 &
+  flanking &
+  1.27e-06 &
+  \cite{liu2023} \\
+  \textit{Zm00001eb189920} &
+  \textit{aldh2} &
+  Aldehyde dehydrogenase2 &
+  2.70 &
+  13.58 &
+  flanking &
+  3.68e-07 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb190350} &
+  \textit{ank1} &
+  Ankyrin repeat-containing protein &
+  -1.83 &
+  12.96 &
+  flanking &
+  1.26e-06 &
+  \cite{liu2023} \\
+  \textit{Zm00001eb196600} &
+  \textit{r3h1} &
+  R3H-assoc domain-containing protein &
+  -2.25 &
+  12.49 &
+  flanking &
+  6.96e-12 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb195790} &
+  \textit{traf1} &
+  TRAF-type domain-containing protein &
+  3.15 &
+  8.47 &
+  flanking &
+  4.32e-05 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb123230} &
+  \textit{tip4c} &
+  Tonoplast intrinsic protein 41 &
+  2.56 &
+  8.25 &
+  outside &
+   &
+  \cite{liu2023} \\
+  \textit{Zm00001eb195970} &
+  \textit{mpv17} &
+  Mpv17/PMP22 family protein, expressed &
+  -2.41 &
+  7.75 &
+  flanking &
+  3.83e-07 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb188570} &
+  \textit{his2b5} &
+  histone 2B5 &
+  -5.61 &
+  7.65 &
+  flanking &
+   &
+  \cite{liu2023} \\
   \textit{Zm00001eb196920} &
-  \textit{} &
+   &
   Uncharacterized protein &
   -2.81 &
   7.37 &
   flanking &
-  8.36E-08 &
-  \cite{peiffer2014, liu2023} \\
- &
-  \textit{Zm00001eb195080} &
-  \textit{imk3} &
-  \begin{tabular}[c]{@{}l@{}}Leucine-rich repeat receptor-like\\ protein
-kinase IMK3\end{tabular} &
-  -4.68 &
-  5.34 &
-  flanking &
-  1.19E-09 &
-  \cite{peiffer2014, liu2023} \\
- &
+  3.47e-09 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb192120} &
+  \textit{enth1} &
+  ENTH domain-containing protein &
+  -2.41 &
+  5.70 &
+  \textbf{\invfour} &
+  4.84e-07 &
+  \cite{liu2023, peiffer2014} \\
   \textit{Zm00001eb186670} &
-  \textit{} &
+   &
   Uncharacterized protein &
   -2.83 &
   5.41 &
   flanking &
-  7.18E-11 &
-  \cite{peiffer2014, liu2023} \\
- &
-  \textit{Zm00001eb194020} &
-  \textit{exo} &
-  \begin{tabular}[c]{@{}l@{}}Exordium / Phi-1-like \\ phosphate-induced
-protein\end{tabular} &
-  -2.39 &
-  1.86 &
-  \textbf{\invfour} &
-  3.32E-12 &
-  \cite{peiffer2014, liu2023} \\
-\multirow{-7}{*}{\begin{tabular}[c]{@{}l@{}}Plant\\ Height\end{tabular}} &
+  2.16e-13 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb195080} &
+  \textit{imk3b} &
+  probable leucine-rich repeat receptor-like protein kinase IMK3 &
+  -4.68 &
+  5.34 &
+  flanking &
+  6.72e-09 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb332450} &
+  \textit{roc4-2} &
+  Peptidyl-prolyl cis-trans isomerase &
+  -2.92 &
+  4.77 &
+  outside &
+  3.24e-09 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb190380} &
+  \textit{rie1} &
+  E3 ubiquitin protein ligase RIE1 &
+  2.15 &
+  2.06 &
+  flanking &
+  1.26e-06 &
+  \cite{liu2023} \\
   \textit{Zm00001eb197300} &
-  \textit{} &
-  \begin{tabular}[c]{@{}l@{}}Cysteine-rich RLK\\ (receptor-like protein
-kinase)\end{tabular} &
+  \textit{stk1} &
+  Non-specific serine/threonine protein kinase &
   -2.62 &
   2.00 &
   flanking &
-  3.04E-08 &
-  \cite{peiffer2014, liu2023} \\ \hline
+  1.22e-08 &
+  \cite{liu2023, peiffer2014} \\
+  \textit{Zm00001eb194020} &
+  \textit{exo} &
+  Phi-1-like phosphate-induced protein &
+  -2.39 &
+  1.86 &
+  \textbf{\invfour} &
+  2.43e-08 &
+  \cite{liu2023, peiffer2014} \\
+ \bottomrule
 \end{tabular}%
 }
 \end{table*}
@@ -761,504 +694,383 @@ kinase)\end{tabular} &
 
 \subsection{WGCNA shows that \invfour introgression disrupts extant coexpression modules of the B73 genomic background}
 
-To assess whether the \invfour introgression causes network-level perturbations
-beyond individual DEGs, we performed weighted gene coexpression network analysis
-(WGCNA) using a consensus approach. We constructed reference networks from CTRL
-samples using 1000 bootstrap iterations with 80\% gene subsampling and variable
-\textit{minModuleSize} (10--35), identifying modules robust to analytical choices
-(Fig~\ref{fig:wgcna}A).
+To assess whether the \invfour introgression causes network-level perturbations beyond individual DEGs, we performed weighted gene coexpression network analysis (WGCNA) using a consensus approach.
+We constructed reference networks from CTRL samples using 1000 bootstrap iterations with 80\% gene subsampling and variable \textit{minModuleSize} (10 to 35), identifying modules robust to analytical choices (Fig~\ref{fig:wgcna}A).
 
-The consensus network identified 13 coexpression modules encompassing 465 DEGs
-(FDR $< 0.05$). Bootstrap support, quantified as the Largest Fragment Proportion
-(LFP), confirmed that five modules exhibit stable consensus structure with
-mean LFP $> 0.70$: greenyellow ($\text{LFP} = 0.80 \pm 0.005$, $n = 16$ genes),
-blue ($\text{LFP} = 0.79 \pm 0.005$, $n = 51$), purple ($\text{LFP} = 0.74 \pm 0.005$,
-$n = 22$), pink ($\text{LFP} = 0.72 \pm 0.005$, $n = 30$), and magenta
-($\text{LFP} = 0.71 \pm 0.006$, $n = 24$) (Supplementary Fig~\ref{fig::module_support}). Gene Ontology
-enrichment confirmed these modules represent biologically coherent gene sets
-(Supplementary Fig~\ref{fig::module_go}). The pink module showed enrichment for ribosome biogenesis
-($p = 2.61 \times 10^{-4}$), negative regulation of gene expression (epigenetic)
-($p = 2.92 \times 10^{-4}$), and positive regulation of growth
-($p = 1.69 \times 10^{-3}$). Notably, the epigenetic and growth terms were driven
-by \jmjii and \jmjiv (Table~\ref{tab::pink_module}), indicating these histone demethylases participate
-in a coordinated growth-regulatory program in B73.
+The consensus network assigned 465 DEGs (FDR $< 0.05$) into 13 coexpression modules (FDR $< 0.05$).
+Bootstrap support, quantified as the Largest Fragment Proportion (LFP), confirmed that five modules exhibit stable consensus structure with mean LFP $> 0.70$: greenyellow ($\text{LFP} = 0.80 \pm 0.005$, $n = 16$ genes), blue ($\text{LFP} = 0.79 \pm 0.005$, $n = 51$), purple ($\text{LFP} = 0.74 \pm 0.005$, $n = 22$), pink ($\text{LFP} = 0.72 \pm 0.005$, $n = 30$), and magenta ($\text{LFP} = 0.71 \pm 0.006$, $n = 24$) (Supplementary Fig.~\ref{fig::module_support}).
+Gene Ontology enrichment confirmed these modules represent biologically coherent gene sets (Supplementary Fig.~\ref{fig::module_go}).
+The pink module showed enrichment for ribosome biogenesis ($p = 2.61 \times 10^{-4}$), negative regulation of gene expression (epigenetic) ($p = 2.92 \times 10^{-4}$), and positive regulation of growth ($p = 1.69 \times 10^{-3}$).
+Notably, the epigenetic and growth terms were driven by \jmjii and \jmjiv (Table~\ref{tab::pink_module}), indicating these histone demethylases participate in a coordinated growth-regulatory program in B73.
 
-Comparison of intramodular connectivity ($k_{Within}$) between genotypes revealed
-systematic disruption in \invfour samples (Fig~\ref{fig:wgcna}B). Adjacency
-correlation between CTRL and \invfour networks ranged from $-0.14$ to $0.42$
-across modules, with 10 of 13 modules showing correlation $< 0.30$
-(Table~\ref{tab::preservation}). To formally test whether modules lost
-connectivity, we performed one-sample $t$-tests for each module testing whether
-mean $\Delta k_{Within} \neq 0$. Eleven of 13 modules showed significant
-connectivity loss after FDR correction ($p_{adj} < 0.05$;
-Table~\ref{tab::preservation}), with the blue module showing the strongest
-effect ($t = -19.7$, $p_{adj} = 4.6 \times 10^{-24}$). Only magenta
-($p_{adj} = 0.051$) and salmon ($p_{adj} = 0.63$) modules did not reach
-significance.
+The greenyellow module, with the highest bootstrap support (LFP $= 0.80$), showed enrichment for developmental cell growth ($p = 8.5 \times 10^{-4}$), cell tip growth ($p = 6.0 \times 10^{-4}$), and regulation of DNA replication ($p = 0.019$).
+This module contains two genes with independent functional support: \textit{sec6} (\textit{Zm00001eb194380}; $\log_2 \text{FC} = +2.87$), encoding an exocyst complex component associated with plant height in GWAS \cite{peiffer2014}, and \textit{pcna2} (\textit{Zm00001eb192050}; $\log_2 \text{FC} = +2.99$), encoding proliferating cell nuclear antigen 2, a DNA replication factor and marker of cell proliferation (Table~\ref{tab::greenyellow_module}).
+The module also includes \textit{ropgef14} (\textit{Zm00001eb188240}) ($\log_2 \text{FC} = -2.98$), a Rho GTPase activator required for polarized cell growth.
+The co-expression of these functionally distinct genes, including exocytosis, DNA replication, and cell polarity, in a highly stable module suggests coordinated regulation of cell division and growth in the B73 background.
 
-The pink module, despite its high bootstrap support in CTRL (LFP $= 0.72$), showed
-near-complete structural collapse (adjacency correlation $= 0.020$). Hub gene
-analysis revealed that \jmjiv, highly connected in CTRL ($k_{Within} = 0.90$),
-dropped to peripheral status in \invfour ($k_{Within} = 0.36$), a 60\% reduction
-(Fig~\ref{fig:wgcna}C). Similarly, \jmjii showed $k_{Within} = 0.89$ in CTRL
-versus $0.44$ in \invfour (50\% reduction). These JMJ genes transitioned from
-central network hubs to weakly connected nodes, consistent with their
-downregulation disrupting the coexpression relationships they normally coordinate.
+The purple module (LFP $= 0.74$, $n = 22$), which contains the plant height GWAS candidate \textit{phi1}/\textit{exo} (\textit{Zm00001eb194020}; $\log_2 \text{FC} = -2.39$; Table~\ref{tab:FT_PH_candidates}), showed enrichment for brassinosteroid signaling regulation ($p = 0.022$) and negative regulation of chromatin silencing ($p = 0.016$), suggesting an indirect link to growth through hormone and epigenetic pathways.
 
-In contrast, the exocyst component \textit{sec6} ($\log_2 FC = +2.87$), located
-within \invfour, showed $k_{Within} = 0.83$ in CTRL but $0.008$ in \invfour,
-suggesting its upregulation decouples it from native coexpression partners. This
-bidirectional rewiring---connectivity loss for downregulated chromatin regulators
-and altered connectivity for upregulated genes---is consistent with the JMJ
-cluster functioning as a regulatory hub whose perturbation propagates through
-the transcriptome.
+Comparison of intramodular connectivity ($k_{Within}$) between genotypes revealed systematic disruption in \invfour samples (Fig~\ref{fig:wgcna}B).
+\texttt{modulePreservation()} analysis \cite{langfelder2011} with 1000 permutations classified 12 of 13 modules as moderately preserved ($Z_{summary}$ 2 to 10), meaning their internal connectivity patterns were partially maintained despite the introgression, while one module (salmon) was not preserved ($Z_{summary} < 2$; Table~\ref{tab::preservation}).
+However, formal testing of connectivity magnitude change revealed pervasive loss: one-sample $t$-tests on $\Delta k_{Within}$ showed that 12 of 13 modules had significant connectivity reduction after FDR correction ($p_{adj} < 0.05$; Table~\ref{tab::preservation}), with the blue module showing the strongest effect ($t = -8.4$, $p_{adj} = 4.9 \times 10^{-10}$).
+Only magenta ($p_{adj} = 0.126$) did not reach significance.
+Thus, although the relative hub structure within modules is partially retained, absolute connectivity is broadly diminished in \invfour.
+
+The pink module illustrates this pattern: despite high bootstrap support in CTRL (LFP $= 0.72$) and moderate structural preservation ($Z_{summary} = 5.8$), it showed significant connectivity loss (mean $\Delta k_{Within} = -1.36$, $p_{adj} = 2.6 \times 10^{-6}$), with 100\% of genes losing connectivity.
+Hub gene analysis revealed that \jmjiv, highly connected in CTRL ($k_{Within} = 3.17$), dropped to peripheral status in \invfour ($k_{Within} = 0.61$), an 81\% reduction (Fig~\ref{fig:wgcna}C).
+Similarly, \jmjii showed $k_{Within} = 3.33$ in CTRL versus $0.59$ in \invfour (82\% reduction).
+These JMJ genes transitioned from central network hubs to weakly connected nodes, consistent with their downregulation disrupting the coexpression relationships they normally coordinate.
+
+In contrast, the exocyst component \textit{sec6} ($\log_2 FC = +2.87$), located within \invfour, showed $k_{Within} = 0.81$ in CTRL but $< 0.001$ in \invfour, suggesting its upregulation decouples it from native coexpression partners.
+This bidirectional rewiring, connectivity loss for downregulated chromatin regulators and altered connectivity for upregulated genes, is consistent with the JMJ cluster functioning as a regulatory hub whose perturbation propagates through the transcriptome.
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=0.6\linewidth]{figs/WGCNA_module_perturbation.png}
+\includegraphics[width=\linewidth]{figs/WGCNA_module_perturbation.png}
 \caption{\textbf{WGCNA module perturbation analysis reveals widespread network disruption in \invfour plants.}
-\textbf{(A)} Consensus WGCNA dendrogram for CTRL samples showing 13 gene coexpression modules. Module assignments were obtained from 1000 consensus iterations with 80\% gene subsampling and variable \textit{minModuleSize} (10--35). Color bar indicates module membership for 465 DEGs (FDR $< 0.05$).
-\textbf{(B)} Change in intramodular connectivity ($\Delta k_{Within}$) between CTRL and \invfour genotypes. Each box represents a module, colored by module assignment. Negative values indicate connectivity loss in \invfour. Asterisks indicate significance from one-sample $t$-tests ($H_0$: $\Delta k_{Within} = 0$) with FDR correction: *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$. Eleven of 13 modules show significant connectivity loss.
-\textbf{(C)} Hub gene connectivity comparison between CTRL ($x$-axis) and \invfour ($y$-axis). Points represent top 5 hub genes per module, colored by module assignment. Point size indicates $|\log_2 FC|$. Points below the diagonal indicate hub genes that lost connectivity in \invfour. Labels show gene symbols where available.}
+\textbf{(A)} Consensus WGCNA dendrogram for CTRL samples showing 13 gene coexpression modules.
+Module assignments were obtained from 1000 consensus iterations with 80\% gene subsampling and variable \textit{minModuleSize} (10 to 35).
+Color bar indicates module membership for 465 DEGs (FDR $< 0.05$).
+\textbf{(B)} Change in standard intramodular connectivity ($\Delta k_{Within}$) between CTRL and \invfour genotypes, computed from signed weighted adjacency matrices (shared soft power $\beta = 18$).
+Each box represents a module, colored by module assignment.
+Negative values indicate connectivity loss in \invfour.
+Asterisks indicate significance from one-sample $t$-tests ($H_0$: $\Delta k_{Within} = 0$) with FDR correction: *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$.
+Twelve of 13 modules show significant connectivity loss.
+Annotations above each module show the top reduced Gene Ontology Biological Process term.
+\textbf{(C)} Hub gene connectivity comparison between CTRL ($x$-axis) and \invfour ($y$-axis).
+Points represent top 5 hub genes per module, colored by module assignment.
+Point size indicates $|\log_2 FC|$.
+Points below the diagonal indicate hub genes that lost connectivity in \invfour.
+Labels show gene symbols where available.}
 \label{fig:wgcna}
 \end{figure*}
 
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width= 0.85\linewidth]{figs/DEG_network.png}
+\includegraphics[width= 0.85\linewidth]{figs/transnetwork.png}
 \caption{\textbf{Trans coexpression network connecting \invfour DEGs to genome-wide targets.}
-\textbf{(A)} Minimum spanning tree visualization of co-expression relationships between DEGs within the \invfour introgression (purple) and target genes located elsewhere in the genome (yellow). Node fill indicates direction of differential expression: filled nodes are upregulated and open nodes are downregulated in \invfour plants. Edge polarity reflects the sign of mutual information: arrows indicate positive coexpression and bars indicate negative coexpression.
-\textit{Left:} Reference edges present in the MaizeNetome database, representing known regulatory relationships. The network includes   \textit{proliferating cell nuclear antigen2} (\textit{pcna2}, \textit{outer cell layer2} (\textit{ocl2}), and  \jmjii .
-\textit{Right:} Novel edges specific to the \invfour network, showing the \jmjiv neighborhood subgraph that includes \textit{Exocyst complex component SEC6} (\textit{sec6}) .
-\textbf{(B)} Gene Ontology enrichment analysis of the trans coexpression network, stratified by gene location (flanking introgression vs. \invfour proper) and regulation direction. Bubble size indicates gene count; color indicates enrichment significance ($-\log_{10}(p)$). Gene labels identify representative members of enriched terms. Notable enrichments include negative regulation of gene expression (epigenetic) and positive regulation of growth among \invfour-downregulated genes.}
-\label{fig::DEGnetwork}
+\textbf{(A)} Minimum spanning tree visualization of co-expression relationships between DEGs within the \invfour introgression (purple) and target genes located elsewhere in the genome (yellow).
+Node fill indicates direction of differential expression: filled nodes are upregulated and open nodes are downregulated in \invfour plants.
+Edge polarity reflects the sign of mutual information: arrows indicate positive coexpression and bars indicate negative coexpression.
+\textit{Left:} Reference edges present in the MaizeNetome database, representing known regulatory relationships.
+The network includes \textit{proliferating cell nuclear antigen2} (\textit{pcna2}), \textit{outer cell layer2} (\textit{ocl2}), and \jmjii.
+\textit{Right:} Novel edges specific to the \invfour network, showing the \jmjiv neighborhood subgraph that includes \textit{Exocyst complex component SEC6} (\textit{sec6}).
+\textbf{(B)} Gene Ontology enrichment analysis of the trans coexpression network, stratified by gene location (flanking introgression vs. \invfour proper) and regulation direction.
+Bubble size indicates gene count; color indicates enrichment significance ($-\log_{10}(p)$).
+Gene labels identify representative members of enriched terms.
+Notable enrichments include negative regulation of gene expression (epigenetic) and positive regulation of growth among \invfour-downregulated genes.}
+\label{fig::transnetwork}
 \end{figure*}
 
 
 
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\linewidth]{figs/jmjcluster.png}
-\caption{\textbf{The \jmjii/\jmjiv cluster is constitutively downregulated in \invfour and shows lineage-specific expansion in B73.}
-\textbf{(A)} Total JMJ cluster expression (sum of \jmjii + \jmjiv) across tissues and experiments. Boxplots show CPM expression in CTRL (gold) and \invfour (purple) genotypes. Left: Crow et al. (2020) growth chamber data across 9 tissue types. Right: PSU2022 field data across 4 leaf positions. Dashed red line indicates expected \invfour expression under copy number scaling (CTRL/5), assuming the single remaining \jmjiv copy produces 1/5 of the total cluster output. Red asterisks denote significant deviation from expectation (linear contrast $t$-test, FDR $<$ 0.05: *, $<$ 0.01: **, $<$ 0.001: ***).
-\textbf{(B)} Microsynteny of the JUMONJI gene cluster across five \textit{Zea} genomes.
-From top to bottom: the teosinte TIL18 (\textit{Z. mays} ssp. \textit{mexicana}), the highland landrace Palomero Toluque\~{n}o (PT), and the tropical inbred lines CML457 and CML459 each contain a single \textit{jmj6} ortholog, while B73 (bottom) has an expanded tandem array of five paralogs (\textit{jmj9}, $\psi$?, \textit{jmj6}, \jmjii, \jmjiv).
-Purple ribbons indicate syntenic relationships between \textit{jmj} loci; gray ribbons show conserved flanking genes. Coordinates in Mb.
-\textbf{(C)} Transcript structure and annotation of the B73 \textit{jmj} cluster.
-The NAM v5 annotation consolidates \jmjii, \textit{jmj6}, and \textit{jmj9} as alternative transcripts of a single locus (\textit{Zm00001eb191790}), while \jmjiv is annotated separately (\textit{Zm00001eb191820}).
-The putative pseudogene ($\psi$?) retains only a v4 identifier (\textit{Zm00001d051961}).
-Heatmap intensity indicates cDNA sequence identity (97--100\%). Bottom track shows genomic positions of individual cluster members.}
-\label{fig:jmj_cluster}
-\end{figure*}
+
+
 
 
 \subsection{Trans-regulatory network analysis detects potential \invfour epigenetic regulators acting on a growth related module }
 
-To investigate the potential trans-regulatory effects of the \invfour
-chromosomal inversion, we constructed a coexpression network linking DEGs
-within the introgressed region (regulators) to differentially expressed genes
-located elsewhere in the genome (trans targets). We validated these
-coexpression relationships against the MaizeNetome database, which catalogs
-experimentally-supported regulatory interactions in maize
-(Fig~\ref{fig::DEGnetwork}A).
+To investigate the potential trans-regulatory effects of the \invfour chromosomal inversion, we constructed a coexpression network linking DEGs within the introgressed region (regulators) to differentially expressed genes located elsewhere in the genome (trans targets).
+We validated these coexpression relationships against the MaizeNetome database, which catalogs experimentally-supported regulatory interactions in maize (Fig~\ref{fig::transnetwork}A).
 
-The trans-regulatory network comprised 135 genes connected by 552 coexpression
-edges. Of the 103 regulator genes within or flanking the introgression, 33
-were located within the \invfour proper and 70 in the flanking regions. These
-regulators showed coexpression relationships with 32 trans target genes
-distributed across all ten maize chromosomes. We classified edges as
-``Reference'' if present in the MaizeNetome database (16 edges, 2.9\%) or
-``Novel'' if specific to our \invfour network (536 edges, 97.1\%).
+The trans-regulatory network comprised 135 genes connected by 552 coexpression edges.
+Of the 103 regulator genes within or flanking the introgression, 33 were located within the \invfour proper and 70 in the flanking regions.
+These regulators showed coexpression relationships with 32 trans target genes distributed across all ten maize chromosomes.
+We classified edges as ``Reference'' if present in the MaizeNetome database (16 edges, 2.9\%) or ``Novel'' if specific to our \invfour network (536 edges, 97.1\%).
 
 
-The Reference network included known regulatory relationships involving
-\textit{proliferating cell nuclear antigen2} (\textit{pcna2}; $\log_2 FC =
-+2.99$), a DNA replication factor, and \textit{outer cell layer2}
-(\textit{ocl2}; $\log_2 FC = -2.66$), a HD-ZIP IV transcription factor
-involved in epidermal cell differentiation. Notably, the Reference network
-also contained edges connecting \jmjii ($\log_2 FC = -3.49$) to trans targets,
-supporting a conserved regulatory role for this histone demethylase.
+The Reference network included known regulatory relationships involving \textit{proliferating cell nuclear antigen2} (\textit{pcna2}; $\log_2 FC = +2.99$), a DNA replication factor, and \textit{outer cell layer2} (\textit{ocl2}, \textit{Zm00001eb428740}; $\log_2 FC = -2.66$), a HD-ZIP IV transcription factor involved in epidermal cell differentiation.
+Notably, the Reference network also contained edges connecting \jmjii ($\log_2 FC = -3.49$) to trans targets, supporting a conserved regulatory role for this histone demethylase.
 
-The Novel network revealed a previously uncharacterized \jmjiv neighborhood
-subgraph (Fig~\ref{fig::DEGnetwork}A, right panel). \jmjiv ($\log_2 FC =
--2.84$) showed strong coexpression with \textit{Exocyst complex component
-SEC6} (\textit{sec6}; $\log_2 FC = +2.87$), which functions in vesicle
-trafficking and cell plate formation during cytokinesis. This connection
-suggests that the JMJ cluster may influence cell division through
-post-translational mechanisms beyond chromatin modification.
+The Novel network revealed a previously uncharacterized \jmjiv neighborhood subgraph (Fig~\ref{fig::transnetwork}A, right panel).
+\jmjiv ($\log_2 FC = -2.84$) showed strong coexpression with \textit{Exocyst complex component SEC6} (\textit{sec6}; $\log_2 FC = +2.87$), which functions in vesicle trafficking and cell plate formation during cytokinesis.
+This connection suggests that the JMJ cluster may influence cell division through post-translational mechanisms beyond chromatin modification.
 
-Gene Ontology enrichment analysis of genes within \invfour proper
-(Fig~\ref{fig::DEGnetwork}B) revealed significant over-representation of
-negative regulation of gene expression, epigenetic (GO:0045814; $p = 2.97
-\times 10^{-4}$, fold enrichment = 77.5) and positive regulation of growth
-(GO:0045927; $p = 1.73 \times 10^{-3}$, fold enrichment = 32.3). Both terms
-were driven by the \jmjii/\jmjiv cluster, which encodes JmjC domain-containing
-histone demethylases. The enrichment of growth regulation terms among
-\invfour-downregulated genes is consistent with the altered SAM geometry
-observed in \invfour plants, suggesting that perturbation of epigenetic
-regulators may underlie the developmental phenotypes.
+Gene Ontology enrichment analysis of genes within \invfour proper (Fig~\ref{fig::transnetwork}B) revealed significant over-representation of negative regulation of gene expression, epigenetic (GO:0045814; $p = 2.2 \times 10^{-4}$, fold enrichment = 90.4) and positive regulation of growth (GO:0045927; $p = 1.3 \times 10^{-3}$, fold enrichment = 37.7).
+Both terms were driven by the \jmjii/\jmjiv cluster, which encodes JmjC domain-containing histone demethylases.
+The enrichment of growth regulation terms among \invfour-downregulated genes is consistent with the altered SAM geometry observed in \invfour plants, suggesting that perturbation of epigenetic regulators may underlie the developmental phenotypes.
+
+
+
+
 
 \subsection{JMJ cluster expression differences reflect copy number variation, with additional regulatory effects evident in field conditions}
 
-The \jmjii/\jmjiv cluster exhibited the strongest transcriptional response to \invfour introgression, with \jmjii showing $\log_2 \text{FC} = -3.49$ (\textit{FDR} $< 10^{-20}$), the largest effect size among all DEGs. This apparent downregulation was consistent across all 13 tissue-experiment combinations examined, including both PSU2022 field samples (V13 adult leaves) and Crow et al. (2020) growth chamber samples spanning roots, leaves, and shoot apical meristems (Fig~\ref{fig:jmj_cluster}A).
+The \jmjii/\jmjiv cluster exhibited the strongest transcriptional response to \invfour introgression, with \jmjii showing $\log_2 \text{FC} = -3.49$ (\textit{FDR} $< 10^{-20}$), the largest effect size among all DEGs.
+This apparent downregulation was consistent across all 13 tissue-experiment combinations examined, including both PSU2022 field samples (V13 adult leaves) and Crow et al. (2020) growth chamber samples spanning roots, leaves, and shoot apical meristems (Fig~\ref{fig:jmj_cluster}A).
 
-However, microsynteny analysis across five \textit{Zea} genomes revealed that the B73 reference contains a tandem expansion of five JMJ paralogs (\jmjix, a putative pseudogene, \jmjvi, \jmjii, and \jmjiv), whereas highland teosinte TIL18, the landrace Palomero Toluque\~{n}o, and the tropical inbreds CML457 and CML459 each retain only a single \textit{jmj6} ortholog (Fig~\ref{fig:jmj_cluster}B). The high sequence identity among paralogs ($>$97\% cDNA similarity; Fig~\ref{fig:jmj_cluster}C) suggests recent duplication and complicates individual paralog quantification.
+However, microsynteny analysis across five \textit{Zea} genomes revealed that the B73 reference contains a tandem expansion of five JMJ paralogs (\jmjix, a putative pseudogene, \jmjvi, \jmjii, and \jmjiv), whereas highland teosinte TIL18, the landrace Palomero Toluque\~{n}o, and the tropical inbreds CML457 and CML459 each retain only a single \textit{jmj6} ortholog (Fig~\ref{fig:jmj_cluster}B).
+The high sequence identity among paralogs ($>$97\% cDNA similarity; Fig~\ref{fig:jmj_cluster}C) suggests recent duplication and complicates individual paralog quantification.
 
-To test whether the observed expression differences could be explained by copy number alone, we compared total cluster expression in \invfour plants against the expectation under simple dosage scaling (CTRL/5). In field samples, \invfour expression was consistently and significantly below this expectation: Leaf 1 achieved 61.5\% of expected levels ($t = 2.94$, \textit{FDR} $= 0.031$), while Leaves 2--4 showed only 49--53\% of expected expression (\textit{FDR} $< 0.015$ for all). This pattern suggests that beyond copy number reduction, additional regulatory mechanisms suppress JMJ cluster transcription in the field.
+To test whether the observed expression differences could be explained by copy number alone, we compared total cluster expression in \invfour plants against the expectation under simple dosage scaling (CTRL/5).
+In field samples, \invfour expression was consistently and significantly below this expectation: Leaf 1 achieved 61.5\% of expected levels ($t = 2.94$, \textit{FDR} $= 0.031$), while Leaves 2 to 4 showed only 49 to 53\% of expected expression (\textit{FDR} $< 0.015$ for all).
+This pattern suggests that beyond copy number reduction, additional regulatory mechanisms suppress JMJ cluster transcription in the field.
 
-In contrast, growth chamber data showed a less consistent pattern. Only 4 of 9 tissues exhibited significant deviation from copy number expectation after FDR correction, with expression levels ranging from 48\% (V1 root) to 83\% (V1 leaf) of expected values. Notably, the shoot apical meristem showed no significant deviation (81.8\% of expected, \textit{FDR} $= 0.57$). This environment-dependent pattern may reflect condition-specific regulatory mechanisms acting on the JMJ cluster beyond the baseline copy number effect.
+In contrast, growth chamber data showed a less consistent pattern.
+Only 4 of 9 tissues exhibited significant deviation from copy number expectation after FDR correction, with expression levels ranging from 48\% (V1 root) to 83\% (V1 leaf) of expected values.
+Notably, the shoot apical meristem showed no significant deviation (81.8\% of expected, \textit{FDR} $= 0.57$).
+This environment-dependent pattern may reflect condition-specific regulatory mechanisms acting on the JMJ cluster beyond the baseline copy number effect.
+
 
 \section{Discussion}
 
-Introgression of \invfour from Mexican highland maize into B73 produces
-consistent effects on flowering time and plant height, independent of phosphorus
-availability (Fig~\ref{fig:phenotypes}). Transcriptomic analysis identifies
-the JUMONJI histone demethylase cluster as the strongest candidate, showing
-both copy number variation between highland and lowland genomes
-(Fig~\ref{fig:jmj_cluster}B) and expression levels below copy number
-expectation in field conditions (Fig~\ref{fig:jmj_cluster}A). WGCNA reveals
-that \invfour introgression disrupts 11 of 13 coexpression modules
-(Table~\ref{tab::preservation}), with JMJ genes losing hub status
-(Fig~\ref{fig:wgcna}C). The phosphorus starvation hypothesis was tested and
-rejected in our companion study \citep{rodriguez2026phosphorus}; here we focus
-on identifying candidate genes underlying the observed adaptive phenotypes.
+Introgression of \invfour from Mexican highland maize into B73 produces consistent effects on flowering time and plant height, independent of phosphorus availability (Fig~\ref{fig:phenotypes}).
+Transcriptomic analysis identifies the JUMONJI histone demethylase cluster as the strongest candidate, showing both copy number variation between highland and lowland genomes (Fig~\ref{fig:jmj_cluster}B) and expression levels below copy number expectation in field conditions (Fig~\ref{fig:jmj_cluster}A).
+WGCNA reveals that \invfour introgression disrupts 12 of 13 coexpression modules (Table~\ref{tab::preservation}), with JMJ genes losing hub status (Fig~\ref{fig:wgcna}C).
+The phosphorus starvation hypothesis was tested and rejected in our companion study~\cite{rodriguez2026phosphorus}; here we focus on identifying candidate genes underlying the observed adaptive phenotypes.
 
 \subsection*{Breakpoint characterization reveals knob repeat involvement in inversion structure}
 
-Genome alignments delimited \invfour to 15.2 Mb containing 432 annotated genes
-in B73 (Table~\ref{tab:breakpoints}). The breakpoint segments are enriched for
-chromosomal knob repeats: the upstream breakpoint contains 438 \textit{knob180}
-and 29 \textit{TR-1} repeats (74\% of annotated repeats), while the downstream
-breakpoint contains 37 \textit{knob180} repeats (46\%; Fig~\ref{fig::design}B).
-This association between inversion breakpoints and repetitive sequences is
-consistent with models proposing that ectopic recombination between dispersed
-repeats can generate chromosomal inversions
-% [PLACEHOLDER: cite inversion origin via ectopic recombination]
-.
+Genome alignments delimited \invfour to 15.2 Mb containing 432 annotated genes in B73 (Table~\ref{tab:breakpoints}).
+The breakpoint segments are enriched for chromosomal knob repeats: the upstream breakpoint contains 438 \textit{knob180} and 29 \textit{TR-1} repeats (74\% of annotated repeats), while the downstream breakpoint contains 37 \textit{knob180} repeats (46\%; Fig~\ref{fig::design}B).
+This association between inversion breakpoints and repetitive sequences is consistent with models proposing that ectopic recombination between dispersed repeats can generate chromosomal inversions \cite{wellenreuther2018}.
 
-The asymmetric structure of the breakpoints---with inverted repeat arrays
-present only at the upstream boundary (Fig~\ref{fig::design}B)---and the
-variation in heterochromatic knob content across genomes (TIL18 carries the
-4L knob \cite{bilinski2018,albert2010}, PT is knobless, and B73 has a TR-1
-knob \cite{ghaffari2013}) suggest that knob dynamics have continued to shape
-chromosome 4 architecture after the inversion origin. The conservation of
-\invfour across \mex populations \cite{pyhajarvi2013} despite this ongoing
-repeat turnover indicates strong selection maintaining the inverted haplotype.
+The asymmetric structure of the breakpoints, with inverted repeat arrays present only at the upstream boundary (Fig~\ref{fig::design}B), and the variation in heterochromatic knob content across genomes (TIL18 carries the 4L knob \cite{bilinski2018,albert2010}, PT is knobless, and B73 has a TR-1 knob, \cite{ghaffari2013}, suggest that knob dynamics have continued to shape chromosome 4 architecture after the inversion origin.
+The conservation of \invfour across \mex populations \cite{pyhajarvi2013} despite this ongoing repeat turnover indicates strong selection maintaining the inverted haplotype.
 
 \subsection*{\invfour effects on flowering and growth replicate previous highland adaptation studies}
 
-Plants carrying \invfour flowered $1.30 \pm 0.27$ days earlier to anthesis
-($p = 7.6 \times 10^{-6}$) and grew $6.48 \pm 1.11$ cm taller
-($p = 2.2 \times 10^{-7}$) than controls (Fig~\ref{fig:phenotypes}A). These
-effects were consistent across phosphorus treatments. The harvest index
-increase ($0.11 \pm 0.04$, $p = 0.01$) suggests altered vegetative-reproductive
-resource allocation rather than simple growth promotion.
+Plants carrying \invfour flowered $1.30 \pm 0.27$ days earlier to anthesis ($p = 7.9 \times 10^{-6}$) and grew $6.48 \pm 1.11$ cm taller ($p = 2.3 \times 10^{-7}$) than controls (Fig~\ref{fig:phenotypes}A).
+These effects were consistent across phosphorus treatments.
+The harvest index increase ($0.11 \pm 0.04$, $p = 0.01$) suggests altered vegetative-reproductive resource allocation rather than simple growth promotion.
+Internode measurements in the CLY2025 field trial localized the height effect: the largest difference was concentrated at internode position 2, just below the tassel ($-4.1$~cm, $p < 10^{-19}$; Supplementary Fig.~\ref{fig::internode}), while total node count did not differ between genotypes.
+This indicates that \invfour promotes internode elongation at specific developmental positions rather than increasing phytomer number, consistent with altered growth dynamics during the transition from vegetative to reproductive development.
 
-These results are consistent with previous studies showing \invfour association
-with flowering time variation across elevation gradients \cite{romero_navarro2017-cn}
-and gene-by-environment interactions in controlled environments \cite{crow2020}.
-The earlier flowering we observe in temperate conditions aligns with the
-prediction that \invfour accelerates flowering at high elevations, where
-limited growing degree days favor rapid development
-\cite{romero_navarro2017-cn}.
+These results are consistent with previous studies showing \invfour association with flowering time variation across elevation gradients \cite{romero_navarro2017-cn} and gene-by-environment interactions in controlled environments \cite{crow2020}.
+The earlier flowering we observe in temperate conditions aligns with the prediction that \invfour accelerates flowering at high elevations, where limited growing degree days favor rapid development \cite{romero_navarro2017-cn}.
+
+Our results show strong concordance with the growth chamber study of Crow et al.\ \cite{crow2020}, who identified DEGs associated with \invfour in B73 near-isogenic lines.
+Of the 29 genes they reported as consistently differentially expressed, correlated in trans, or encoding transcription factors (Table S2 in \cite{crow2020}), 20 of 27 unique genes are also DEGs in our field study after mapping v4 to v5 gene identifiers (FDR $< 0.05$).
+The shared genes span several functional categories.
+Among chromatin regulators, both studies identified the JMJ histone demethylase cluster (listed as ``Putative lysine-specific demethylase JMJ16'' in their v4 annotation): \jmjii ($\log_2\text{FC} = -3.49$), \jmjiv ($-2.84$), and a flanking JMJ-domain transcription factor (\textit{jmj21}, $+2.28$).
+In cell growth and proliferation, \textit{sec6} ($+2.87$), classified as ``Consistent DE'' by Crow et al., and \textit{pcna2} ($+2.99$), which they identified as ``Correlated Trans,'' were both upregulated.
+Additional shared DEGs include the transcription factors \textit{gata4} ($-1.02$) and \textit{ereb14} ($-0.46$), the signaling kinases \textit{vps15} ($-0.60$) and a PBL19-like receptor ($-1.39$), and the nitrite reductase \textit{nii2} ($-2.06$).
+Of the 20 shared DEGs, 13 were downregulated and 7 upregulated, and all mapped within the \invfour interval.
+Our field study, using a plant blocking model to account for spatial variation, identified 465 DEGs at FDR $< 0.05$ and extends this shared candidate set by providing a mechanistic explanation: the JMJ signal reflects copy number variation between highland and lowland genomes (Fig~\ref{fig:jmj_cluster}B), with additional regulatory suppression in field conditions (Fig~\ref{fig:jmj_cluster}A).
+Both studies converge on the finding that gene expression changes are not confined to breakpoint-proximal genes: our DEGs show no enrichment inside \invfour versus flanking regions (OR $= 1.02$, Table~\ref{tab:DEGs_distro}), consistent with trans-regulatory effects rather than simple position effects.
 
 \subsection*{Gene-by-environment interactions support local adaptation}
 
-Analysis across three location-year combinations revealed significant GxE
-interactions for all phenotypes tested (Supplementary Table~\ref{tab::gxe}).
-Plant height showed the strongest interaction ($\eta^2_p = 0.29$,
-$p < 8.7 \times 10^{-10}$), with effect direction reversing between
-Pennsylvania (Cohen's $d = 1.45$--$2.23$) and North Carolina ($d = -1.28$;
-Supplementary Fig~\ref{fig::gxe_forest}).
+Analysis across three location-year combinations revealed significant GxE interactions for all phenotypes tested (Supplementary Table~\ref{tab::gxe}).
+Plant height showed the strongest interaction ($\eta^2_p = 0.29$, $p < 8.7 \times 10^{-10}$), with effect direction reversing between Pennsylvania (Cohen's $d = 1.45$ to $2.23$) and North Carolina ($d = -1.28$; Supplementary Fig.~\ref{fig::gxe_forest}).
 
-This pattern is characteristic of local adaptation, where alleles beneficial
-in one environment may be neutral or deleterious in others
-\cite{kirkpatrick2006b}. The rarity of \invfour in temperate maize, despite
-introgression opportunities during northward expansion \cite{hufford2013-gs},
-may reflect selection against the inversion in environments with long growing
-seasons where earlier flowering provides no advantage. The 432 genes within
-\invfour (Table~\ref{tab:DEGs_distro}) are maintained as a coadapted unit by
-suppressed recombination \cite{gonzalez-segovia2019-jy}, preserving
-highland-adapted allele combinations.
+This pattern is characteristic of local adaptation, where alleles beneficial in one environment may be neutral or deleterious in others \cite{kirkpatrick2006b}.
+The rarity of \invfour in temperate maize, despite introgression opportunities during northward expansion \cite{hufford2013-gs}, may reflect selection against the inversion in environments with long growing seasons where earlier flowering provides no advantage.
+The 432 genes within \invfour (Table~\ref{tab:DEGs_distro}) are maintained as a coadapted unit by suppressed recombination \cite{gonzalez-segovia2019-jy}, preserving highland-adapted allele combinations.
 
-\subsection*{JMJ histone demethylases emerge as flowering time candidates}
 
-The \jmjii/\jmjiv cluster exhibited the largest expression difference among
-all DEGs, with $\log_2 \text{FC} = -3.49$ ($\textit{FDR} < 10^{-20}$;
-Table~\ref{tab:FT_PH_candidates}). This downregulation was consistent across
-all 13 tissue-experiment combinations examined, including field and growth
-chamber samples spanning roots, leaves, and shoot apical meristems
-(Fig~\ref{fig:jmj_cluster}A).
 
-Microsynteny analysis revealed that B73 contains five JMJ paralogs while
-highland teosinte TIL18 and the landraces PT, CML457, and CML459 each retain
-only a single ortholog (Fig~\ref{fig:jmj_cluster}B). The high sequence
-identity among B73 paralogs ($>$97\%; Fig~\ref{fig:jmj_cluster}C) indicates
-recent tandem duplication. Under simple dosage scaling, \invfour expression
-should equal CTRL/5; however, field samples showed only 49--61\% of this
-expectation (linear contrast $t$-test, $\textit{FDR} < 0.05$ for all four
-tissues). Growth chamber data were less consistent (48--83\% of expectation,
-4/9 tissues significant), suggesting environment-specific regulatory
-mechanisms beyond baseline copy number effects.
+\subsection*{JMJ histone demethylases as flowering time / plant height candidates}
 
-GWAS support links the JMJ cluster to flowering time variation
-\cite{tibbs-cortes2024}. JUMONJI domain proteins function as histone
-demethylases that remove methyl groups from H3K4, a mark associated with
-active transcription % [PLACEHOLDER: cite JMJ biochemical function review]
-. In Arabidopsis, JMJ homologs regulate flowering time through chromatin
-modification of floral pathway genes % [PLACEHOLDER: cite Arabidopsis JMJ flowering]
-. The \textit{sec6} gene, encoding an exocyst complex component involved in
-cytokinesis, also emerged as a plant height candidate with GWAS support
-\cite{peiffer2014} (Table~\ref{tab:FT_PH_candidates}).
+The \jmjii/\jmjiv cluster exhibited the largest expression difference among all DEGs, with $\log_2 \text{FC} = -3.49$ ($\textit{FDR} < 10^{-20}$; Table~\ref{tab:FT_PH_candidates}).
+This downregulation was consistent across all 13 tissue-experiment combinations examined, including field and growth chamber samples spanning roots, leaves, and shoot apical meristems (Fig~\ref{fig:jmj_cluster}A).
+
+Microsynteny analysis revealed that B73 contains five JMJ paralogs while highland teosinte TIL18 and the landraces PT, CML457, and CML459 each retain only a single ortholog (Fig~\ref{fig:jmj_cluster}B).
+The high sequence identity among B73 paralogs ($>$97\%; Fig~\ref{fig:jmj_cluster}C) indicates recent tandem duplication.
+Under simple dosage scaling, \invfour expression should equal CTRL/5; however, field samples showed only 49 to 61\% of this expectation (linear contrast $t$-test, $\textit{FDR} < 0.05$ for all four tissues).
+Growth chamber data were less consistent (48 to 83\% of expectation, 4/9 tissues significant), suggesting environment-specific regulatory mechanisms beyond baseline copy number effects.
+
+GWAS support links the JMJ cluster to flowering time variation \cite{tibbs-cortes2024}.
+JUMONJI domain proteins function as histone demethylases that remove methyl groups from H3K4, a mark associated with active transcription \cite{klose2007}.
+In Arabidopsis, JMJ homologs regulate flowering time through chromatin modification of floral pathway genes \cite{gan2014}.
+Crow et al.\ \cite{crow2020} listed JMJ demethylases among their consistently differentially expressed genes, though the underlying copy number variation was not characterized.
+Our microsynteny analysis (Fig~\ref{fig:jmj_cluster}B) provides a structural explanation for this shared signal and, combined with independent GWAS support, strengthens JMJ candidacy beyond differential expression alone.
+The \textit{sec6} gene, also identified by Crow et al.\ as consistently DE and encoding an exocyst complex component involved in cytokinesis, emerged as a plant height candidate with GWAS support \cite{peiffer2014} (Table~\ref{tab:FT_PH_candidates}).
+
+
+
 
 \subsection*{Network disruption links chromatin regulators to growth phenotypes}
 
-SAM measurements from two-week-old seedlings revealed that \invfour plants
-have elongated meristems, with a 9\% increase in the shape factor
-($h/r^2 = +2.49 \pm 1.14$ nm$^{-1}$, $p = 0.035$; Fig~\ref{fig:phenotypes}D).
-This early developmental change may underlie the subsequent height and
-flowering differences observed in field-grown plants.
+SAM measurements from two-week-old seedlings revealed that \invfour plants have elongated meristems, with a 9\% increase in the shape factor ($h/r^2 = +2.49 \pm 1.14$ nm$^{-1}$, $p = 0.035$; Fig~\ref{fig:phenotypes}C).
+This early developmental change may underlie the subsequent height and flowering differences observed in field-grown plants.
 
-WGCNA analysis showed that JMJ genes function as network hubs in CTRL
-($k_{Within} = 0.89$--$0.90$) but become peripheral in \invfour
-($k_{Within} = 0.36$--$0.44$; Fig~\ref{fig:wgcna}C). Eleven of 13 modules
-showed significant connectivity loss (one-sample $t$-test, $\textit{FDR} < 0.05$;
-Table~\ref{tab::preservation}), with the pink module---enriched for ribosome
-biogenesis and growth regulation (Table~\ref{tab::pink_module})---showing
-near-complete structural collapse (adjacency correlation $= 0.020$). The
-trans-regulatory network connects JMJ genes to cell proliferation factors
-including \textit{pcna2} and \textit{sec6} (Fig~\ref{fig::DEGnetwork}A),
-suggesting a mechanistic chain: JMJ downregulation $\rightarrow$ altered
-H3K4 methylation $\rightarrow$ growth gene misexpression $\rightarrow$ SAM
-elongation $\rightarrow$ accelerated flowering and increased height.
+WGCNA analysis showed that JMJ genes function as network hubs in CTRL ($k_{Within} = 3.17$ to $3.33$) but become peripheral in \invfour ($k_{Within} = 0.59$ to $0.61$; Fig~\ref{fig:wgcna}C).
+Twelve of 13 modules showed significant connectivity loss (one-sample $t$-test, $\textit{FDR} < 0.05$; Table~\ref{tab::preservation}), with the pink module, enriched for ribosome biogenesis and growth regulation (Table~\ref{tab::pink_module}), showing significant connectivity reduction (mean $\Delta k_{Within} = -1.36$, $p_{adj} = 2.6 \times 10^{-6}$) despite moderate structural preservation ($Z_{summary} = 5.8$).
+The trans-regulatory network connects JMJ genes to cell proliferation factors including \textit{pcna2} and \textit{sec6} (Fig~\ref{fig::transnetwork}A), suggesting a mechanistic chain: JMJ downregulation $\rightarrow$ altered H3K4 methylation $\rightarrow$ growth gene misexpression $\rightarrow$ SAM elongation $\rightarrow$ accelerated flowering and increased height.
+
+The greenyellow module provides complementary evidence for this model.
+With the highest bootstrap support among all modules (LFP $= 0.80$), it contains both \textit{sec6}, the plant height GWAS candidate \cite{peiffer2014}, and \textit{pcna2}, a DNA replication factor marking actively dividing cells (Table~\ref{tab::greenyellow_module}).
+The upregulation of these genes in \invfour ($\log_2 \text{FC} = +2.87$ and $+2.99$, respectively), alongside downregulation of the cell polarity regulator \textit{ropgef14} ($\log_2 \text{FC} = -2.98$), suggests coordinated rewiring of growth-related gene expression consistent with altered cell proliferation dynamics.
+
+The purple module (LFP $= 0.74$, $n = 22$) provides additional support through a distinct pathway.
+This module contains \textit{phi1}/\textit{exo} (\textit{Zm00001eb194020}; $\log_2 \text{FC} = -2.39$), a plant height GWAS candidate \cite{liu2023,peiffer2014}, and shows enrichment for brassinosteroid signaling regulation ($p = 0.022$) and negative regulation of chromatin silencing ($p = 0.016$).
+The convergence of epigenetic and hormone signaling within a single coexpression module suggests that \invfour effects on growth may be mediated through multiple regulatory layers, not solely through JMJ-dependent chromatin modification.
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width= 0.9 \linewidth]{figs/jmjcluster.png}
+\caption{\textbf{The \jmjii/\jmjiv cluster is constitutively downregulated in \invfour and shows lineage-specific expansion in B73.}
+\textbf{(A)} Total JMJ cluster expression (sum of \jmjii + \jmjiv) across tissues and experiments.
+Boxplots show CPM expression in CTRL (gold) and \invfour (purple) genotypes.
+Left: Crow et al. (2020) growth chamber data across 9 tissue types.
+Right: PSU2022 field data across 4 leaf positions.
+Dashed red line indicates expected \invfour expression under copy number scaling (CTRL/5), assuming the single remaining \jmjiv copy produces 1/5 of the total cluster output.
+Red asterisks denote significant deviation from expectation (linear contrast $t$-test, FDR $<$ 0.05: *, $<$ 0.01: **, $<$ 0.001: ***).
+\textbf{(B)} Microsynteny of the JUMONJI gene cluster across five \textit{Zea} genomes.
+From top to bottom: the teosinte TIL18 (\textit{Z. mays} ssp. \textit{mexicana}), the highland landrace Palomero Toluque\~{n}o (PT), and the tropical inbred lines CML457 and CML459 each contain a single \textit{jmj6} ortholog, while B73 (bottom) has an expanded tandem array of five paralogs (\textit{jmj9}, $\psi$?, \textit{jmj6}, \jmjii, \jmjiv).
+Purple ribbons indicate syntenic relationships between \textit{jmj} loci; gray ribbons show conserved flanking genes.
+Coordinates in Mb.
+\textbf{(C)} Transcript structure and annotation of the B73 \textit{jmj} cluster.
+The NAM v5 annotation consolidates \jmjii, \textit{jmj6}, and \textit{jmj9} as alternative transcripts of a single locus (\textit{Zm00001eb191790}), while \jmjiv is annotated separately (\textit{Zm00001eb191820}).
+The putative pseudogene ($\psi$?) retains only a v4 identifier (\textit{Zm00001d051961}).
+Heatmap intensity indicates cDNA sequence identity (97 to 100\%).
+Bottom track shows genomic positions of individual cluster members.}
+\label{fig:jmj_cluster}
+\end{figure*}
+
+\clearpage
 
 \subsection*{Chromosomal inversions maintain coadapted allele complexes}
 
-\invfour exemplifies how chromosomal inversions can facilitate local
-adaptation by maintaining coadapted allele combinations \cite{kirkpatrick2006b}.
-The 15.2 Mb inversion contains 432 annotated genes (Table~\ref{tab:breakpoints})
-and shows suppressed recombination \cite{gonzalez-segovia2019-jy}, ensuring
-that highland-adapted alleles are inherited as a unit. The presence of copy
-number variation within the inversion (JMJ cluster expansion in B73) adds
-structural complexity beyond simple haplotype differences.
+\invfour exemplifies how chromosomal inversions can facilitate local adaptation by maintaining coadapted allele combinations \cite{kirkpatrick2006b}.
+The 15.2~Mb inversion contains 432 annotated genes (Table~\ref{tab:breakpoints}) and shows suppressed recombination \cite{gonzalez-segovia2019-jy}, ensuring that highland-adapted alleles are inherited as a unit.
+Genome-wide analysis of adaptive introgression identified \invfour as the strongest signal for clinal ancestry variation across Mexican elevation gradients, with introgression dating to over 1000 generations ago, consistent with ancient adaptive introgression from \mex rather than contemporary gene flow \cite{calfee2021-mr}.
 
-Highland-associated inversions including \invfour and \textit{Inv9f} are
-prevalent in \mex populations \cite{pyhajarvi2013} and Mexican traditional
-varieties \cite{crow2020} but rare in temperate maize, suggesting that
-multiple structural variants may act in concert for highland adaptation.
-The introgression of \invfour from \mex \cite{calfee2021-mr,hufford2013-gs}
-represents one source of adaptive variation that enabled maize colonization
-of highland environments.
+Megabase-scale inversions that modulate gene expression and contribute to adaptation have now been characterized across diverse taxa.
+The 1.5~Mb inversion at human 17q21.31 acts simultaneously as an eQTL, mQTL, and sQTL for genes within the rearranged region, altering expression, methylation, and splicing patterns that associate with cortical surface area, intracranial volume, and subcortical brain morphology \cite{wang2023inversions}.
+This demonstrates that balanced rearrangements can modulate regulatory architecture rather than gene dosage, paralleling our finding that \invfour disrupts coexpression networks rather than simply altering transcript levels of breakpoint-proximal genes.
+In \textit{Mimulus guttatus}, a 6.7~Mb inversion on chromosome 8 modulates \textit{GA20ox2} expression in the floral shoot apex, affecting flowering time and growth architecture in a tissue-specific manner \cite{kollar2025}; this inversion remains the only case definitively linked to local adaptation via field reciprocal transplant experiments \cite{lowry2010}.
+The parallel between \textit{Mimulus} and our results is striking: both inversions modulate expression of growth-regulatory genes in meristematic tissue, producing flowering time and stature phenotypes.
+In sunflower, inversions contribute disproportionately to parallel dune ecotype divergence across independent populations, with seed size QTLs clustering within inversions more often than expected by chance \cite{huang2025}, demonstrating that inversions serve as vehicles for repeated adaptation to novel environments.
 
-\subsection*{Limitations and future directions}
+The mechanisms by which inversions modulate gene expression extend beyond simple breakpoint disruption.
+In yeast, engineered inversions cause expression changes in up to 13\% of genes through indirect mechanisms, including upregulation of a chromatin remodeling gene near one breakpoint that cascades into genome-wide transcriptional perturbation \cite{naseeb2016}.
+Yet yeast phenotypes remain largely buffered, suggesting that network robustness compensates for transcriptional disruption.
+In \invfour, expression changes correlate with quantitative phenotypes (flowering, height, meristem shape), indicating that the network perturbation exceeds the buffering capacity, or that the coordinated expression changes are themselves the adaptive target of selection.
+In \textit{Mimulus}, expression divergence within the chromosome 8 inversion evolved gradually through accumulated mutations rather than breakpoint effects \cite{kollar2025}.
+Similarly, our DEGs are not enriched inside versus outside \invfour (OR $= 1.02$, Table~\ref{tab:DEGs_distro}), consistent with trans-regulatory effects from hub genes rather than position effects.
+Across taxa, the average adaptive inversion spans 8.4~Mb \cite{wellenreuther2018}; \invfour at 15.2~Mb exceeds this average, consistent with the prediction that larger inversions are favored when they protect more coadapted loci from recombination.
 
-Several limitations constrain interpretation of our results. First, 24 Mb of
-flanking introgression persists after eight backcross generations
-(Fig~\ref{fig::design}F--G), and DEG enrichment does not differ between
-\invfour proper and flanking regions (OR $= 1.02$, $p = 0.95$;
-Table~\ref{tab:DEGs_distro}). Second, only B73 was tested as the recurrent
-parent; effects may differ in other genetic backgrounds. Third, the high
-sequence identity among JMJ paralogs ($>$97\%; Fig~\ref{fig:jmj_cluster}C)
-complicates individual gene attribution. Fourth, our evidence is correlative;
-functional validation is needed to confirm causal relationships.
+Highland-associated inversions including \invfour and \textit{Inv9f} are prevalent in \mex populations \cite{pyhajarvi2013} and Mexican traditional varieties \cite{crow2020} but rare in temperate maize.
+The identification of \textit{Inv9f} as a second highland-adaptive inversion with independent clinal introgression \cite{calfee2021-mr} suggests that multiple structural variants act in concert for highland adaptation.
+The presence of copy number variation within \invfour (JMJ cluster expansion in B73) adds structural complexity beyond simple haplotype differences, as the introgressed \mex haplotype carries a single JMJ ortholog while the B73 haplotype contains five tandem paralogs (Fig~\ref{fig:jmj_cluster}B).
 
-Future work should include heterologous overexpression of JMJ genes in
-Arabidopsis to test effects on flowering time (CRISPR knockout in maize
-is complicated by potential compensation among paralogs % [PLACEHOLDER: cite compensation in tandem duplicates]
-). Additional genetic backgrounds would test the generality of \invfour
-effects. ChIP-seq for H3K4me3 could validate the predicted chromatin
-changes. Finally, Hi-C analysis could test whether \invfour alters 3D
-chromatin organization and contact points on chromosome 4, potentially
-explaining the environment-specific JMJ regulatory effects we observed.
+Our results remain correlative: 24 Mb of flanking introgression persists after eight backcross generations (Fig~\ref{fig::design}F, G), only B73 was tested as the recurrent parent, and the high sequence identity among JMJ paralogs ($>$97\%; Fig~\ref{fig:jmj_cluster}C) complicates individual gene attribution.
+Functional validation through heterologous overexpression of JMJ genes in Arabidopsis, ChIP-seq for H3K4me3, and Hi-C analysis of 3D chromatin organization on chromosome 4 would strengthen the mechanistic model proposed here.
+
 
 \section{Materials and Methods}
 \label{sec:materials:methods}
 
-\subsection{\invfour Near Introgressed Lines, growth conditions, experimental 
+\subsection{\invfour Near Isogenic Lines, growth conditions, experimental
 design, and phenotype measurements}
 
-To measure the effects of the \invfour in plant field phenotypes and their 
-phosphorus starvation response transcriptome, we used a highland traditional 
-variety carrying the Highland haplotype of \invfour corresponding to the 
-inverted karyotype. The accession Michoacán 21 (referred to as Mi21), from the 
-Mexican Cónico group, was obtained from the International Maize and Wheat 
-Improvement Center (CIMMYT). In contrast, the reference genome of the temperate 
-inbred B73, the recurrent parent for introgression, carries the lowland 
-haplotype corresponding to the standard non-inverted karyotype at \invfour.
+To measure the effects of the \invfour in plant field phenotypes and their phosphorus starvation response transcriptome, we used a highland traditional variety carrying the Highland haplotype of \invfour corresponding to the inverted karyotype.
+The accession Michoacán 21 (referred to as Mi21), from the Mexican Cónico group, was obtained from the International Maize and Wheat Improvement Center (CIMMYT).
+In contrast, the reference genome of the temperate inbred B73, the recurrent parent for introgression, carries the lowland haplotype corresponding to the standard non-inverted karyotype at \invfour.
 
-From the cross of Mi21 with B73 one F1 individual was backcrossed to B73 for 
-six generations. We selected lines carrying \invfour with a diagnostic SNP 
-during each cycle using a cleaved amplified polymorphic sequence (CAPS) marker. 
-The marker SNP is PZE04175660223 located at position 4:181637780 in the NAM 
-B73v5 \textit{Zea mays} genome assembly. Amplification of the polymorphic site 
-was done with the following primer pair: 
-\textit{CTGAGCAGGAGATGATGGCCACTC} and 
-\textit{GGAAAGGACATAAAAGAAAGGTGCA}, and subsequently cleaved by \textit{HinfI}. 
-Plants were genotyped using the CASP marker for selecting heterozygous plants 
-at BC6S2 after selfing seeds of \invfour and CTRL homozygous individuals were 
-selected for the field trial.
+From the cross of Mi21 with B73 one F1 individual was backcrossed to B73 for six generations.
+We selected lines carrying \invfour with a diagnostic SNP during each cycle using a cleaved amplified polymorphic sequence (CAPS) marker.
+The marker SNP is PZE04175660223 located at position 4:181637780 in the NAM B73v5 \textit{Zea mays} genome assembly.
+Amplification of the polymorphic site was done with the following primer pair: \textit{CTGAGCAGGAGATGATGGCCACTC} and \textit{GGAAAGGACATAAAAGAAAGGTGCA}, and subsequently cleaved by \textit{HinfI}.
+Plants were genotyped using the CAPS marker for selecting heterozygous plants at BC6S2 after selfing seeds of \invfour and CTRL homozygous individuals were selected for the field trial.
 
-Plants were planted on May 26 2022 at the Russell E. Larson Agricultural 
-Research Farm in Rock Springs, Pennsylvania (40°42'36" N 77°57'0" W, 366 
-m.a.s.l.) in soil classified as a Hagerstown silt loam (fine, mixed, semiactive, 
-mesic Typic Hapludalf). Experimental conditions were similar to previously 
-described \cite{strock2018}. The experiment had a complete block design with 
-two phosphorus (P) levels. Low-P fields (5 ppm Melich-3 Phosphorus) and high-P 
-fields (36 ppm Melich-3 Phosphorus) were divided into smaller blocks. Three 
-rows per block were planted with a mean stand count of 8 plants per plot, and 
-the plants from the center row were selected for measurements to avoid border 
-effects. Fields received fertilization based on treatment requirements. Drip 
-irrigation was provided during dry periods. Each genotype was replicated four 
-times within its P treatment.
+Plants were planted on May 26 2022 at the Russell E.
+Larson Agricultural Research Farm in Rock Springs, Pennsylvania (40°42'36" N 77°57'0" W, 366 m.a.s.l.) in soil classified as a Hagerstown silt loam (fine, mixed, semiactive, mesic Typic Hapludalf).
+Experimental conditions were similar to previously described \cite{strock2018}.
+The experiment had a complete block design with two phosphorus (P) levels.
+Low-P fields (5 ppm Mehlich-3 Phosphorus) and high-P fields (36 ppm Mehlich-3 Phosphorus) were divided into smaller blocks.
+Three rows per block were planted with a mean stand count of 8 plants per plot, and the plants from the center row were selected for measurements to avoid border effects.
+Fields received fertilization based on treatment requirements.
+Drip irrigation was provided during dry periods.
+Each genotype was replicated four times within its P treatment.
 
 \subsection{Phenotype analysis}
 
-For stover mass growth curves, a different plant at each time point 40, 50, 60,
-and harvest, 121 days after planting (DAP), was collected, dried, and weighed
-for the same row. Stover dry mass data was fitted to a logistic growth model
-using the R package \textit{Growthcurver} \cite{sprouffske2016}. Maximum stover
-dry weight was estimated as the maximum over the four time points rather than
-dry weight at harvest. Ear measurements were taken for one ear per row at
-harvest.
+For stover mass growth curves, a different plant at each time point 40, 50, 60, and harvest, 121 days after planting (DAP), was collected, dried, and weighed for the same row.
+Stover dry mass data was fitted to a logistic growth model using the R package \textit{Growthcurver} \cite{sprouffske2016}.
+Maximum stover dry weight was estimated as the maximum over the four time points rather than dry weight at harvest.
+Ear measurements were taken for one ear per row at harvest.
 
-We used a two-stage approach to estimate \invfour effects on field phenotypes
-while accounting for spatial heterogeneity. In the first stage, we applied
-P-spline analysis of spatial trends (SpATS) \cite{rodriguez-alvarez2018}
-implemented via the \texttt{statgenHTP::fitModels()} function
-\cite{millet2025}. For each phenotype $y$, SpATS fits a mixed model
-that decomposes spatial variation into smooth bivariate surfaces using
-two-dimensional P-splines over field row and column coordinates:
+We used a two-stage approach to estimate \invfour effects on field phenotypes while accounting for spatial heterogeneity.
+In the first stage, we applied P-spline analysis of spatial trends (SpATS) \cite{rodriguez-alvarez2018} implemented via the \texttt{statgenHTP::fitModels()} function \cite{millet2025}.
+For each phenotype $y$, SpATS fits a mixed model that decomposes spatial variation into smooth bivariate surfaces using two-dimensional P-splines over field row and column coordinates:
 
 \begin{eqnarray}
 \label{eq:pheno_model}
 y_{ijr} = \mu + \text{Rep}_i + \text{P}_j + f(\text{row}, \text{col}) + \varepsilon_{ijr}
 \end{eqnarray}
 
-where $\mu$ is the overall mean, $\text{Rep}_i$ is the replicate effect,
-$\text{P}_j$ is the phosphorus treatment effect, and
-$f(\text{row}, \text{col})$ is a smooth bivariate spatial surface estimated
-via penalized spline ANOVA (PSANOVA). Notably, genotype was not included in
-this model, so genotypic effects are preserved in the spatially-corrected
-values extracted using the \texttt{getCorrected()} function.
+where $\mu$ is the overall mean, $\text{Rep}_i$ is the replicate effect, $\text{P}_j$ is the phosphorus treatment effect, and $f(\text{row}, \text{col})$ is a smooth bivariate spatial surface estimated via penalized spline ANOVA (PSANOVA).
+Notably, genotype was not included in this model, so genotypic effects are preserved in the spatially-corrected values extracted using the \texttt{getCorrected()} function.
 
-In the second stage, we tested for \invfour effects on these spatially-corrected
-values. For each phenotype, we performed two-sample \textit{t}-tests comparing
-\invfour and control genotypes, with data pooled across phosphorus treatments.
-This approach tests whether \invfour affects phenotypes independent of
-phosphorus availability. P-values were adjusted for multiple comparisons using
-the Benjamini-Hochberg false discovery rate (FDR) method \cite{benjamini1995}.
-Phenotypes with adjusted $p < 0.05$ were considered significantly affected by
-\invfour.
+In the second stage, we tested for \invfour effects on these spatially-corrected values.
+For each phenotype, we performed two-sample \textit{t}-tests comparing \invfour and control genotypes, with data pooled across phosphorus treatments.
+This approach tests whether \invfour affects phenotypes independent of phosphorus availability.
+P-values were adjusted for multiple comparisons using the Benjamini-Hochberg false discovery rate (FDR) method \cite{benjamini1995}.
+Phenotypes with adjusted $p < 0.05$ were considered significantly affected by \invfour.
 
-Days to anthesis (DTA) and days to silking (DTS) were converted to growing
-degree days (GDDA and GDDS, respectively) using daily temperature records from
-the Rock Springs weather station with a base temperature of 10°C and an upper
-threshold of 30°C.
+Days to anthesis (DTA) and days to silking (DTS) were converted to growing degree days (GDDA and GDDS, respectively) using daily temperature records from the Rock Springs weather station with a base temperature of 10°C and an upper threshold of 30°C.
 
 \subsection{Genotype $\times$ Environment analysis}
 
-To assess the consistency of \invfour effects across environments, we analyzed
-phenotype data from three location-year combinations: Pennsylvania 2022
-(PSU2022), Pennsylvania 2025 (PSU2025), and North Carolina 2025 (CLY2025). All
-environments used the MI21 donor background. Phenotypes analyzed included plant
-height (PH), days to anthesis (DTA), days to silking (DTS), and their
-thermal-time equivalents (GDDA, GDDS) calculated using growing degree days with
-a base temperature of 10°C and upper threshold of 30°C.
+To assess the consistency of \invfour effects across environments, we analyzed phenotype data from three location-year combinations: Pennsylvania 2022 (PSU2022), Pennsylvania 2025 (PSU2025), and North Carolina 2025 (CLY2025).
+All environments used the MI21 donor background.
+Phenotypes analyzed included plant height (PH), days to anthesis (DTA), days to silking (DTS), and their thermal-time equivalents (GDDA, GDDS) calculated using growing degree days with a base temperature of 10°C and upper threshold of 30°C.
 
-Spatially corrected phenotype values were obtained for each environment using
-SpATS as described above. We then performed two-way ANOVA with genotype
-(\invfour vs. control) and environment as fixed factors:
+Spatially corrected phenotype values were obtained for each environment using SpATS as described above.
+We then performed two-way ANOVA with genotype (\invfour vs. control) and environment as fixed factors:
 
 \begin{eqnarray}
 \label{eq:gxe_model}
 y_{ijk} = \mu + G_i + E_j + (G \times E)_{ij} + \varepsilon_{ijk}
 \end{eqnarray}
 
-where $G_i$ is the genotype effect, $E_j$ is the environment effect, and
-$(G \times E)_{ij}$ is the genotype-by-environment interaction. Effect sizes
-were quantified using partial eta-squared ($\eta^2_p$) for ANOVA effects and
-Cohen's $d$ for pairwise genotype comparisons within each environment. Marginal
-means and contrasts were estimated using the \textit{emmeans} package
-\cite{lenth2023}. P-values were adjusted for multiple testing using the
-Benjamini-Hochberg FDR method \cite{benjamini1995}.
+where $G_i$ is the genotype effect, $E_j$ is the environment effect, and $(G \times E)_{ij}$ is the genotype-by-environment interaction.
+Effect sizes were quantified using partial eta-squared ($\eta^2_p$) for ANOVA effects and Cohen's $d$ for pairwise genotype comparisons within each environment.
+Marginal means and contrasts were estimated using the \textit{emmeans} package \cite{lenth2023}.
+P-values were adjusted for multiple testing using the Benjamini-Hochberg FDR method \cite{benjamini1995}.
 
-To examine temperature sensitivity of \invfour effects, we correlated genotype
-effect sizes (Cohen's $d$) with mean environmental temperature during the first
-100 days after planting, calculated from NASA POWER hourly temperature data.
+To examine temperature sensitivity of \invfour effects, we correlated genotype effect sizes (Cohen's $d$) with mean environmental temperature during the first 100 days after planting, calculated from NASA POWER hourly temperature data.
 
 \subsection{Internode length measurements}
 
-To characterize the effect of \invfour on plant architecture, we measured
-internode lengths in the CLY2025 field experiment. At physiological maturity,
-plants were harvested and internodes were measured sequentially from the
-tassel-bearing node (position 1) downward. Internode position was recorded both
-as absolute node number (from ground level) and as position from the top (from
-tassel). The ear-bearing node was marked for each plant.
+To characterize the effect of \invfour on plant architecture, we measured internode lengths in the CLY2025 field experiment.
+At physiological maturity, plants were harvested and internodes were measured sequentially from the tassel-bearing node (position 1) downward.
+Internode position was recorded both as absolute node number (from ground level) and as position from the top (from tassel).
+The ear-bearing node was marked for each plant.
 
-Internode profiles were analyzed separately for each donor background (MI21 and
-TMEX). For the TMEX background, measurements were limited to the top 10
-internodes due to plant architecture differences. Within each donor, we
-compared \invfour and control genotypes using two-sample \textit{t}-tests for
-total node count. Internode length profiles were visualized by plotting length
-against position from top, with individual plant trajectories shown.
+Internode profiles were analyzed separately for each donor background (MI21 and TMEX).
+For the TMEX background, measurements were limited to the top 10 internodes due to plant architecture differences.
+Within each donor, we compared \invfour and control genotypes using two-sample \textit{t}-tests for total node count.
+Internode length profiles were visualized by plotting length against position from top, with individual plant trajectories shown.
 
-To validate the internode measurements against whole-plant phenotypes, we
-compared the sum of measured internode lengths with directly measured plant
-height (PH) from field records using linear regression. Agreement between
-methods was assessed by $R^2$ and slope deviation from unity.
+To validate the internode measurements against whole-plant phenotypes, we compared the sum of measured internode lengths with directly measured plant height (PH) from field records using linear regression.
+Agreement between methods was assessed by $R^2$ and slope deviation from unity.
 
 \subsection{Tissue sampling, RNA extraction, and sequencing}
 
-We sampled the plants at 63 DAP when we estimated them to be between v10 to v12 
-developmental stages. We took tissue from he first leaf with a fully developed 
-collar, or first leaf before the flag leaf, and every other leaf below for a 
-total of four sampled leaves per plant. These leaves were numbered sequentially 
-from 1 (most apical) to 4 (most basal). We used four replicate plants per 
-combination of P treatment and \invfour genotype for a total of 64 tissue 
-samples.
+We sampled the plants at 63 DAP when we estimated them to be between v10 to v12 developmental stages.
+We took tissue from the first leaf with a fully developed collar, or first leaf before the flag leaf, and every other leaf below for a total of four sampled leaves per plant.
+These leaves were numbered sequentially from 1 (most apical) to 4 (most basal).
+We used four replicate plants per combination of P treatment and \invfour genotype for a total of 64 tissue samples.
 
-We took ten disc samples from the leaf tips with a tissue puncher and 
-immediately froze the tissue in 1.5 mL tubes with two steel beads precooled 
-with liquid nitrogen and kept in dry ice until stored at -80°C. We extracted 
-total RNA with the QIAGEN RNAeasy Plant Mini Kit RNA extraction kit following 
-manufacturer procedures (QIAGEN 74904), and RNA samples were quantified in 
-nanodrop and sent to the NCSU Core Genomics Laboratory for sequencing. 
-Following QC in Bioanalyzer, Illumina libraries were prepared and sequenced in 
-a lane of Novaseq according to manufacturer recommendations.
+We took ten disc samples from the leaf tips with a tissue puncher and immediately froze the tissue in 1.5 mL tubes with two steel beads precooled with liquid nitrogen and kept in dry ice until stored at -80°C.
+We extracted total RNA with the QIAGEN RNAeasy Plant Mini Kit RNA extraction kit following manufacturer procedures (QIAGEN 74904), and RNA samples were quantified in nanodrop and sent to the NCSU Core Genomics Laboratory for sequencing.
+Following QC in Bioanalyzer, Illumina libraries were prepared and sequenced in a lane of Novaseq according to manufacturer recommendations.
 
 \subsection{Plant genotyping}
 
-We followed \cite{brouard2022} for GATK-based RNAseq genotyping of 15 plant 
-samples represented by 60 leaf libraries. Briefly, Illumina short reads were 
-mapped to the NAM5 Zea mays B73 genome \cite{hufford2021} using \textit{STAR} 
-\cite{dobin2013}, then we marked duplicates in the resulting BAM alignments, 
-split reads at intron-exon junctions and recalibrated sequence quality per leaf 
-library.
+We followed \cite{brouard2022} for GATK-based RNAseq genotyping of 15 plant samples represented by 60 leaf libraries.
+Briefly, Illumina short reads were mapped to the NAM5 Zea mays B73 genome \cite{hufford2021} using \textit{STAR} \cite{dobin2013}, then we marked duplicates in the resulting BAM alignments, split reads at intron-exon junctions and recalibrated sequence quality per leaf library.
 
-At this point, we used HaploytypeCallerfor for generating gvcfs per plant 
-identified by field row id ($\sim 4$ libraries per plant). We did joint sample 
-genotyping afterward with \textit{genotypeGVCFs}. Then we filtered for variant 
-quality (\textit{window 35, cluster, QD < 2.0, FS > 30.0, SOR > 3.0, MQ < 
-40.0}) for the genotypes and $50\%$ marker completion for individuals. This 
-resulted in 200000 markers with $85\%$ complete data for 13 plants. Finally, we 
-used TASSEL5 K Nearest Neighbour imputing, producing a matrix of 19668 markers 
-at $99.84\%$ completion. Shell scripts are available at the 
-\href{https://github.com/sawers-rellan-labs/inv4m} 
-{\invfour github repository}
+At this point, we used HaplotypeCaller for generating gvcfs per plant identified by field row id ($\sim 4$ libraries per plant).
+We did joint sample genotyping afterward with \textit{genotypeGVCFs}.
+Then we filtered for variant quality (\textit{window 35, cluster, QD < 2.0, FS > 30.0, SOR > 3.0, MQ < 40.0}) for the genotypes and $50\%$ marker completion for individuals.
+This resulted in 200000 markers with $85\%$ complete data for 13 plants.
+Finally, we used TASSEL5 K Nearest Neighbour imputing, producing a matrix of 19668 markers at $99.84\%$ completion.
+Shell scripts are available at the \href{https://github.com/sawers-rellan-labs/inv4m} {\invfour github repository}
 
 \subsection{Differential gene expression analysis}
 
-We aligned reads to the maize Zm-B73-REFERENCE-NAM-5.0 genome using
-\textit{kallisto} \cite{bray2016}. The alternative transcript alignment was
-turned into counts per gene. We used \textit{voom} to calculate variance
-weights according to gene expression levels and counts were converted to
-$\log_2(\text{CPM})$ \cite{ritchie2015}.
+We aligned reads to the maize Zm-B73-REFERENCE-NAM-5.0 genome using \textit{kallisto} \cite{bray2016}.
+The alternative transcript alignment was turned into counts per gene.
+We used \textit{voom} to calculate variance weights according to gene expression levels and counts were converted to $\log_2(\text{CPM})$ \cite{ritchie2015}.
 
-We made a multivariate multiple regression for gene expression using
-\textit{limma}. For the log-transformed expression $Y_{ijrs}$, from leaf
-stage $s$, in plant $r$, under phosphorus treatment $i$, with genotype $j$,
-we have:
+We made a multivariate multiple regression for gene expression using \textit{limma}.
+For the log-transformed expression $Y_{ijrs}$, from leaf stage $s$, in plant $r$, under phosphorus treatment $i$, with genotype $j$, we have:
 
 \begin{eqnarray}
 \begin{aligned}
@@ -1277,201 +1089,126 @@ u_r \sim \mathcal{N}(0, \sigma^2_u), \quad
 \varepsilon_{ijrs} \sim \mathcal{N}(0, \phi_{ijrs}\sigma^2)
 \end{eqnarray}
 
-The term $u_r$ represents a plant-level random effect that accounts for
-non-independence among leaves sampled from the same individual. This
-approach correctly treats plants (n=4 per treatment $\times$ genotype) as
-biological replicates, with leaves as correlated sub-samples within each
-plant. The consensus within-plant correlation was estimated using
-\textit{duplicateCorrelation} in \textit{limma} and incorporated into
-model fitting.
+The term $u_r$ represents a plant-level random effect that accounts for non-independence among leaves sampled from the same individual.
+This approach correctly treats plants (n=4 per treatment $\times$ genotype) as biological replicates, with leaves as correlated sub-samples within each plant.
+The consensus within-plant correlation was estimated using \textit{duplicateCorrelation} in \textit{limma} and incorporated into model fitting.
 
-The leaf stage ($\text{Leaf}_s$) was modeled as a centered numerical
-variable ($s \in \{1,2,3,4\}$), so the intercept represents expression
-at the average leaf stage. The precision weights $\phi_{ijrs}$ from the
-voom transformation capture heteroskedastic measurement error across
-samples.
+The leaf stage ($\text{Leaf}_s$) was modeled as a centered numerical variable ($s \in \{1,2,3,4\}$), so the intercept represents expression at the average leaf stage.
+The precision weights $\phi_{ijrs}$ from the voom transformation capture heteroskedastic measurement error across samples.
 
-We adjusted the p-values for the t-tests of the linear model coefficients
-as false discovery rates (FDR). Genes whose effect had FDR $< 0.05$ were
-deemed differentially expressed. For phosphorus treatment ($\beta_2$) and
-\invfour genotype ($\beta_3$), genes with
-$|\log_2(\text{FC})| > 1.5$ were considered high-confidence DEGs. For the
-leaf stage effect ($\beta_1$) and interaction terms, a threshold of
-$|\log_2(\text{FC})| > 0.5$ was applied, corresponding to $>2.1$-fold
-total change across the leaf gradient. R scripts and expression data are
-available at the
-\href{https://github.com/sawers-rellan-labs/inv4m}{\invfour
-github repository}.
+We adjusted the p-values for the t-tests of the linear model coefficients as false discovery rates (FDR).
+Genes whose effect had FDR $< 0.05$ were deemed differentially expressed.
+For phosphorus treatment ($\beta_2$) and \invfour genotype ($\beta_3$), genes with $|\log_2(\text{FC})| > 1.5$ were considered high-confidence DEGs.
+For the leaf stage effect ($\beta_1$) and interaction terms, a threshold of $|\log_2(\text{FC})| > 0.5$ was applied, corresponding to $>2.8$-fold total change across the leaf gradient.
+R scripts and expression data are available at the \href{https://github.com/sawers-rellan-labs/inv4m}{\invfour github repository}.
 
 \subsection{WGCNA module perturbation analysis}
 
-To assess how \invfour disrupts gene coexpression structure, we performed weighted
-gene co-expression network analysis (WGCNA) \cite{langfelder2008} on the 465 DEGs
-(FDR $< 0.05$) separately for CTRL and \invfour genotypes using field expression
-data only. Networks were constructed using a signed adjacency with soft-thresholding
-power selected to achieve approximate scale-free topology ($R^2 > 0.8$).
+To assess how \invfour disrupts gene coexpression structure, we performed weighted gene co-expression network analysis (WGCNA) \cite{langfelder2008} on the 465 DEGs (FDR $< 0.05$) using field expression data only.
+Signed weighted networks were constructed using soft-thresholding power selected via \texttt{pickSoftThreshold()} to achieve approximate scale-free topology ($R^2 > 0.8$).
+Both CTRL and \invfour conditions independently converged on $\beta = 18$, which was used as a shared power for all downstream analyses to ensure comparability.
 
-To obtain robust module assignments, we adapted the consensus network approach of
-\cite{shahan2018}, which uses gene subsampling rather than sample bootstrapping to
-identify relationships that are stable across parameter choices. In each of 1000
-iterations, 80\% of genes were randomly subsampled without replacement and WGCNA
-clustering was performed with \textit{minModuleSize} uniformly sampled from 10--35
-to avoid parameterization bias. Following \cite{shahan2018}, the consensus adjacency
-matrix $A$ was computed as:
+Reference coexpression modules were defined from CTRL samples using the consensus network approach of \cite{shahan2018}, which uses gene subsampling to identify relationships that are stable across parameter choices.
+In each of 1000 iterations, 80\% of genes were randomly subsampled without replacement and WGCNA clustering was performed with \textit{minModuleSize} uniformly sampled from 10 to 35 to avoid parameterization bias.
+Following \cite{shahan2018}, the consensus co-clustering matrix $C$ was computed as:
 \begin{equation}
-A_{ij} = \frac{\text{number of times gene } i \text{ clusters with gene } j}{\text{number of times gene } i \text{ is subsampled with gene } j}
+C_{ij} = \frac{\text{number of times gene } i \text{ clusters with gene } j}{\text{number of times gene } i \text{ is subsampled with gene } j}
 \end{equation}
-where $A_{ij} \in [0,1]$ represents the proportion of opportunities in which genes
-$i$ and $j$ were assigned to the same module. Unlike \cite{shahan2018} who randomized
-power transformation across iterations, we fixed soft power at the value fitted to
-our data's scale-free topology and varied only \textit{minModuleSize} given our
-smaller gene set. Final modules were identified by hierarchical clustering on the
-consensus adjacency matrix (\textit{deepSplit} = 4).
+where $C_{ij} \in [0,1]$ represents the proportion of opportunities in which genes $i$ and $j$ were assigned to the same module.
+Unlike \cite{shahan2018} who randomized power transformation across iterations, we fixed soft power at $\beta = 18$ and varied only \textit{minModuleSize} given our smaller gene set.
+Final CTRL reference modules were identified by hierarchical clustering on $C$ (\textit{deepSplit} = 4).
 
-Module stability was assessed using 1000 bootstrap iterations, calculating the
-proportion of iterations in which each module was recovered with $\geq 80\%$ gene
-overlap (Jaccard index $\geq 0.8$). Module eigengenes were computed as the first
-principal component of each module's expression matrix.
+Module stability was assessed using 1000 independent bootstrap iterations (separate from the consensus iterations above), calculating the Largest Fragment Proportion (LFP), the proportion of each module's genes captured by the largest bootstrap fragment.
+Module eigengenes were computed as the first principal component of each module's expression matrix.
 
-Network perturbation was quantified by comparing intramodular connectivity
-($k_{Within}$) between CTRL and \invfour networks for genes assigned to CTRL
-consensus modules. Connectivity change was calculated as $\Delta k_{Within} =
-k_{Within}^{Inv4m} - k_{Within}^{CTRL}$, where negative values indicate connectivity
-loss in \invfour. Hub genes were identified as the top 5 genes per module ranked by
-$k_{Within}$ in the CTRL network.
+Network perturbation was quantified by comparing standard intramodular connectivity ($k_{Within}$) between CTRL and \invfour networks for genes assigned to CTRL consensus modules.
+For each genotype, signed weighted adjacency matrices were computed from the expression data using the shared soft-thresholding power ($\beta = 18$).
+Intramodular connectivity was calculated using \texttt{intramodularConnectivity()} \cite{langfelder2008}:
+\begin{equation}
+k_{Within}(i) = \sum_{j \in M_i, j \neq i} a_{ij}
+\end{equation}
+where $a_{ij}$ is the signed adjacency between genes $i$ and $j$, and $M_i$ is the set of genes in the same module as gene $i$.
+Connectivity change was calculated as $\Delta k_{Within} = k_{Within}^{Inv4m} - k_{Within}^{CTRL}$, where negative values indicate connectivity loss in \invfour.
+Module preservation was assessed using \texttt{modulePreservation()} \cite{langfelder2011} with 1000 label permutations, yielding $Z_{summary}$ statistics (thresholds: $< 2$ = not preserved, $2$ to $10$ = moderate, $> 10$ = strong).
+Hub genes were identified as the top 5 genes per module ranked by $k_{Within}$ in the CTRL network.
 
-Gene Ontology enrichment analysis was performed for each module using
-\textit{clusterProfiler} \cite{yu2012}. Semantic redundancy was reduced using
-\textit{rrvgo} \cite{sayols2023} with a similarity threshold of 0.7, and the top
-Biological Process term per module was used to annotate the connectivity change
-boxplot.
+Gene Ontology enrichment analysis was performed for each module using \textit{clusterProfiler} \cite{yu2012}.
+Semantic redundancy was reduced using \textit{rrvgo} \cite{sayols2023} with a similarity threshold of 0.7, and the top Biological Process term per module was used to annotate the connectivity change boxplot.
 
 \subsection{Trans coexpression network analysis}
 
-To identify genes regulated in \textit{trans} by \invfour, we constructed a
-bipartite co-expression network linking DEGs within the introgressed region
-(\textit{cis} regulators) to DEGs located elsewhere in the genome (\textit{trans}
-targets). Pearson correlation coefficients were calculated between all
-\textit{cis}-\textit{trans} gene pairs using $\log_2(\text{CPM})$ normalized
-expression values. Edges were retained if $|r| > 0.5$ and the correlation was
-significant (\textit{p} $< 0.005$).
+To identify genes regulated in \textit{trans} by \invfour, we constructed a bipartite co-expression network linking DEGs within the introgressed region (\textit{cis} regulators) to DEGs located elsewhere in the genome (\textit{trans} targets).
+Pearson correlation coefficients were calculated between all \textit{cis}-\textit{trans} gene pairs using $\log_2(\text{CPM})$ normalized expression values.
+Edges were retained if the correlation was significant after FDR correction ($q < 0.05$).
+Prior to network construction, we excluded \textit{trans} targets carrying SNPs in linkage disequilibrium with the \invfour tagging marker (Pearson correlation FDR $< 0.005$; see Section~3.1), which removed 2 of 39 \textit{trans} DEGs (\textit{Zm00001eb070810} on chromosome~2 and \textit{tip4c} on chromosome~3).
 
-To distinguish \invfour-specific effects from flanking introgression effects, we
-applied a strongest-regulator criterion: for each \textit{trans} target, we
-identified the \textit{cis} regulator with the highest absolute correlation.
-Targets were assigned to the \invfour network only if their strongest regulator
-was located within the 15 Mb inversion proper, not in the flanking introgressed
-regions. This approach recovered 50 genes in the \invfour trans-regulatory
-network (22 upregulated, 28 downregulated).
+To distinguish \invfour-specific effects from flanking introgression effects, we applied a strongest-regulator criterion: for each \textit{trans} target, we identified the \textit{cis} regulator with the highest absolute correlation.
+Targets were assigned to the \invfour network only if their strongest regulator was located within the 15 Mb inversion proper, not in the flanking introgressed regions.
+This approach recovered 50 genes in the \invfour trans-regulatory network (22 upregulated, 28 downregulated).
 
-To validate our co-expression edges against known regulatory relationships, we
-queried the MaizeNetome database \cite{feng2023}, which provides genome-wide
-gene co-expression networks derived from 7,603 maize RNA-seq samples. Because
-the MaizeNetome search interface limits batch queries, we retrieved edges in
-three batches using B73 NAM v4 gene identifiers: (1) left flanking region
-(upstream of \invfour), (2) \invfour proper (the 15 Mb inversion), and
-(3) right flanking region (downstream of \invfour). Gene identifiers were
-converted from B73 NAM v4 to v5 using published correspondence tables
-\cite{hufford2021}. Edges present in MaizeNetome were classified as
-``Reference'' (representing conserved co-expression relationships detected
-across diverse maize tissues and genotypes), while edges absent from
-MaizeNetome were classified as ``Novel'' (\invfour-specific). Of the 552 edges
-in the \invfour trans-regulatory network, 16 (2.9\%) were Reference edges and
-536 (97.1\%) were Novel edges, indicating that \invfour creates largely novel
-co-expression relationships not observed in the broader maize transcriptome.
+To validate our co-expression edges against known regulatory relationships, we queried the MaizeNetome database \cite{feng2023}, which provides genome-wide gene co-expression networks derived from 7,603 maize RNA-seq samples.
+Because the MaizeNetome search interface limits batch queries, we retrieved edges in three batches using B73 NAM v4 gene identifiers: (1) left flanking region (upstream of \invfour), (2) \invfour proper (the 15 Mb inversion), and (3) right flanking region (downstream of \invfour).
+Gene identifiers were converted from B73 NAM v4 to v5 using published correspondence tables \cite{hufford2021}.
+Edges present in MaizeNetome were classified as ``Reference'' (representing conserved co-expression relationships detected across diverse maize tissues and genotypes), while edges absent from MaizeNetome were classified as ``Novel'' (\invfour-specific).
+Of the 552 edges in the \invfour trans-regulatory network, 16 (2.9\%) were Reference edges and 536 (97.1\%) were Novel edges, indicating that \invfour creates largely novel co-expression relationships not observed in the broader maize transcriptome.
 
-Networks were visualized as minimum spanning trees (MST) constructed on
-standardized Euclidean distance derived from mutual information:
-$MI = 0.5 \times \log_2(1/(1-r^2))$. Edge polarity (concordant vs. discordant
-expression change) was indicated by arrow or bar symbols, respectively.
+Networks were visualized as minimum spanning trees (MST) constructed on standardized Euclidean distance derived from mutual information: $MI = 0.5 \times \log_2(1/(1-r^2))$.
+Edge polarity (concordant vs. discordant expression change) was indicated by arrow or bar symbols, respectively.
 
-Gene Ontology enrichment analysis was performed on the trans network using
-\textit{clusterProfiler} \cite{yu2012} with the B73 NAM v5 GO annotation from
-\cite{fattel2024}. Gene sets were stratified by regulator location (flanking vs.
-\invfour) and direction of differential expression (up vs. down). Semantic
-redundancy among enriched terms was reduced using \textit{rrvgo} \cite{sayols2023}
-with a similarity threshold of 0.7. Enrichment results were visualized as bubble
-plots showing the top five terms per gene set ranked by adjusted \textit{p}-value.
+Gene Ontology enrichment analysis was performed on the trans network using \textit{clusterProfiler} \cite{yu2012} with the B73 NAM v5 GO annotation from \cite{fattel2024}.
+Gene sets were stratified by regulator location (flanking vs. \invfour) and direction of differential expression (up vs. down).
+Semantic redundancy among enriched terms was reduced using \textit{rrvgo} \cite{sayols2023} with a similarity threshold of 0.7.
+Enrichment results were visualized as bubble plots showing the top five terms per gene set ranked by adjusted \textit{p}-value.
 
 
 \subsection{Filtering of \invfour DEGs by phenotype association}
 
-As our data showed evidence of \invfour accelerating flowering time and 
-increasing plant height, we put together a list of candidate genes associated 
-with these two phenotypes to tease out which DEGs were likely contributors to 
-the observed \invfour effect in these traits. For flowering time, we started 
-with the list of 991 genes compiled by \cite{wang2021} and 62 genes from 
-\cite{li2023a}.
+As our data showed evidence of \invfour accelerating flowering time and increasing plant height, we put together a list of candidate genes associated with these two phenotypes to tease out which DEGs were likely contributors to the observed \invfour effect in these traits.
+For flowering time, we started with the list of 991 genes compiled by \cite{wang2021} and 62 genes from \cite{li2023a}.
 
-Then we downloaded the maize data from the GWAS atlas \cite{liu2023} 
-(\textit{gwas\_association\_result\_for\_maize.txt.gz}) and selected genes that 
-overlapped association SNPs for the 
-\href{https://ngdc.cncb.ac.cn/gwas/browse/ontology}{Plant Phenotype and Trait 
-Ontology} term ``days to flowering trait" \textit{PPTO:0000155}. For this and 
-the following candidate gene list, we considered that a gene overlapped an 
-association SNP if the SNP was located within the 5 kb extended range of the 
-gene model, i.e. as described in the gff gene annotation $\pm 5$ kb.
+Then we downloaded the maize data from the GWAS atlas \cite{liu2023} (\textit{gwas\_association\_result\_for\_maize.txt.gz}) and selected genes that overlapped association SNPs for the \href{https://ngdc.cncb.ac.cn/gwas/browse/ontology}{Plant Phenotype and Trait Ontology} term ``days to flowering trait" \textit{PPTO:0000155}.
+For this and the following candidate gene list, we considered that a gene overlapped an association SNP if the SNP was located within the 5 kb extended range of the gene model, i.e. as described in the gff gene annotation $\pm 5$ kb.
 
-The final source of associations for flowering time was the phenotypic 
-plasticity study in \cite{tibbs-cortes2024} from which we used 281 genes with 
-significant GWAS SNPs in the columns \textit{DTS\_slope}, \textit{DTS\_intcp}, 
-\textit{DTA\_slope}, \textit{DTA\_intcp}. For plant height, 27 genes from 
-\cite{liu2023}, 1210 genes with GWAS Atlas associations for the term ``plant 
-height" \textit{PPTO:0000126}; and 39 genes overlapping phenotypic plasticity 
-association SNPs for \textit{PH\_slope} and \textit{PH\_intcp} 
-\cite{tibbs-cortes2024}. The final nonredundant list consisted of a total of 
-2224 candidate genes for flowering time and 1272 candidates for plant height.
+The final source of associations for flowering time was the phenotypic plasticity study in \cite{tibbs-cortes2024} from which we used 281 genes with significant GWAS SNPs in the columns \textit{DTS\_slope}, \textit{DTS\_intcp}, \textit{DTA\_slope}, \textit{DTA\_intcp}.
+For plant height, 27 genes from \cite{liu2023}, 1210 genes with GWAS Atlas associations for the term ``plant height" \textit{PPTO:0000126}; and 39 genes overlapping phenotypic plasticity association SNPs for \textit{PH\_slope} and \textit{PH\_intcp} \cite{tibbs-cortes2024}.
+The final nonredundant list consisted of a total of 2224 candidate genes for flowering time and 1272 candidates for plant height.
 
 \subsection{Meristem clearing and size quantification}
 
-For vegetative meristem size quantification, maize seedlings were grown at the 
-North Carolina State University Phytotron in a Percival Model LT-105 growth 
-chamber (conditions: 29.4°C day/23.9°C night, relative humidity 50\%, 16 hours 
-light/8 hours dark, light intensity of 412 $\mu$ mol at plant height; soil 
-type: 1:1 Sun Gro Propagation Growing Mix [Canadian Sphagnum peat moss 50-65\%, 
-vermiculite, dolomitic lime, 0.0001\% silicon dioxide] : cement sand) in 
-24-well trays. Seedlings were watered daily in the morning daily and fertilized 
-three times per week.
+For vegetative meristem size quantification, maize seedlings were grown at the North Carolina State University Phytotron in a Percival Model LT-105 growth chamber (conditions: 29.4°C day/23.9°C night, relative humidity 50\%, 16 hours light/8 hours dark, light intensity of 412 $\mu$ mol at plant height; soil type: 1:1 Sun Gro Propagation Growing Mix [Canadian Sphagnum peat moss 50-65\%, vermiculite, dolomitic lime, 0.0001\% silicon dioxide] : cement sand) in 24-well trays.
+Seedlings were watered daily in the morning and fertilized three times per week.
 
-Two-weeks after planting, seedlings were cut at soil level and again 1cm above 
-the soil cut. This 1cm tissue cassette of the shoot apex was cut longitudinally 
-in the medial plane, in a midrib to margin orientation, by hand with a razor 
-blade. Tissue was fixed in ice cold and fresh FAA [50\% EtOH, 35\% milliQ 
-water, 10\% formaldehyde (35\%), 5\% glacial acetic acid (v/v)] with a vacuum 
-for 15 min. FAA was replaced, and tissues were place overnight at 4°C on a 
-rocker.
+Two-weeks after planting, seedlings were cut at soil level and again 1cm above the soil cut.
+This 1cm tissue cassette of the shoot apex was cut longitudinally in the medial plane, in a midrib to margin orientation, by hand with a razor blade.
+Tissue was fixed in ice cold and fresh FAA [50\% EtOH, 35\% milliQ water, 10\% formaldehyde (35\%), 5\% glacial acetic acid (v/v)] with a vacuum for 15 min.
+FAA was replaced, and tissues were place overnight at 4°C on a rocker.
 
-For clearing, tissues were then removed from FAA and dehydrated through a 
-graded ethanol series at room temperature for an hour each with gentle shaking: 
-50\%, 70\%, 85\%, 95\% EtOH (v/v)], followed by 1:1 95\% EtOH and Methyl 
-Salicylate, and finally, 100\% Methyl Salicylate. Once in 100\% Methyl 
-Salicylate, samples were left to shake at room temperature overnight. Each 
-shoot apex tissue cassette was placed on a microscope slide and covered with a 
-coverslip.
+For clearing, tissues were then removed from FAA and dehydrated through a graded ethanol series at room temperature for an hour each with gentle shaking: 50\%, 70\%, 85\%, 95\% EtOH (v/v)], followed by 1:1 95\% EtOH and Methyl Salicylate, and finally, 100\% Methyl Salicylate.
+Once in 100\% Methyl Salicylate, samples were left to shake at room temperature overnight.
+Each shoot apex tissue cassette was placed on a microscope slide and covered with a coverslip.
 
-Cleared shoot apices were imaged with differential internal contrast using a 
-Leica DM4B microscope equipped with a DMC6200 digital camera. Each shoot apex 
-image was measured using ImageJ v2.14.0. The scale was properly set for each 
-image. Width was measured as a straight line at 0° anchored from the edge of 
-P0. Height was measured from the highest point of the meristem tip to the width 
-line at 90°. Surface area was measured using the polygon selection tool by 
-taking into consideration the width line and marking the edge of the meristem 
-dome.
+Cleared shoot apices were imaged with differential internal contrast using a Leica DM4B microscope equipped with a DMC6200 digital camera.
+Each shoot apex image was measured using ImageJ v2.14.0.
+The scale was properly set for each image.
+Width was measured as a straight line at 0° anchored from the edge of P0.
+Height was measured from the highest point of the meristem tip to the width line at 90°.
+Surface area was measured using the polygon selection tool by taking into consideration the width line and marking the edge of the meristem dome.
 
-Data were analyzed using ANOVA and plots were generated in R v.4.3.2 with the 
-packages rstatix v.0.7.2, readxl v.1.4.3, ggplot2 v.3.5.1 and ggpubr v.0.6.0.
+Data were analyzed using ANOVA and plots were generated in R v.4.3.2 with the packages rstatix v.0.7.2, readxl v.1.4.3, ggplot2 v.3.5.1 and ggpubr v.0.6.0.
 
 
 
 \section{Acknowledgments}
 
-We acknowledge support from [funding agencies]. We thank [collaborators] for 
-assistance with field work and laboratory analyses.
+We acknowledge support from [funding agencies].
+We thank [collaborators] for assistance with field work and laboratory analyses.
 
 \bibliography{Inv4m}
 
 \pagebreak
 \onecolumn
+
+
 \section*{Supplement}
 
 \beginsupplement
@@ -1633,7 +1370,7 @@ assistance with field work and laboratory analyses.
   180271106 &
   180292951 &
   21845 &
-  19\% &
+  23\% &
   \multicolumn{1}{r}{35\%} \\ \midrule
  &
    &
@@ -1734,15 +1471,14 @@ assistance with field work and laboratory analyses.
 
 \begin{figure}[!ht]
 \includegraphics[width=\linewidth]{figs/SNP_distribution.png}
-\caption{\textbf{Chromosome Distribution of the SNPs in the RNAseq samples, 
-their correlation with \invfour, and genotype run length as percentage of the 
-genome.} 
-\textbf{(A)} Chromosome 4 contains 44\% of all genotyped SNPs and 98\% 
-of \invfour correlated SNPs (n=13).
-\textbf{(B)} Manhattan plot for the significance (\textit{t-test}) of the Pearson correlation of 19861 genotyped SNPs with PZE04175660223. Red line: \textit{FDR} $=0.05$ threshold. 
-\textbf{(C)} Pearson correlation ($r$) of the each SNP with the \invfour tagging SNP PZE04175660223, open circles: non-significant SNPs.
+\caption{\textbf{Chromosome Distribution of the SNPs in the RNAseq samples, their correlation with \invfour, and genotype run length as percentage of the genome.}
+\textbf{(A)} Chromosome 4 contains 44\% of all genotyped SNPs and 98\% of \invfour correlated SNPs (n=13).
+\textbf{(B)} Manhattan plot for the significance (\textit{t-test}) of the Pearson correlation of 19861 genotyped SNPs with PZE04175660223.
+Red line: \textit{FDR} $= 0.005$ threshold.
+\textbf{(C)} Pearson correlation ($r$) of each SNP with the \invfour tagging SNP PZE04175660223, open circles: non-significant SNPs.
 SNPs with significant correlation with \invfour (full circles) are divergent highland introgressions.
-\textbf{(D)} NIL genotype run length as percentage of the genome. Each point represents a NIL, \invfour plants are tagged by the highland allele of PZE04175660223, CTRL plants by the reference (B73) allele, dashed line is the overall mean for the 13 NILs.}
+\textbf{(D)} NIL genotype run length as percentage of the genome.
+Each point represents a NIL, \invfour plants are tagged by the highland allele of PZE04175660223, CTRL plants by the reference (B73) allele, dashed line is the overall mean for the 13 NILs.}
 \label{fig::SNPdistro}
 \end{figure}
 
@@ -1750,52 +1486,39 @@ SNPs with significant correlation with \invfour (full circles) are divergent hig
 \begin{table}[!ht]
 \caption{\textbf{Effect of \invfour on gene expression.} Selected DEGs from the plant-blocking limma model (FDR $< 0.05$, $|log_2 FC| > 1.5$). Bottom row shows the only significant Leaf$\times$\invfour interaction.}
 \label{tab:gene_effects}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}rrrrrr@{}}
+\begin{tabular}{@{}lrrl@{}}
 \toprule
-\textbf{Predictor} & \textbf{Regulation} & \textbf{Locus} & \textbf{-log10(\textit{FDR})} & \textbf{logFC} & \textbf{Name}                                   \\ \midrule
-\invfour & Down & jmj2      & 21.9 & -3.49 & JUMONJI-transcription factor 2              \\
-\invfour & Down & jmj4      & 19.7 & -2.84 & JUMONJI-transcription factor 4              \\
-\invfour & Down & metrs1    & 17.5 & -2.86 & Methionyl-tRNA synthetase                   \\
-\invfour & Down & uba2      & 17.5 & -1.98 & SUMO-activating enzyme subunit              \\
-\invfour & Down & ccta      & 15.8 & -1.69 & CCT-alpha                                   \\
-\invfour & Down & arf1      & 15.8 & -2.78 & ADP-ribosylation factor                     \\
-\invfour & Down & hsp70-17  & 14.2 & -6.48 & Heat shock 70 kDa protein 17                \\
-\invfour & Down & Zm..0240  & 14.2 & -9.16 & ---                                         \\
-\invfour & Down & ropgef14  & 13.6 & -2.98 & Rop guanine nucleotide exchange factor 14   \\
-\invfour & Down & trxl2     & 13.2 & -6.10 & Thioredoxin-like 3-1, chloroplastic         \\
-\invfour & Down & ank       & 13.0 & -1.83 & Ankyrin repeat-containing protein           \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & ychf      & 16.9 & 6.50  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & sec6      & 16.5 & 2.87  & Exocyst complex component Sec6              \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & zfrvt     & 15.6 & 1.97  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & pig3      & 15.0 & 1.97  & Quinone oxidoreductase PIG3                 \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & etfa      & 14.0 & 4.46  & Electron transfer flavoprotein alpha        \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & gbp1      & 13.7 & 8.96  & GTP-binding protein-related                 \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & Zm..5370  & 13.6 & 1.63  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & kan1      & 13.6 & 1.68  & KANADI1                                     \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & aldh2     & 13.6 & 2.70  & aldehyde dehydrogenase2                     \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & jmj21     & 13.5 & 2.28  & JUMONJI-transcription factor 21             \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & Zm..9580  & 13.2 & 7.38  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & mybsant   & 12.4 & 6.96  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & engd2     & 12.3 & 6.14  & ---                                         \\
-\rowcolor[HTML]{EFEFEF}
-\invfour & Up   & gpm458    & 11.2 & 10.47 & Oil body-associated protein like            \\ \midrule
-Leaf$\times$\invfour & Down & sec6 & 3.1 & -0.55 & Exocyst complex component Sec6              \\ \bottomrule
-\end{tabular}%
-}
+\textbf{Locus} & \textbf{$-\log_{10}$(\textit{FDR})} & \textbf{$\log_2$FC} & \textbf{Name} \\ \midrule
+\multicolumn{4}{l}{\textbf{\invfour: Downregulated}} \\ \midrule
+jmj2      & 21.9 & $-3.49$ & JUMONJI-transcription factor 2              \\
+jmj4      & 19.7 & $-2.84$ & JUMONJI-transcription factor 4              \\
+metrs1    & 17.5 & $-2.86$ & Methionyl-tRNA synthetase                   \\
+uba2      & 17.5 & $-1.98$ & SUMO-activating enzyme subunit              \\
+ccta      & 15.8 & $-1.69$ & CCT-alpha                                   \\
+arf1      & 15.8 & $-2.78$ & ADP-ribosylation factor                     \\
+hsp70-17  & 14.2 & $-6.48$ & Heat shock 70 kDa protein 17                \\
+Zm00001eb190240  & 14.2 & $-9.16$ &                                             \\
+ropgef14  & 13.6 & $-2.98$ & Rop guanine nucleotide exchange factor 14   \\
+trxl2     & 13.2 & $-6.10$ & Thioredoxin-like 3-1, chloroplastic         \\
+ank       & 13.0 & $-1.83$ & Ankyrin repeat-containing protein           \\ \midrule
+\multicolumn{4}{l}{\textbf{\invfour: Upregulated}} \\ \midrule
+sec6      & 16.5 & $+2.87$  & Exocyst complex component Sec6             \\
+zfrvt     & 15.6 & $+1.97$  &                                            \\
+pig3      & 15.0 & $+1.97$  & Quinone oxidoreductase PIG3                \\
+etfa      & 14.0 & $+4.46$  & Electron transfer flavoprotein alpha       \\
+gbp1      & 13.7 & $+8.96$  & GTP-binding protein-related                \\
+Zm00001eb195370  & 13.6 & $+1.63$  &                                            \\
+kan1      & 13.6 & $+1.68$  & KANADI1                                    \\
+aldh2     & 13.6 & $+2.70$  & aldehyde dehydrogenase2                    \\
+jmj21     & 13.5 & $+2.28$  & JUMONJI-transcription factor 21            \\
+Zm00001eb189580  & 13.2 & $+7.38$  &                                            \\
+mybsant   & 12.4 & $+6.96$  &                                            \\
+engd2     & 12.3 & $+6.14$  &                                            \\
+gpm458    & 11.2 & $+10.47$ & Oil body-associated protein like            \\
+ychf      & 9.7  & $+4.19$  &                                            \\ \midrule
+\multicolumn{4}{l}{\textbf{Leaf$\times$\invfour}} \\ \midrule
+sec6      & 3.1  & $-0.55$  & Exocyst complex component Sec6             \\ \bottomrule
+\end{tabular}
 \end{table}
 
 
@@ -1818,28 +1541,73 @@ GDDS & $6.1 \times 10^{-3}$  & 0.08 & $1.9 \times 10^{-5}$ & $1.7 \times 10^{-13
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=0.9\linewidth]{figs/GxE_interaction.png}
-\caption{\textbf{Genotype $\times$ environment interaction plots for the MI21 donor background.} Mean trait values ($\pm$ SE) for CTRL (gold) and \invfour (purple) genotypes across three environments: PSU2022 and PSU2025 (Pennsylvania) and CLY2025 (North Carolina). Panels show days to anthesis (DTA), days to silking (DTS), plant height (PH), and thermal time equivalents (GDDA, GDDS). Non-parallel lines indicate genotype $\times$ environment interactions. Note the crossing interaction for plant height, where \invfour is taller in Pennsylvania environments but shorter in North Carolina, consistent with environment-dependent effects on growth.}
+\includegraphics[width=\linewidth]{figs/GxE_interaction.png}
+\caption{\textbf{Genotype $\times$ environment interaction plots for the MI21 donor background.}
+Mean trait values ($\pm$ SE) for CTRL (gold) and \invfour (purple) genotypes across three environments: PSU2022 and PSU2025 (Pennsylvania) and CLY2025 (North Carolina).
+Panels show days to anthesis (DTA), days to silking (DTS), plant height (PH), and thermal time equivalents (GDDA, GDDS).
+Non-parallel lines indicate genotype $\times$ environment interactions.
+Note the crossing interaction for plant height, where \invfour is taller in Pennsylvania environments but shorter in North Carolina, consistent with environment-dependent effects on growth.}
 \label{fig::gxe_interaction}
 \end{figure*}
 
 \begin{figure}[!ht]
 \includegraphics[width=\linewidth]{figs/effectsizeGxE.png}
-\caption{\textbf{Effect sizes of \invfour across environments.} Forest plot showing Cohen's $d$ effect sizes for \invfour genotype comparisons within each environment (PSU2022, PSU2025, CLY2025) for plant height (PH), days to anthesis (DTA), days to silking (DTS), and thermal time equivalents (GDDA, GDDS). Error bars represent 95\% confidence intervals. Note the reversal of plant height effects in CLY2025 (North Carolina) compared to Pennsylvania environments.}
+\caption{\textbf{Effect sizes of \invfour across environments.}
+Forest plot showing Cohen's $d$ effect sizes for \invfour genotype comparisons within each environment (PSU2022, PSU2025, CLY2025) for plant height (PH), days to anthesis (DTA), days to silking (DTS), and thermal time equivalents (GDDA, GDDS).
+Error bars represent 95\% confidence intervals.
+Note the reversal of plant height effects in CLY2025 (North Carolina) compared to Pennsylvania environments.}
 \label{fig::gxe_forest}
 \end{figure}
 
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width= 0.7 \linewidth]{figs/internodes.png}
+\includegraphics[width=\linewidth]{figs/internodes.png}
 \caption{\textbf{Internode length analysis in \invfour and control plants.}
-\textbf{(A)} Plant height comparison between CTRL and \invfour in the MI21 background (CLY2025 field experiment). Boxplots show plant height (cm) with individual data points. P-value from linear mixed model.
+\textbf{(A)} Plant height comparison between CTRL and \invfour in the MI21 background (CLY2025 field experiment).
+Boxplots show plant height (cm) with individual data points.
+P-value from linear mixed model.
 \textbf{(B)} Representative dissected plant showing whole plant architecture including root system and stem with visible node demarcations.
-\textbf{(C)} Detail of tassel and upper stem region. Scale bar in cm.
-\textbf{(D)} Internode length profiles by position from top. Boxplots show internode length (cm) at each position for CTRL (gold, $n = 112$ plants) and \invfour (purple, $n = 116$ plants). The longest internodes occur at positions 4--6, corresponding to the ear node region. \textit{Inset}: Schematic illustration of maize plant architecture indicating internode numbering scheme from the tassel-bearing node (position 1) downward.}
+\textbf{(C)} Detail of tassel and upper stem region.
+Scale bar = 10 cm.
+\textbf{(D)} Internode length profiles by position from top.
+Scale bar = 10 cm.
+Boxplots show internode length (cm) at each position for CTRL (gold, $n = 112$ plants) and \invfour (purple, $n = 116$ plants).
+Asterisks indicate positions with significant differences (FDR $< 0.05$).
+Internode 2 shows the largest difference ($-4.12$ cm, $-18.5\%$; FDR $= 3.7 \times 10^{-18}$) and accounts for 93\% of the total height difference (Table~\ref{tab::internode_effects}).
+\textit{Inset}: Schematic illustration of maize plant architecture indicating internode numbering scheme from the tassel-bearing node (position 1) downward.}
 \label{fig::internode}
 \end{figure*}
+
+
+\begin{table}[!ht]
+\caption{\textbf{Internode length differences between \invfour and control plants by position.} T-tests comparing internode length at each position from the tassel (position 1) downward. FDR correction applied across all 16 positions. Internode 2 (immediately below the tassel) accounts for 93\% of the total height difference. MI21 donor background, CLY2025 field experiment ($n = 112$ CTRL, $n = 116$ \invfour plants).}
+\label{tab::internode_effects}
+\centering
+\small
+\begin{tabular}{@{}crrrrrr@{}}
+\toprule
+\textbf{Position} & \textbf{CTRL (cm)} & \textbf{\invfour (cm)} & \textbf{Diff (cm)} & \textbf{\% Change} & \textbf{FDR} & \textbf{Sig.} \\
+\midrule
+1 & 24.19 & 25.09 & $+0.91$ & $+3.8$ & 0.150 & ns \\
+\textbf{2} & \textbf{22.27} & \textbf{18.15} & $\mathbf{-4.12}$ & $\mathbf{-18.5}$ & $\mathbf{3.7 \times 10^{-18}}$ & \textbf{****} \\
+3 & 11.86 & 10.73 & $-1.12$ & $-9.5$ & $3.0 \times 10^{-6}$ & **** \\
+4 & 12.38 & 11.28 & $-1.09$ & $-8.8$ & $1.4 \times 10^{-11}$ & **** \\
+5 & 12.98 & 12.40 & $-0.59$ & $-4.5$ & $3.8 \times 10^{-4}$ & *** \\
+6 & 13.17 & 13.02 & $-0.15$ & $-1.2$ & 0.245 & ns \\
+7 & 13.13 & 13.19 & $+0.06$ & $+0.5$ & 0.713 & ns \\
+8 & 15.22 & 15.17 & $-0.05$ & $-0.3$ & 0.816 & ns \\
+9 & 15.11 & 15.86 & $+0.75$ & $+5.0$ & $9.4 \times 10^{-4}$ & *** \\
+10 & 13.09 & 14.12 & $+1.03$ & $+7.9$ & $9.0 \times 10^{-5}$ & **** \\
+11 & 10.68 & 11.43 & $+0.75$ & $+7.0$ & 0.004 & ** \\
+12 & 8.62 & 9.00 & $+0.38$ & $+4.5$ & 0.240 & ns \\
+13 & 5.82 & 6.16 & $+0.34$ & $+5.9$ & 0.238 & ns \\
+14 & 4.43 & 4.51 & $+0.08$ & $+1.9$ & 0.713 & ns \\
+15 & 4.17 & 3.81 & $-0.36$ & $-8.7$ & 0.245 & ns \\
+16 & 4.00 & 2.75 & $-1.25$ & $-31.3$ & 0.238 & ns \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \clearpage
 
@@ -1847,7 +1615,11 @@ GDDS & $6.1 \times 10^{-3}$  & 0.08 & $1.9 \times 10^{-5}$ & $1.7 \times 10^{-13
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\linewidth]{figs/module_support.png}
-\caption{\textbf{WGCNA consensus module bootstrap support.} Horizontal bars show mean bootstrap support (Label Fraction Present, LFP) for each CTRL consensus module across 1000 iterations with 80\% gene subsampling. Error bars indicate standard error of the mean. Dashed lines indicate stability thresholds: green ($\geq 0.70$, Stable) and orange ($\geq 0.50$, Moderate). Most modules achieve stable or moderate support, indicating robust module assignments in the CTRL reference network.}
+\caption{\textbf{WGCNA consensus module bootstrap support.}
+Horizontal bars show mean bootstrap support (Label Fraction Present, LFP) for each CTRL consensus module across 1000 iterations with 80\% gene subsampling.
+Error bars indicate standard error of the mean.
+Dashed lines indicate stability thresholds: green ($\geq 0.70$, Stable) and orange ($\geq 0.50$, Moderate).
+Most modules achieve stable or moderate support, indicating robust module assignments in the CTRL reference network.}
 \label{fig::module_support}
 \end{figure}
 
@@ -1856,8 +1628,13 @@ GDDS & $6.1 \times 10^{-3}$  & 0.08 & $1.9 \times 10^{-5}$ & $1.7 \times 10^{-13
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=0.9\linewidth]{figs/go_enrichment_BP_rrvgo.png}
-\caption{\textbf{Gene Ontology enrichment of WGCNA consensus modules.} Bubble plot showing Biological Process (BP) GO term enrichment for each CTRL consensus module. Bubble size indicates gene count; color indicates enrichment significance ($-\log_{10}(p)$). GO terms were reduced using rrvgo semantic similarity to eliminate redundancy. Module labels include gene counts in parentheses. Notable enrichments include chromatin organization (blue module), translation (brown), and cellular response to stress (yellow).}
+\includegraphics[width=\linewidth]{figs/go_enrichment_BP_rrvgo.png}
+\caption{\textbf{Gene Ontology enrichment of WGCNA consensus modules.}
+Bubble plot showing Biological Process (BP) GO term enrichment for each CTRL consensus module.
+Bubble size indicates gene count; color indicates enrichment significance ($-\log_{10}(p)$).
+GO terms were reduced using rrvgo semantic similarity to eliminate redundancy.
+Module labels include gene counts in parentheses.
+Notable enrichments include chromatin organization (blue module), translation (brown), and cellular response to stress (yellow).}
 \label{fig::module_go}
 \end{figure*}
 
@@ -1865,27 +1642,57 @@ GDDS & $6.1 \times 10^{-3}$  & 0.08 & $1.9 \times 10^{-5}$ & $1.7 \times 10^{-13
 
 
 \begin{table}[!ht]
-\caption{\textbf{WGCNA module preservation statistics.} Modules sorted by FDR-corrected p-value from one-sample t-test of $\Delta k_{Within} \neq 0$. Adj.\ Corr.\ = adjacency correlation between CTRL and \invfour networks. LFP = Largest Fragment Proportion (bootstrap support in CTRL).}
+\caption{\textbf{WGCNA module preservation statistics.} Modules sorted by FDR-corrected $p$-value from one-sample $t$-test of $\Delta k_{Within} \neq 0$. $Z_{summary}$ from \texttt{modulePreservation()} with 1000 permutations \cite{langfelder2011}: $< 2$ = not preserved, $2$ to $10$ = moderate, $> 10$ = strong. LFP = Largest Fragment Proportion (bootstrap support in CTRL).}
 \label{tab::preservation}
 \centering
 \small
-\begin{tabular}{@{}lrrrrr@{}}
+\begin{tabular}{@{}lrrrrrr@{}}
 \toprule
-\textbf{Module} & \textbf{Genes} & \textbf{Adj. Corr.} & \textbf{$\Delta k_{Within}$} & \textbf{FDR} & \textbf{LFP} \\
+\textbf{Module} & \textbf{Genes} & \textbf{$Z_{summary}$} & \textbf{$\Delta k_{Within}$} & \textbf{FDR} & \textbf{LFP} \\
 \midrule
-blue & 51 & 0.01 & -0.71 & $4.6 \times 10^{-24}$ & 0.79 \\
-brown & 46 & 0.19 & -0.59 & $2.2 \times 10^{-22}$ & 0.68 \\
-yellow & 36 & 0.06 & -0.59 & $1.1 \times 10^{-17}$ & 0.68 \\
-black & 32 & 0.33 & -0.47 & $1.1 \times 10^{-15}$ & 0.69 \\
-green & 36 & 0.14 & -0.39 & $1.4 \times 10^{-15}$ & 0.69 \\
-pink & 30 & 0.02 & -0.54 & $4.5 \times 10^{-14}$ & 0.72 \\
-greenyellow & 16 & 0.28 & -0.51 & $3.8 \times 10^{-10}$ & 0.80 \\
-turquoise & 55 & 0.42 & -0.19 & $1.3 \times 10^{-9}$ & 0.54 \\
-red & 34 & 0.16 & -0.32 & $1.7 \times 10^{-9}$ & 0.63 \\
-purple & 22 & -0.14 & -0.43 & $3.8 \times 10^{-8}$ & 0.74 \\
-tan & 12 & 0.41 & -0.54 & $7.1 \times 10^{-7}$ & 0.68 \\
-magenta & 24 & 0.07 & -0.08 & 0.051 & 0.71 \\
-salmon & 11 & -0.03 & 0.01 & 0.630 & 0.52 \\
+blue & 51 & 3.1 & -1.27 & $4.9 \times 10^{-10}$ & 0.79 \\
+brown & 46 & 3.8 & -2.22 & $4.3 \times 10^{-9}$ & 0.68 \\
+yellow & 36 & 3.5 & -1.29 & $1.5 \times 10^{-8}$ & 0.68 \\
+purple & 22 & 3.8 & -1.04 & $2.6 \times 10^{-6}$ & 0.74 \\
+black & 32 & 4.5 & -0.66 & $2.6 \times 10^{-6}$ & 0.69 \\
+pink & 30 & 5.8 & -0.83 & $2.6 \times 10^{-6}$ & 0.72 \\
+red & 34 & 3.3 & -0.34 & $8.5 \times 10^{-5}$ & 0.63 \\
+greenyellow & 16 & 3.0 & -0.65 & $4.5 \times 10^{-4}$ & 0.80 \\
+green & 36 & 5.0 & -0.38 & 0.002 & 0.69 \\
+tan & 12 & 2.2 & -4.13 & 0.003 & 0.68 \\
+turquoise & 55 & 6.1 & -0.33 & 0.005 & 0.54 \\
+salmon & 11 & 1.2 & -0.15 & 0.025 & 0.52 \\
+magenta & 24 & 5.3 & -0.18 & 0.126 & 0.71 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!ht]
+\caption{\textbf{Greenyellow module DEGs containing growth and cell division genes.} Genes assigned to the greenyellow WGCNA consensus module, which has the highest bootstrap support (LFP = 0.80) among all modules. Contains the plant height GWAS candidate \textit{sec6} and the cell proliferation marker \textit{pcna2}. Sorted by statistical significance (FDR). GO enrichment includes ``developmental cell growth'' ($p = 8.5 \times 10^{-4}$) and ``regulation of DNA replication'' ($p = 0.019$).}
+\label{tab::greenyellow_module}
+\centering
+\small
+\begin{tabular}{@{}lllrr@{}}
+\toprule
+\textbf{Gene ID} & \textbf{Label} & \textbf{Description} & \textbf{log$_2$FC} & \textbf{FDR} \\
+\midrule
+Zm00001eb194380 & \textit{sec6} & Exocyst complex component Sec6 & $+2.87$ & $2.9 \times 10^{-17}$ \\
+Zm00001eb188240 & \textit{ropgef14} & Rop guanine nucleotide exchange factor 14 & $-2.98$ & $2.6 \times 10^{-14}$ \\
+Zm00001eb112470 & \textit{engd2} & GTPase-like protein & $+6.14$ & $4.9 \times 10^{-13}$ \\
+Zm00001eb191260 & \textit{pbl19} & Serine/threonine-protein kinase PBL19 & $-1.39$ & $3.5 \times 10^{-9}$ \\
+Zm00001eb195290 & \textit{pap1} & PAP-associated domain-containing protein & $+1.45$ & $4.7 \times 10^{-8}$ \\
+Zm00001eb386670 & \textit{rglg2} & E3 ubiquitin-protein ligase RGLG2 & $-1.01$ & $5.2 \times 10^{-4}$ \\
+Zm00001eb187450 & \textit{mybr58} & MYB-related transcription factor 58 & $+1.74$ & $3.1 \times 10^{-3}$ \\
+Zm00001eb192050 & \textit{pcna2} & Proliferating cell nuclear antigen 2 & $+2.99$ & $9.3 \times 10^{-3}$ \\
+Zm00001eb290800 & \textit{pk8} & Protein kinase domain-containing & $-0.37$ & $2.5 \times 10^{-2}$ \\
+Zm00001eb392440 & \textit{iqm1} & IQ calmodulin-binding motif protein & $-0.85$ & $2.6 \times 10^{-2}$ \\
+Zm00001eb080160 & \textit{hipp16} & Heavy metal-associated protein 16 & $-0.99$ & $3.4 \times 10^{-2}$ \\
+Zm00001eb404820 & \textit{esk1} & Protein ESKIMO-like & $-0.65$ & $3.4 \times 10^{-2}$ \\
+Zm00001eb064190 & \textit{parg} & Poly(ADP-ribose) glycohydrolase & $-0.29$ & $4.2 \times 10^{-2}$ \\
+Zm00001eb190580 & \textit{pla2} & Phospholipase A2 homolog 1 & $-0.69$ & $4.8 \times 10^{-2}$ \\
+Zm00001eb375460 & \textit{pk3} & Protein kinase domain-containing & $-0.74$ & $4.8 \times 10^{-2}$ \\
+Zm00001eb279370 & \textit{phi1b} & Phi-1-like phosphate-induced protein & $+0.72$ & $5.0 \times 10^{-2}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1903,7 +1710,7 @@ salmon & 11 & -0.03 & 0.01 & 0.630 & 0.52 \\
 Zm00001eb191790 & \textit{jmj2} & JUMONJI-transcription factor 2 & $-3.49$ & $1.2 \times 10^{-22}$ \\
 Zm00001eb191820 & \textit{jmj4} & JUMONJI-transcription factor 4 & $-2.84$ & $1.9 \times 10^{-20}$ \\
 Zm00001eb188750 & \textit{hsp70-17} & Heat shock 70 kDa protein 17 & $-6.48$ & $6.9 \times 10^{-15}$ \\
-Zm00001eb196760 & --- & --- & $-8.29$ & $9.2 \times 10^{-14}$ \\
+Zm00001eb196760 &  &  & $-8.29$ & $9.2 \times 10^{-14}$ \\
 Zm00001eb195120 & \textit{swc6} & SWR1 complex subunit 6 & $-1.15$ & $6.4 \times 10^{-13}$ \\
 Zm00001eb196830 & \textit{pan1} & PAN domain-containing protein & $-5.35$ & $3.9 \times 10^{-11}$ \\
 Zm00001eb249540 & \textit{rpl29} & 50S ribosomal protein L29, chloroplastic & $+4.41$ & $6.9 \times 10^{-10}$ \\
@@ -1911,7 +1718,7 @@ Zm00001eb192350 & \textit{pkwd1} & Protein kinase family protein / WD-40... & $-
 Zm00001eb195790 & \textit{traf1} & TRAF-type domain-containing protein & $+3.15$ & $3.4 \times 10^{-9}$ \\
 Zm00001eb192360 & \textit{ppr5} & Pentatricopeptide repeat-containing p... & $-0.89$ & $6.9 \times 10^{-9}$ \\
 Zm00001eb195560 & \textit{lurp8} & Protein LURP-one-related 8 & $-5.49$ & $5.3 \times 10^{-8}$ \\
-Zm00001eb360380 & --- & --- & $+0.60$ & $1.5 \times 10^{-4}$ \\
+Zm00001eb360380 &  &  & $+0.60$ & $1.5 \times 10^{-4}$ \\
 Zm00001eb188350 & \textit{rfc3} & Replication factor C subunit 3 & $-0.83$ & $1.8 \times 10^{-4}$ \\
 Zm00001eb194610 & \textit{yae1} & Essential protein Yae1 N-terminal dom... & $-2.54$ & $4.1 \times 10^{-4}$ \\
 Zm00001eb193640 & \textit{ycge} & HTH-type transcriptional repressor YcgE & $+0.95$ & $5.8 \times 10^{-4}$ \\
@@ -1925,14 +1732,13 @@ Zm00001eb432550 & \textit{bcd135b} & Ribosomal RNA processing protein A & $-0.43
 Zm00001eb330750 & \textit{eif2b} & Eukaryotic translation initiation fac... & $-0.27$ & $3.3 \times 10^{-2}$ \\
 Zm00001eb194670 & \textit{degp9} & Protease Do-like protein 9 & $-0.29$ & $3.9 \times 10^{-2}$ \\
 Zm00001eb205670 & \textit{rps8} & 40S ribosomal protein S8 & $-0.34$ & $4.4 \times 10^{-2}$ \\
-Zm00001eb080580 & --- & --- & $-0.34$ & $4.4 \times 10^{-2}$ \\
+Zm00001eb080580 &  &  & $-0.34$ & $4.4 \times 10^{-2}$ \\
 Zm00001eb012770 & \textit{rps18} & Ribosomal protein S18 & $-0.26$ & $4.4 \times 10^{-2}$ \\
 Zm00001eb273610 & \textit{cchh40} & Zinc finger CCCH domain-containing pr... & $-0.22$ & $4.5 \times 10^{-2}$ \\
-Zm00001eb126770 & \textit{cl59140\_1} & --- & $-0.35$ & $4.6 \times 10^{-2}$ \\
+Zm00001eb126770 & \textit{cl59140\_1} &  & $-0.35$ & $4.6 \times 10^{-2}$ \\
 Zm00001eb160040 & \textit{rpc3} & DNA-directed RNA polymerase III subun... & $-0.28$ & $4.8 \times 10^{-2}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-
 
 \end{document}
